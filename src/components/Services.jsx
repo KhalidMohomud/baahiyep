@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionFooter from './SectionFooter';
 
 const Services = () => {
   const services = [
@@ -47,83 +48,56 @@ const Services = () => {
 
   return (
     <section className="min-h-screen bg-white relative overflow-hidden">
+      {/* background and accents */}
       <div className="absolute inset-0 network-pattern opacity-20"></div>
-      
-      {/* Orange decorative element */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary rounded-full translate-x-16 -translate-y-16"></div>
-      
+      {/* angled bottom-left creative block */}
+      <div className="services-angled-block" aria-hidden="true">
+        <div className="services-angled-inner">
+          <div className="flex items-center gap-3 mb-2">
+            <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <div className="text-white leading-tight font-extrabold text-3xl md:text-5xl">HOME OF</div>
+          <div className="text-white leading-none font-extrabold text-4xl md:text-6xl">CREATIVITY</div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="mb-16">
-            <div className="bg-navy text-white px-8 py-4 rounded-full inline-block shadow-lg">
-              <h2 className="text-3xl font-bold">Our Services</h2>
-            </div>
+          <div className="mb-10 md:mb-14">
+            <div className="heading-bubble inline-block px-6 py-3 text-white text-2xl md:text-3xl font-extrabold">Our Services</div>
           </div>
-          
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Quote */}
+
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Quote with vertical divider */}
             <div className="space-y-8">
-              <blockquote className="text-xl text-gray-700 leading-relaxed">
-                <span className="text-primary text-3xl font-bold">"</span>
-                We can help your business grow and reach more customers with the use of trending designs and creative production
-                <span className="text-primary text-3xl font-bold">"</span>
-              </blockquote>
-              
-              {/* Home of Creativity */}
-              <div className="bg-primary text-white p-12 rounded-r-full shadow-2xl">
-                <div className="flex items-center mb-4">
-                  <svg className="w-12 h-12 mr-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 3a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <h3 className="text-4xl font-bold leading-tight">
-                  HOME OF<br />
-                  CREATIVITY
-                </h3>
+              <div className="flex">
+                <blockquote className="text-xl text-gray-700 leading-relaxed pr-6">
+                  <span className="text-primary text-3xl font-bold">"</span>
+                  We can help your business grow and reach more customers with the use of trending designs and creative production
+                  <span className="text-primary text-3xl font-bold">"</span>
+                </blockquote>
+                <div className="w-px bg-gray-300" />
               </div>
             </div>
-            
+
             {/* Services list */}
             <div className="space-y-6">
               {services.map((service, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center space-x-6 p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 group cursor-pointer"
-                >
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200">
+                <div key={index} className="flex items-center space-x-5">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-white grid place-items-center shadow-3xl">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-navy group-hover:text-primary transition-colors duration-200">
-                    {service.title}
-                  </h3>
+                  <h3 className="text-2xl md:text-3xl font-semibold text-navy">{service.title}</h3>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Bottom section with social media */}
-      <div className="bg-primary py-6">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-center items-center space-x-6 text-white">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-            </svg>
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.404-5.965 1.404-5.965s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.22.083.34-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.763-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
-            </svg>
-            <span className="font-semibold ml-4">Baahiye Digital Marketing</span>
-          </div>
-        </div>
-      </div>
+
+      <SectionFooter />
     </section>
   );
 };

@@ -12,6 +12,8 @@ export default {
         secondary: '#1A237E',
         navy: '#1E2A4A',
         lightGray: '#F5F5F5',
+        brandOrange: '#FF5722',
+        brandNavy: '#1E2A4A',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
