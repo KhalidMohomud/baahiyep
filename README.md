@@ -1,8 +1,14 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+(/public/image/logo.png)
 
-Currently, two official plugins are available:
+# Baahiye Digital Marketing is a company that provides creative and digital services.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## We merge your brand with new creative designs and provide web designing and hosting solutions. Our creative digital marketing hub is made up of a team of innovators who understand the influence of digital media on brand and business growth.
+
+## We pride ourselves on the ability to blend innovation and efficiency to produce   first-rate services for our clients. Your business goals are the driving force behind ours.
+
+- We always aim to exceed and deliver results based on our clients' marketing objectives while enhancing their overall brands.
+
+
