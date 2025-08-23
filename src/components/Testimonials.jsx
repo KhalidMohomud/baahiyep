@@ -10,8 +10,8 @@ const Testimonials = () => {
   const testimonials = [
     { 
       quote: "Baahiye Digital Marketing transformed our brand completely. Their expertise in digital strategy is unmatched and they delivered results beyond our expectations.", 
-      author: "Khalid Hassan", 
-      title: "CEO, Tech Solutions",
+      author: "Khalid Mohomud", 
+      title: "CEO, Hersi Solutions",
       image: "/image/khalid.jpeg",
       rating: 5
     },
