@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <NotFound />,
+    errorElement: <NotFound />, 
     children: [
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
@@ -36,6 +36,8 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         )
       },
+      // Catch-all route for unmatched paths
+      { path: '*', element: <NotFound /> },
     ],
   },
 ]);

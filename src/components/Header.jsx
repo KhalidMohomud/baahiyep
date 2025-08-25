@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useClerkAuth } from '../contexts/ClerkAuthContext';
-import { FaUser, FaSignOutAlt, FaChevronDown } from 'react-icons/fa';
 import { UserButton } from '@clerk/clerk-react';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [userMenuOpen, setUserMenuOpen] = useState(false);
-  const { currentUser, signOut, isAuthenticated } = useClerkAuth();
+  const { isAuthenticated, signOut } = useClerkAuth();
 
   const handleLogout = () => {
     signOut();
-    setUserMenuOpen(false);
+    setMobileOpen(false);
   };
 
+  // const closeMobileMenu = () => {
+  //   setMobileOpen(false);
+  // };
+
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-lg">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center group">
+          <NavLink to="/" className="flex items-center group" >
             <img
               src="/image/logo.png"
               alt="Baahiye Digital Marketing logo"
-              className="object-contain w-auto h-16 md:h-22"
+              className="object-contain w-auto h-16 md:h-20 transition-transform duration-300 group-hover:scale-105"
             />
           </NavLink>
 
@@ -32,53 +34,61 @@ const Header = () => {
             <NavLink 
               to="/" 
               className={({isActive}) => 
-                `text-gray-700 hover:text-brandOrange transition-colors font-medium ${
+                `text-gray-700 hover:text-brandOrange transition-all duration-300 font-medium relative group ${
                   isActive ? 'text-brandOrange' : ''
                 }`
               }
             >
               Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full"></span>
             </NavLink>
             <NavLink 
               to="/about" 
               className={({isActive}) => 
-                `text-gray-700 hover:text-brandOrange transition-colors font-medium ${
+                `text-gray-700 hover:text-brandOrange transition-all duration-300 font-medium relative group ${
                   isActive ? 'text-brandOrange' : ''
                 }`
               }
             >
               About
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full"></span>
             </NavLink>
             <NavLink 
               to="/service" 
               className={({isActive}) => 
-                `text-gray-700 hover:text-brandOrange transition-colors font-medium ${
+                `text-gray-700 hover:text-brandOrange transition-all duration-300 font-medium relative group ${
                   isActive ? 'text-brandOrange' : ''
                 }`
               }
             >
               Services
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full"></span>
             </NavLink>
-            <NavLink 
-              to="/Portifole" 
-              className={({isActive}) => 
-                `text-gray-700 hover:text-brandOrange transition-colors font-medium ${
-                  isActive ? 'text-brandOrange' : ''
-                }`
-              }
-            >
-              Portfolio
-            </NavLink>
+           
             <NavLink 
               to="/Contact" 
               className={({isActive}) => 
-                `text-gray-700 hover:text-brandOrange transition-colors font-medium ${
+                `text-gray-700 hover:text-brandOrange transition-all duration-300 font-medium relative group ${
                   isActive ? 'text-brandOrange' : ''
                 }`
               }
             >
               Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full"></span>
             </NavLink>
+             
+            <NavLink 
+              to="/Portifole" 
+              className={({isActive}) => 
+                `text-gray-700 hover:text-brandOrange transition-all duration-300 font-medium relative group ${
+                  isActive ? 'text-brandOrange' : ''
+                }`
+              }
+            >
+              Portfolio
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full"></span>
+            </NavLink>
+
           </nav>
 
           {/* Authentication Section */}
@@ -88,7 +98,7 @@ const Header = () => {
               <div className="flex items-center space-x-4">
                 <NavLink
                   to="/profile"
-                  className="hidden md:block px-4 py-2 text-gray-700 hover:text-brandOrange transition-colors font-medium"
+                  className="hidden md:block px-4 py-2 text-gray-700 hover:text-brandOrange transition-colors duration-300 font-medium"
                 >
                   Profile
                 </NavLink>
@@ -110,13 +120,13 @@ const Header = () => {
               <div className="hidden md:flex items-center space-x-3">
                 <NavLink
                   to="/SingIn"
-                  className="px-4 py-2 text-gray-700 hover:text-brandOrange transition-colors font-medium"
+                  className="px-4 py-2 text-gray-700 hover:text-brandOrange transition-colors duration-300 font-medium"
                 >
                   Sign In
                 </NavLink>
                 <NavLink
                   to="/SingUp"
-                  className="px-4 py-2 bg-brandOrange text-white rounded-lg hover:bg-brandNavy transition-colors font-medium"
+                  className="px-4 py-2 bg-brandOrange text-white rounded-lg hover:bg-brandNavy transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   Sign Up
                 </NavLink>
@@ -126,7 +136,8 @@ const Header = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 text-gray-700 transition-colors rounded-md md:hidden hover:text-brandOrange hover:bg-gray-100"
+              className="p-2 text-gray-700 transition-colors duration-300 rounded-md md:hidden hover:text-brandOrange hover:bg-gray-100"
+              aria-label="Toggle mobile menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen ? (
@@ -141,15 +152,15 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileOpen && (
-          <div className="py-4 border-t border-gray-200 md:hidden">
+          <div className="py-4 border-t border-gray-200 md:hidden animate-in slide-in-from-top-2 duration-300">
             <nav className="flex flex-col space-y-3">
               <NavLink 
                 to="/" 
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
                 className={({isActive}) => 
-                  `px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  `px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
                     isActive 
-                      ? 'bg-brandOrange text-white' 
+                      ? 'bg-brandOrange text-white shadow-md' 
                       : 'text-gray-700 hover:text-brandOrange hover:bg-gray-100'
                   }`
                 }
@@ -158,11 +169,11 @@ const Header = () => {
               </NavLink>
               <NavLink 
                 to="/about" 
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
                 className={({isActive}) => 
-                  `px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  `px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
                     isActive 
-                      ? 'bg-brandOrange text-white' 
+                      ? 'bg-brandOrange text-white shadow-md' 
                       : 'text-gray-700 hover:text-brandOrange hover:bg-gray-100'
                   }`
                 }
@@ -171,11 +182,11 @@ const Header = () => {
               </NavLink>
               <NavLink 
                 to="/service" 
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
                 className={({isActive}) => 
-                  `px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  `px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
                     isActive 
-                      ? 'bg-brandOrange text-white' 
+                      ? 'bg-brandOrange text-white shadow-md' 
                       : 'text-gray-700 hover:text-brandOrange hover:bg-gray-100'
                   }`
                 }
@@ -184,11 +195,11 @@ const Header = () => {
               </NavLink>
               <NavLink 
                 to="/Portifole" 
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
                 className={({isActive}) => 
-                  `px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  `px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
                     isActive 
-                      ? 'bg-brandOrange text-white' 
+                      ? 'bg-brandOrange text-white shadow-md' 
                       : 'text-gray-700 hover:text-brandOrange hover:bg-gray-100'
                   }`
                 }
@@ -197,11 +208,11 @@ const Header = () => {
               </NavLink>
               <NavLink 
                 to="/Contact" 
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
                 className={({isActive}) => 
-                  `px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  `px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
                     isActive 
-                      ? 'bg-brandOrange text-white' 
+                      ? 'bg-brandOrange text-white shadow-md' 
                       : 'text-gray-700 hover:text-brandOrange hover:bg-gray-100'
                   }`
                 }
@@ -214,15 +225,15 @@ const Header = () => {
                 <div className="pt-4 border-t border-gray-200 space-y-2">
                   <NavLink
                     to="/SingIn"
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brandOrange hover:bg-gray-100 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brandOrange hover:bg-gray-100 rounded-md transition-all duration-300"
                   >
                     Sign In
                   </NavLink>
                   <NavLink
                     to="/SingUp"
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-3 py-2 text-base font-medium bg-brandOrange text-white rounded-md hover:bg-brandNavy transition-colors"
+                    onClick={closeMobileMenu}
+                    className="block px-3 py-2 text-base font-medium bg-brandOrange text-white rounded-md hover:bg-brandNavy transition-all duration-300 shadow-md"
                   >
                     Sign Up
                   </NavLink>

@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { FaPaintBrush, FaBullhorn, FaGlobe, FaFilm, FaRegLightbulb } from "react-icons/fa";
 import { MdEvent } from "react-icons/md";
-import Header from '../components/Header'
 import SectionFooter from '../components/SectionFooter'
 import Packages from '../components/Packages';
 import { FaUsers, FaTrophy, FaProjectDiagram } from "react-icons/fa";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Testimonials from '../components/Testimonials';
+import DomainSearch from '../components/DomainSearch';
+import Homehero from '../components/Homehero';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -97,36 +98,36 @@ const Home = () => {
     }
   ];
 
-  const clients = [
-    { name: 'SIMAD UNIVERSITY', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.25-removebg-preview.png' },
-    { name: 'SOMALI SUDANESE SPECIALIZED HOSPITAL', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png' },
-    { name: 'AL-BIRRI', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png' },
-    { name: 'MAD Lab', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png' }
-  ];
+  // const clients = [
+  //   { name: 'SIMAD UNIVERSITY', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.25-removebg-preview.png' },
+  //   { name: 'SOMALI SUDANESE SPECIALIZED HOSPITAL', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png' },
+  //   { name: 'AL-BIRRI', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png' },
+  //   { name: 'MAD Lab', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png' }
+  // ];
 
-  const blogPosts = [
-    {
-      title: 'How Motion Graphics Can Help Your Brand Marketing?',
-      excerpt: 'Discover how motion graphics can transform your brand marketing strategy and engage your audience effectively.',
-      image: '/image/clbg.jpeg',
-      date: 'July 24, 2024',
-      tags: ['Brand Marketing', 'Motion Graphics']
-    },
-    {
-      title: 'The Future of Digital Marketing in 2024',
-      excerpt: 'Explore the latest trends and technologies shaping the future of digital marketing.',
-      image: '/image/logo.png',
-      date: 'July 20, 2024',
-      tags: ['Digital Marketing', 'Trends']
-    },
-    {
-      title: 'Web Design Best Practices for Better Conversion',
-      excerpt: 'Learn the essential web design principles that can significantly improve your conversion rates.',
-      image: '/image/WhatsApp_Image_2025-08-22_at_14.23.25-removebg-preview.png',
-      date: 'July 18, 2024',
-      tags: ['Web Design', 'Conversion']
-    }
-  ];
+  // const blogPosts = [
+  //   {
+  //     title: 'How Motion Graphics Can Help Your Brand Marketing?',
+  //     excerpt: 'Discover how motion graphics can transform your brand marketing strategy and engage your audience effectively.',
+  //     image: '/image/clbg.jpeg',
+  //     date: 'July 24, 2024',
+  //     tags: ['Brand Marketing', 'Motion Graphics']
+  //   },
+  //   {
+  //     title: 'The Future of Digital Marketing in 2024',
+  //     excerpt: 'Explore the latest trends and technologies shaping the future of digital marketing.',
+  //     image: '/image/logo.png',
+  //     date: 'July 20, 2024',
+  //     tags: ['Digital Marketing', 'Trends']
+  //   },
+  //   {
+  //     title: 'Web Design Best Practices for Better Conversion',
+  //     excerpt: 'Learn the essential web design principles that can significantly improve your conversion rates.',
+  //     image: '/image/WhatsApp_Image_2025-08-22_at_14.23.25-removebg-preview.png',
+  //     date: 'July 18, 2024',
+  //     tags: ['Web Design', 'Conversion']
+  //   }
+  // ];
 
   useEffect(() => {
     // Hero Section Animation
@@ -430,81 +431,14 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="relative py-20 overflow-hidden text-white bg-gradient-to-r from-brandOrange via-brandOrange to-brandNavy">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-    <div>
-              <h1 className="mb-6 text-5xl font-bold hero-title md:text-6xl">
-                Event Branding
-              </h1>
-              <p className="mb-8 text-xl leading-relaxed hero-description text-white/90">
-                We specialize in event branding, consulting, digital strategy, social media management, 
-                content writing, and comprehensive digital marketing solutions that drive results.
-              </p>
-              <button className="px-8 py-4 text-lg font-semibold transition-colors bg-white rounded-lg hero-button cta-button text-brandNavy hover:bg-white/90">
-                See More
-              </button>
-            </div>
-            <div className="flex justify-center">
-              <div className="flex items-center justify-center w-64 h-64 rounded-full hero-graphic bg-white/10">
-                <div className="flex items-center justify-center w-32 h-32 rounded-full bg-white/20">
-                  <span className="text-6xl">🎪</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Navigation Dots */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {[1, 2, 3, 4, 5].map((dot) => (
-              <div key={dot} className="w-3 h-3 bg-white rounded-full nav-dot"></div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+        <Homehero/>
       {/* Domain Search Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl px-4 mx-auto text-center sm:px-6 lg:px-8">
-          <h2 className="mb-8 text-4xl font-bold section-heading text-brandNavy">Choose Your Domain Today!</h2>
-          <div className="flex flex-col gap-4 mb-8 sm:flex-row">
-            <input 
-              type="text" 
-              placeholder="Search your domain"
-              className="flex-1 px-6 py-4 text-lg border-2 border-gray-300 rounded-lg focus:border-brandOrange focus:outline-none"
-            />
-            <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
-              Search
-            </button>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-6 mb-8 md:grid-cols-4">
-            {[
-              { ext: '.com', price: '$14.99/year' },
-              { ext: '.org', price: '$12.99/year' },
-              { ext: '.net', price: '$13.99/year' },
-              { ext: '.edu', price: '$15.99/year' }
-            ].map((domain) => (
-              <div key={domain.ext} className="text-center">
-                <div className="text-2xl font-bold text-brandNavy">{domain.ext}</div>
-                <div className="text-gray-600">{domain.price}</div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="flex justify-end">
-            <div className="px-6 py-3 text-white border-4 rounded-full bg-brandOrange border-brandOrange/50">
-              <div className="text-sm font-semibold">Limited Time Offer</div>
-              <div className="text-lg font-bold">Sale .SO 50%</div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <DomainSearch/>
 
       {/* Services Section */}
+      
       <section ref={servicesRef} className="py-20 bg-lightGray">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">Our Services</h2>
@@ -518,49 +452,15 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
               VIEW MORE
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section ref={portfolioRef} className="py-20 bg-lightGray">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <h2 className="mb-6 text-4xl font-bold text-center section-heading text-brandNavy">Our Portfolios</h2>
-          <p className="max-w-2xl mx-auto mb-16 text-center text-gray-600">
-            Our portfolios speaks for itself. Check out all project and see for yourself.
-          </p>
-          
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-            {portfolioItems.map((item, index) => (
-              <div key={index} className="relative portfolio-item group">
-                <div className="relative overflow-hidden rounded-lg shadow-lg">
-                  <img 
-                    src={item.image} 
-                    alt={item.category}
-                    className="object-cover w-full h-48 transition-transform group-hover:scale-110"
-                  />
-                  <div className="absolute flex items-center justify-center w-12 h-12 text-sm font-bold text-white rounded-full top-4 right-4 bg-brandOrange">
-                    {item.progress}
-                  </div>
-                </div>
-                <div className="mt-4 text-center">
-                  <h3 className="text-lg font-semibold text-brandNavy">{item.category}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
-              VIEW MORE
-            </button>
-          </div>
-        </div>
-      </section>
+   
 
       {/* Web Hosting Packages Section */}
       <section ref={hostingRef} className="py-20 bg-white">
@@ -695,6 +595,41 @@ const Home = () => {
           </div>
         </div>
       </section> */}
+         {/* Portfolio Section */}
+         <section ref={portfolioRef} className="py-20 bg-lightGray">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <h2 className="mb-6 text-4xl font-bold text-center section-heading text-brandNavy">Our Portfolios</h2>
+          <p className="max-w-2xl mx-auto mb-16 text-center text-gray-600">
+            Our portfolios speaks for itself. Check out all project and see for yourself.
+          </p>
+          
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
+            {portfolioItems.map((item, index) => (
+              <div key={index} className="relative portfolio-item group">
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
+                  <img 
+                    src={item.image} 
+                    alt={item.category}
+                    className="object-cover w-full h-48 transition-transform group-hover:scale-110"
+                  />
+                  <div className="absolute flex items-center justify-center w-12 h-12 text-sm font-bold text-white rounded-full top-4 right-4 bg-brandOrange">
+                    {item.progress}
+                  </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <h3 className="text-lg font-semibold text-brandNavy">{item.category}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
+              VIEW MORE
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials Section */}
       <Testimonials/>

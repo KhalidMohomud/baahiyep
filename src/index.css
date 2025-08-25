@@ -20,6 +20,28 @@ body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Ensure pages start at top */
+#root {
+  min-height: 100vh;
+}
+
+/* Smooth transitions for page changes */
+.page-transition {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .geometric-pattern {

@@ -1,7 +1,47 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
 import SectionFooter from './SectionFooter';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Aboutcomp = () => {
+  const videoRef = useRef(null);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const triggerElement = heroRef.current;
+
+    if (!video || !triggerElement) return;
+
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: 'top 80%',   // when 80% of the trigger hits top of viewport
+      end: 'bottom top',  // until it's scrolled out
+      onEnter: () => {
+        video.play().catch((e) => {
+          console.warn('Autoplay failed:', e);
+        });
+      },
+      onLeave: () => {
+        video.pause();
+      },
+      onEnterBack: () => {
+        video.play().catch((e) => {
+          console.warn('Autoplay failed:', e);
+        });
+      },
+      onLeaveBack: () => {
+        video.pause();
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <section className="relative py-16 overflow-visible bg-white">
       {/* subtle network background */}
@@ -39,11 +79,19 @@ const Aboutcomp = () => {
             </p>
           </div>
 
-          {/* Decorative bubbles */}
-          <div className="relative h-64 md:h-80">
+          {/* Video Section */}
+          <div className="relative h-64 md:h-80" ref={heroRef}>
             <div className="absolute w-24 h-24 rounded-full -top-6 -left-6 bg-brandOrange opacity-90 shadow-3xl"></div>
             <div className="absolute w-24 h-24 rounded-full -bottom-6 -right-6 bg-brandOrange opacity-90 shadow-3xl"></div>
-            <div className="absolute inset-0 border-8 rounded-3xl border-brandNavy"></div>
+            <div className="absolute inset-0 border-8 rounded-3xl border-brandNavy">
+              <video
+                ref={videoRef}
+                src="/video/adv.mp4"
+                playsInline
+                controls
+                className="object-cover w-full h-full rounded-3xl"
+              />
+            </div>
           </div>
         </div>
       </div>
