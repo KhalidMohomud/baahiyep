@@ -269,7 +269,7 @@ const Services = () => {
                 
                 <div className="mt-6 text-center">
                   <button className="px-6 py-3 font-semibold text-white transition-all duration-300 transform rounded-full bg-gradient-to-r from-brandOrange to-brandNavy hover:from-brandNavy hover:to-brandOrange hover:scale-105">
-                    Choose plane
+                    See more
                   </button>
                 </div>
               </div>

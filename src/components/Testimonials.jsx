@@ -165,12 +165,8 @@ const Testimonials = () => {
                   key={index} 
                   className="relative flex-shrink-0 p-8 text-center transition-all duration-500 bg-white border border-gray-100 shadow-lg testimonial-card group rounded-2xl hover:shadow-2xl hover:-translate-y-2 w-80 snap-start"
                 >
-                  {/* Quote Icon */}
-                  {/* <div className="absolute flex items-center justify-center w-8 h-8 transform -translate-x-1/2 rounded-full -top-4 left-1/2 bg-brandOrange">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                    </svg>
-                  </div> */}
+                
+              
 
                   {/* Profile Image */}
                   <div className="mb-6">
@@ -225,14 +221,14 @@ const Testimonials = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-16 text-center">
+          {/* <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white transition-colors rounded-full cursor-pointer bg-brandOrange hover:bg-brandNavy group">
               <span>Read More Testimonials</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 

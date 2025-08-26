@@ -1,8 +1,23 @@
 import  { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { setAmount, setMeta } from '../store/paymentSlice'
 import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa'
 
 const DomainSearch = () => {
+
+const DOMAIN_PRICES = {
+  ".com": 14.99,
+  ".org": 12.99,
+  ".net": 13.99,
+  ".so": 11.99,
+  ".edu": 15.99,
+};
+
+
   const [domain, setDomain] = useState('')
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
@@ -93,20 +108,29 @@ const DomainSearch = () => {
           <FaCheckCircle style={{ marginRight: '8px' }} />
           <span>Congratulation {domain} is available!</span>
         </div>
-        <button
-          style={{
-            backgroundColor: '#3d0c0c',
-            color: 'white',
-            borderRadius: '8px',
-            padding: '8px 12px',
-            border: 'none',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-          onClick={() => alert('Redirect to purchase page')}
-        >
-          Purchase
-        </button>
+           <button
+  style={{
+    backgroundColor: '#3d0c0c',
+    color: 'white',
+    borderRadius: '8px',
+    padding: '8px 12px',
+    border: 'none',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+  }}
+  onClick={() => {
+    // Extract TLD from domain
+    const tld = domain.substring(domain.lastIndexOf('.'));
+    const price = DOMAIN_PRICES[tld] || 11.99; // default if unknown TLD
+
+    dispatch(setAmount(price));
+    dispatch(setMeta({ source: 'domain', domain }));
+    navigate('/payments');
+  }}
+>
+  Purchase
+</button>
+
       </div>
     ) : (
       <div

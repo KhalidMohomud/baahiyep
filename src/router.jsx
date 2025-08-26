@@ -11,6 +11,8 @@ import Portifole from "./page/Portifole";
 import UserProfile from "./components/UserProfile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import VerifyEmail from "./page/VerifyEmail";
+import Payments from "./page/Payments";
+import ServiceDetail from "./components/ServiceDetail";
 
 
 const router = createBrowserRouter([
@@ -20,13 +22,15 @@ const router = createBrowserRouter([
     errorElement: <NotFound />, 
     children: [
       { index: true, element: <Home /> },
-      { path: 'about', element: <About /> },
-      { path: 'service', element: <Services /> },
-      { path: 'Portifole', element: <Portifole/> },
-      { path: 'Contact', element: <Contact /> },
-
-      { path: 'SingUp', element: <SingUp /> },
-      { path: 'SingIn', element: <SingIn /> },
+      { path: '/about', element: <About /> },
+      { path: '/service/:title', element: <ServiceDetail /> },
+      { path: '/service', element: <Services /> },
+      { path: '/Portifole', element: <Portifole/> },
+      { path: '/Contact', element: <Contact /> },
+      { path: '/payments', element: <Payments /> },
+     
+      { path: '/SingUp', element: <SingUp /> },
+      { path: '/SingIn', element: <SingIn /> },
       { path: 'verify-email', element: <VerifyEmail /> },
       {
         path: 'profile',

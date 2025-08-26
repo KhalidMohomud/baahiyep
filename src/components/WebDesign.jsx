@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import SectionFooter from './SectionFooter';
+import { useDispatch } from 'react-redux';
+import { setAmount, setMeta } from '../store/paymentSlice';
+import { useNavigate } from 'react-router-dom';
 
 const WebDesign = () => {
   const [isYearly, setIsYearly] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const packages = [
     {
@@ -126,7 +131,15 @@ const WebDesign = () => {
 
                 {/* 🔥 Upgraded Choose Plan Button */}
     <div className="mt-6 text-center">
-      <button className="px-12 py-2 text-lg font-semibold text-white transition duration-300 rounded-full shadow-md w-80 bg-gradient-to-r from-brandOrange to-orange-500 hover:shadow-lg hover:scale-105">
+      <button
+        onClick={() => {
+          const selectedAmount = isYearly ? pkg.yearlyPrice : pkg.monthlyPrice;
+          dispatch(setAmount(selectedAmount));
+          dispatch(setMeta({ source: 'web_design', name: pkg.name, cadence: isYearly ? 'yearly' : 'monthly' }));
+          navigate('/payments');
+        }}
+        className="px-12 py-2 text-lg font-semibold text-white transition duration-300 rounded-full shadow-md w-80 bg-gradient-to-r from-brandOrange to-orange-500 hover:shadow-lg hover:scale-105"
+      >
         Choose Plan
       </button>
     </div>

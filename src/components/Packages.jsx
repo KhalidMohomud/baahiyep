@@ -1,5 +1,8 @@
 
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setAmount, setMeta } from '../store/paymentSlice';
+import { useNavigate } from 'react-router-dom';
 import SectionFooter from './SectionFooter';
 
 const features = [
@@ -20,6 +23,8 @@ const data = [
 
 const Packages = () => {
   const [isYearly, setIsYearly] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <section className="relative overflow-visible bg-gradient-to-b from-white via-gray-50 to-white py-20">
@@ -123,7 +128,15 @@ const Packages = () => {
 
                 {/* Choose Plan Button */}
                 <div className="mt-8 mb-6 text-center">
-                  <button className="px-6 py-3 rounded-full bg-brandOrange text-white font-semibold shadow-md hover:bg-brandNavy transition-all">
+                  <button
+                    onClick={() => {
+                      const selectedAmount = isYearly ? pkg.yearlyPrice : pkg.monthlyPrice;
+                      dispatch(setAmount(selectedAmount));
+                      dispatch(setMeta({ source: 'package', name: pkg.name, cadence: isYearly ? 'yearly' : 'monthly' }));
+                      navigate('/payments');
+                    }}
+                    className="px-6 py-3 rounded-full bg-brandOrange text-white font-semibold shadow-md hover:bg-brandNavy transition-all"
+                  >
                     Choose Plan
                   </button>
                 </div>

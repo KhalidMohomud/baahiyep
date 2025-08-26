@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './App.css';
 import { Outlet } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/clerk-react';
@@ -13,7 +13,7 @@ function App() {
   return (
     <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY}>
       <ClerkAuthProvider>
-        <div className="min-h-screen flex flex-col">
+        <div className="flex flex-col min-h-screen">
           <ScrollToTop />
           <Header />
           <main className="flex-1">
