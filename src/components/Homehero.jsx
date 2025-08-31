@@ -183,7 +183,7 @@ function Homehero() {
         </p>
 
         {/* Features */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10 lg:justify-start">
+        {/* <div className="flex flex-wrap justify-center gap-3 mb-10 lg:justify-start">
           {heroSlides[currentSlide].features.map((feature, index) => (
             <span
               key={index}
@@ -195,7 +195,7 @@ function Homehero() {
               </span>
             </span>
           ))}
-        </div>
+        </div> */}
 
         {/* CTA Button */}
         <div className="text-center lg:text-left">
