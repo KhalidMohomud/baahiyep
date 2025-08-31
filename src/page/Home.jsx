@@ -7,9 +7,9 @@ import { FaUsers, FaTrophy, FaProjectDiagram } from "react-icons/fa";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Testimonials from '../components/Testimonials';
-import DomainSearch from '../components/DomainSearch';
+// import DomainSearch from '../components/DomainSearch';
 import Homehero from '../components/Homehero';
-import WebDesign from '../components/WebDesign';
+import SocialMediaPackages from '../components/SocialMediaPackages';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -379,35 +379,42 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen px-3 pt-1 bg-white">
       
       {/* Hero Section */}
-        <Homehero/>
+        <Homehero />
       {/* Domain Search Section */}
     
 
       {/* Services Section */}
-      
-      <section ref={servicesRef} className="py-20 bg-lightGray">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">Our Services</h2>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-            {services.map((service) => (
-              <div key={service.name} className="text-center service-card">
-                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full bg-brandOrange">
-                  <span className="text-3xl text-white">{service.icon}</span>
-                </div>
-                <h3 className="text-xl font-semibold text-brandNavy">{service.name}</h3>
-              </div>
-            ))}
+ <section ref={servicesRef} className="py-20 bg-lightGray">
+  <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">
+      Our Services
+    </h2>
+
+    <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+      {services.map((service) => (
+        <div
+          key={service.name}
+          className="text-center transition-all duration-300 transform rounded-lg cursor-pointer service-card active:bg-gray-200 active:shadow-inner"
+        >
+          <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full bg-brandOrange">
+            <span className="text-3xl text-white">{service.icon}</span>
           </div>
-          {/* <div className="mt-12 text-center">
-            <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
-              VIEW MORE
-            </button>
-          </div> */}
+          <h3 className="text-xl font-semibold text-brandNavy">{service.name}</h3>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* <div className="mt-12 text-center">
+      <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
+        VIEW MORE
+      </button>
+    </div> */}
+  </div>
+</section>
+
 
    
 
@@ -418,7 +425,11 @@ const Home = () => {
 
       <Packages/>
 
-      <WebDesign/>
+      {/* <WebDesign/> */}
+      <div>
+          <SocialMediaPackages/>
+      </div>
+    
 
       {/* Achievements Section */}
       <section ref={achievementsRef} className="py-20 bg-white">
@@ -446,83 +457,53 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Blog Section */}
-      {/* <section ref={blogRef} className="py-20 bg-lightGray">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">Recent Blogs</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {blogPosts.map((post, index) => (
-              <div key={index} className="overflow-hidden transition-shadow bg-white shadow-lg blog-card rounded-xl hover:shadow-xl">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  className="object-cover w-full h-48"
-                />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brandOrange">
-                      <span className="text-sm text-white">B</span>
-                    </div>
-                    <span className="text-sm text-gray-600">Baahiye Digital Marketing</span>
-                    <span className="text-sm text-gray-600">•</span>
-                    <span className="text-sm text-gray-600">{post.date}</span>
-                  </div>
-                  <h3 className="mb-3 text-xl font-bold text-brandNavy">{post.title}</h3>
-                  <p className="mb-4 text-gray-600">{post.excerpt}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 text-sm bg-gray-100 rounded-full text-brandNavy">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
-              READ MORE
-            </button>
-          </div>
-        </div>
-      </section> */}
+      
+   
          {/* Portfolio Section */}
-         <section ref={portfolioRef} className="py-20 bg-lightGray">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <h2 className="mb-6 text-4xl font-bold text-center section-heading text-brandNavy">Our Portfolios</h2>
-          <p className="max-w-2xl mx-auto mb-16 text-center text-gray-600">
-            Our portfolios speaks for itself. Check out all project and see for yourself.
-          </p>
-          
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-            {portfolioItems.map((item, index) => (
-              <div key={index} className="relative portfolio-item group">
-                <div className="relative overflow-hidden rounded-lg shadow-lg">
-                  <img 
-                    src={item.image} 
-                    alt={item.category}
-                    className="object-cover w-full h-48 transition-transform group-hover:scale-110"
-                  />
-                  <div className="absolute flex items-center justify-center w-12 h-12 text-sm font-bold text-white rounded-full top-4 right-4 bg-brandOrange">
-                    {item.progress}
-                  </div>
-                </div>
-                <div className="mt-4 text-center">
-                  <h3 className="text-lg font-semibold text-brandNavy">{item.category}</h3>
-                </div>
-              </div>
-            ))}
+       <section ref={portfolioRef} className="py-20 bg-[#f7f9fb]">
+  <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <h2 className="mb-6 text-4xl font-extrabold tracking-tight text-center text-brandNavy">
+      Our Portfolios
+    </h2>
+    <p className="max-w-3xl mx-auto mb-16 text-lg text-center text-gray-500">
+      Our portfolios speak for themselves. Check out all projects and see for yourself.
+    </p>
+
+    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+      {portfolioItems.map((item, index) => (
+        <div
+          key={index}
+          className="relative overflow-hidden transition-shadow duration-300 bg-white shadow-lg group rounded-2xl hover:shadow-2xl"
+        >
+          <div className="overflow-hidden rounded-t-2xl">
+            <img
+              src={item.image}
+              alt={item.category}
+              className="object-cover w-full h-56 transition-transform duration-500 sm:h-64 md:h-56 lg:h-64 group-hover:scale-105"
+            />
+            <div className="absolute flex items-center justify-center w-12 h-12 font-semibold text-white rounded-full shadow-lg top-4 right-4 bg-brandOrange">
+              {item.progress}
+            </div>
           </div>
-          
-          <div className="mt-12 text-center">
-            <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
-              VIEW MORE
-            </button>
+          <div className="p-6 text-center">
+            <h3 className="text-xl font-semibold tracking-wide text-brandNavy">
+              {item.category}
+            </h3>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    <div className="text-center mt-14">
+      <button
+        className="inline-block px-12 py-4 text-lg font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-brandOrange hover:bg-brandNavy hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-brandOrange/50"
+      >
+        VIEW MORE
+      </button>
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonials Section */}
       <Testimonials/>

@@ -115,8 +115,8 @@ const Packages = () => {
           ))}
         </div>
       </div>
-
-      <SectionFooter />
+{/* 
+      <SectionFooter /> */}
     </div>
   );
 };

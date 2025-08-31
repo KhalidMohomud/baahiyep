@@ -58,33 +58,33 @@ const SocialMediaPackages = () => {
   ];
 
   return (
-    <section className="relative overflow-visible bg-gradient-to-b from-white via-gray-50 to-white py-20">
+    <section className="relative py-20 overflow-visible bg-gradient-to-b from-white via-gray-50 to-white">
       {/* background */}
-      <div className="absolute inset-0 network-pattern opacity-10 pointer-events-none"></div>
+      <div className="absolute inset-0 pointer-events-none network-pattern opacity-10"></div>
 
       {/* Decorative icon bubble */}
-      <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-brandOrange text-white hidden md:grid place-items-center shadow-lg">
+      <div className="absolute hidden w-16 h-16 text-white rounded-full shadow-lg top-4 right-4 bg-brandOrange md:grid place-items-center">
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
           <path d="M3 10l9-5v10L3 10zm10 6h4a4 4 0 004-4V8a1 1 0 10-2 0v4a2 2 0 01-2 2h-4v2z" />
         </svg>
       </div>
 
-      <div className="px-6 mx-auto max-w-7xl relative">
+      <div className="relative px-6 mx-auto max-w-7xl">
         {/* Toggle Button */}
       
 
         {/* Heading */}
-        <div className="text-center mb-6 md:mb-10">
-          <h2 className="inline-block px-6 py-3 rounded-full bg-brandOrange text-white text-2xl md:text-4xl font-extrabold shadow-lg">
+        <div className="mb-6 text-center md:mb-10">
+          <h2 className="inline-block px-6 py-3 text-2xl font-extrabold text-white rounded-full shadow-lg bg-brandOrange md:text-4xl">
             Social Media Packages
           </h2>
         </div>
-        <p className="text-center text-gray-600 leading-relaxed max-w-5xl mx-auto mb-10 md:mb-16 text-base md:text-lg">
-          Get the very best <span className="text-brandOrange font-bold">Social Media Packages</span> specifically suited to your budget.
+        <p className="max-w-5xl mx-auto mb-10 text-base leading-relaxed text-center text-gray-600 md:mb-16 md:text-lg">
+          Get the very best <span className="font-bold text-brandOrange">Social Media Packages</span> specifically suited to your budget.
           Each package includes the perfect balance of strategy, creative design, management, advertising, and reporting.
         </p>
         <div className="flex justify-center mb-10">
-          <div className="bg-gray-200 rounded-full p-1 flex shadow-inner">
+          <div className="flex p-1 bg-gray-200 rounded-full shadow-inner">
             <button
               onClick={() => setIsYearly(false)}
               className={`px-6 py-2 rounded-full font-semibold transition ${
@@ -108,14 +108,14 @@ const SocialMediaPackages = () => {
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className="relative group transition transform hover:-translate-y-2"
+              className="relative transition transform group hover:-translate-y-2"
             >
               {/* Stars above card */}
-              <div className="absolute -top-7 left-1/2 -translate-x-1/2 flex gap-1">
+              <div className="absolute flex gap-1 -translate-x-1/2 -top-7 left-1/2">
                 {Array.from({ length: pkg.stars }).map((_, i) => (
                   <div
                     key={i}
-                    className="w-7 h-7 rounded-full bg-brandNavy text-yellow-300 grid place-items-center text-sm shadow-lg"
+                    className="grid text-sm text-yellow-300 rounded-full shadow-lg w-7 h-7 bg-brandNavy place-items-center"
                   >
                     ★
                   </div>
@@ -123,27 +123,27 @@ const SocialMediaPackages = () => {
               </div>
 
               {/* Card */}
-              <div className="flex flex-col h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 overflow-hidden transition">
+              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg rounded-2xl hover:shadow-2xl">
                 {/* Card header */}
-                <div className="bg-gradient-to-r from-brandOrange to-brandNavy text-white py-4 text-center font-semibold text-lg">
+                <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
                   {pkg.name}
                 </div>
 
                 {/* Pricing */}
-                <div className="text-center my-6">
+                <div className="my-6 text-center">
                   <span className="text-4xl font-extrabold text-brandNavy">
                     ${isYearly ? pkg.yearlyPrice : pkg.monthlyPrice}
                   </span>
-                  <span className="text-gray-500 ml-2 text-lg">
+                  <span className="ml-2 text-lg text-gray-500">
                     /{isYearly ? 'year' : 'month'}
                   </span>
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-4 text-base flex-1 px-6">
+                <ul className="flex-1 px-6 space-y-4 text-base">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3 text-gray-700">
-                      <span className="w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold bg-green-100 text-green-600">
+                      <span className="flex items-center justify-center w-6 h-6 text-sm font-bold text-green-600 bg-green-100 rounded-full">
                         ✔
                       </span>
                       <span>{feature}</span>
@@ -160,7 +160,7 @@ const SocialMediaPackages = () => {
                       dispatch(setMeta({ source: 'social_media', name: pkg.name, cadence: isYearly ? 'yearly' : 'monthly' }));
                       navigate('/payments');
                     }}
-                    className="px-6 py-3 rounded-full bg-brandOrange text-white font-semibold shadow-md hover:bg-brandNavy transition-all"
+                    className="px-6 py-3 font-semibold text-white transition-all rounded-full shadow-md bg-brandOrange hover:bg-brandNavy"
                   >
                     Choose Plan
                   </button>
@@ -171,7 +171,7 @@ const SocialMediaPackages = () => {
         </div>
       </div>
 
-      <SectionFooter />
+      {/* <SectionFooter /> */}
     </section>
   );
 };
