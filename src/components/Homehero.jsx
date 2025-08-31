@@ -141,7 +141,7 @@ function Homehero() {
   </div>
 
   {/* Navigation Arrows */}
-  <button
+  {/* <button
     onClick={prevSlide}
     className="absolute z-10 text-white transition-all duration-300 transform -translate-y-1/2 left-6 top-1/2 hover:text-white/90 hover:scale-125 group"
     aria-label="Previous slide"
@@ -149,8 +149,8 @@ function Homehero() {
     <div className="p-4 transition-all duration-300 border rounded-full shadow-lg bg-white/20 backdrop-blur-md border-white/30 group-hover:bg-white/30">
       <FaArrowLeft className="w-6 h-6" />
     </div>
-  </button>
-
+  </button> */}
+{/* 
   <button
     onClick={nextSlide}
     className="absolute z-10 text-white transition-all duration-300 transform -translate-y-1/2 right-6 top-1/2 hover:text-white/90 hover:scale-125 group"
@@ -159,7 +159,7 @@ function Homehero() {
     <div className="p-4 transition-all duration-300 border rounded-full shadow-lg bg-white/20 backdrop-blur-md border-white/30 group-hover:bg-white/30">
       <FaArrowRight className="w-6 h-6" />
     </div>
-  </button>
+  </button> */}
 
   <div className="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div className="grid items-center gap-10 sm:gap-16 lg:grid-cols-2">
