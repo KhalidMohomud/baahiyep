@@ -273,13 +273,13 @@ function Homehero() {
     </div>
 
     {/* Slide Counter */}
-    <div className="mt-8 text-center text-white/90">
+    {/* <div className="mt-8 text-center text-white/90">
       <span className="inline-block px-6 py-3 border rounded-full shadow-xl bg-white/20 backdrop-blur-md border-white/30">
         <span className="text-sm font-medium">
           {currentSlide + 1} / {heroSlides.length}
         </span>
       </span>
-    </div>
+    </div> */}
   </div>
 
   {/* Custom CSS for slow spin animation */}
