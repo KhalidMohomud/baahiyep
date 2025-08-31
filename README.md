@@ -1,6 +1,6 @@
 
 
-
+![Alt text](./public/image/logo.png)
 # Baahiye Digital Marketing is a company that provides creative and digital services.
 
 
@@ -11,7 +11,7 @@
 
 - We always aim to exceed and deliver results based on our clients' marketing objectives while enhancing their overall brands.
 
-![Alt text](./public/image/hscreen.png)
+
 
 
 
