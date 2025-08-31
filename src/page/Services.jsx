@@ -2,6 +2,7 @@ import  { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
+import { useNavigate } from 'react-router-dom'
 
 import SectionFooter from '../components/SectionFooter'
 import { FaRocket, FaPalette, FaCode, FaBullhorn, FaChartLine, FaMobile, FaSearch, FaUsers, FaLightbulb, FaCog } from 'react-icons/fa'
@@ -20,6 +21,7 @@ const Services = () => {
   const subtitleRef = useRef(null)
   const serviceCardsRef = useRef(null)
   const featureCardsRef = useRef(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     // Hero section animations
@@ -134,37 +136,43 @@ const Services = () => {
       icon: <FaRocket className="text-4xl text-brandOrange" />,
       title: "Digital Marketing",
       description: "Comprehensive digital marketing strategies to boost your online presence and drive conversions.",
-      features: ["SEO Optimization", "Social Media Marketing", "Content Marketing", "PPC Campaigns"]
+      features: ["SEO Optimization", "Social Media Marketing", "Content Marketing", "PPC Campaigns"],
+      serviceId: 'digital-marketing'
     },
     {
       icon: <FaPalette className="text-4xl text-brandOrange" />,
       title: "Brand Design",
       description: "Creative brand identity design that makes your business stand out from the competition.",
-      features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Marketing Materials"]
+      features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Marketing Materials"],
+      serviceId: 'graphic-design'
     },
     {
       icon: <FaCode className="text-4xl text-brandOrange" />,
       title: "Web Development",
       description: "Custom web solutions built with modern technologies and best practices.",
-      features: ["Responsive Design", "E-commerce Solutions", "Custom Applications", "Performance Optimization"]
+      features: ["Responsive Design", "E-commerce Solutions", "Custom Applications", "Performance Optimization"],
+      serviceId: 'web-solutions'
     },
     {
       icon: <FaBullhorn className="text-4xl text-brandOrange" />,
       title: "Content Creation",
       description: "Engaging content that tells your story and connects with your audience.",
-      features: ["Blog Writing", "Video Production", "Infographics", "Social Media Content"]
+      features: ["Blog Writing", "Video Production", "Infographics", "Social Media Content"],
+      serviceId: 'digital-marketing'
     },
     {
       icon: <FaChartLine className="text-4xl text-brandOrange" />,
       title: "Analytics & Insights",
       description: "Data-driven insights to optimize your marketing strategies and improve ROI.",
-      features: ["Performance Tracking", "Conversion Analysis", "A/B Testing", "ROI Optimization"]
+      features: ["Performance Tracking", "Conversion Analysis", "A/B Testing", "ROI Optimization"],
+      serviceId: 'digital-marketing'
     },
     {
       icon: <FaMobile className="text-4xl text-brandOrange" />,
       title: "Mobile Marketing",
       description: "Mobile-first marketing strategies to reach your audience wherever they are.",
-      features: ["App Marketing", "Mobile SEO", "SMS Campaigns", "Location-Based Marketing"]
+      features: ["App Marketing", "Mobile SEO", "SMS Campaigns", "Location-Based Marketing"],
+      serviceId: 'digital-marketing'
     }
   ]
 
@@ -195,7 +203,7 @@ const Services = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       
       {/* Hero Section */}
-      <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
+      <div ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-brandOrange/10 to-brandNavy/10"></div>
         <div className="relative px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <h1 
@@ -225,10 +233,10 @@ const Services = () => {
         <div className="absolute w-20 h-20 rounded-full top-20 left-10 bg-brandOrange/20 blur-xl hero-element"></div>
         <div className="absolute w-32 h-32 rounded-full top-40 right-20 bg-brandNavy/20 blur-xl hero-element"></div>
         <div className="absolute w-16 h-16 rounded-full bottom-20 left-1/4 bg-brandOrange/30 blur-lg hero-element"></div>
-      </section>
+      </div>
 
       {/* Services Section */}
-      <section ref={servicesRef} className="py-20 bg-white">
+      <div ref={servicesRef} className="py-20 bg-white">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
@@ -268,7 +276,10 @@ const Services = () => {
                 </ul>
                 
                 <div className="mt-6 text-center">
-                  <button className="px-6 py-3 font-semibold text-white transition-all duration-300 transform rounded-full bg-gradient-to-r from-brandOrange to-brandNavy hover:from-brandNavy hover:to-brandOrange hover:scale-105">
+                  <button 
+                    onClick={() => navigate(`/service/${service.serviceId}`)}
+                    className="px-6 py-3 font-semibold text-white transition-all duration-300 transform rounded-full bg-gradient-to-r from-brandOrange to-brandNavy hover:from-brandNavy hover:to-brandOrange hover:scale-105"
+                  >
                     See more
                   </button>
                 </div>
@@ -276,13 +287,13 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
        <Packages/>
        <WebDesign/>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20 bg-gradient-to-r from-gray-50 to-white">
+      <div ref={featuresRef} className="py-20 bg-gradient-to-r from-gray-50 to-white">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
@@ -311,7 +322,7 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* CTA Section */}
       {/* <section ref={ctaRef} className="py-20 bg-gradient-to-r from-brandOrange to-brandNavy">

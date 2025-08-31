@@ -43,7 +43,7 @@ const WebDesign = () => {
   ];
 
   return (
-    <section className="relative py-16 overflow-visible bg-white">
+    <div className="relative py-16 overflow-visible bg-white">
       {/* subtle network background */}
       <div className="absolute inset-0 pointer-events-none network-pattern opacity-20"></div>
 
@@ -152,7 +152,7 @@ const WebDesign = () => {
       </div>
 
       <SectionFooter />
-    </section>
+    </div>
   );
 };
 

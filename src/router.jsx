@@ -12,7 +12,7 @@ import UserProfile from "./components/UserProfile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import VerifyEmail from "./page/VerifyEmail";
 import Payments from "./page/Payments";
-import ServiceDetail from "./components/ServiceDetail";
+import InformtionSevices from "./page/InformtionSevices";
 
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: '/about', element: <About /> },
-      { path: '/service/:title', element: <ServiceDetail /> },
+      { path: '/service/:title', element: <InformtionSevices /> },
       { path: '/service', element: <Services /> },
       { path: '/Portifole', element: <Portifole/> },
       { path: '/Contact', element: <Contact /> },

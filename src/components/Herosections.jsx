@@ -1,7 +1,7 @@
 import React from 'react'
   export  const Herosections = () => {
   return (
-       <section className="relative overflow-hidden">
+       <div className="relative overflow-hidden">
         <div className="stripe-bg"></div>
         <div className="relative px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8 md:py-12">
           <div className="relative md:ml-auto md:w-[850px] md:h-[360px] rounded-[48px] ring-8 ring-brandNavy overflow-hidden shadow-3xl animate-slide-in-up md:animate-float">
@@ -27,6 +27,6 @@ import React from 'react'
             <div className="text-2xl font-semibold md:text-3xl">www.baahiye.so</div>
           </div>
         </div>
-      </section>
+      </div>
   )
 }

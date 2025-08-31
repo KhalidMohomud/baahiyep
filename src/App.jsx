@@ -4,8 +4,9 @@ import { Outlet } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/clerk-react';
 import { ClerkAuthProvider } from './contexts/ClerkAuthContext';
 import Header from './components/Header';
-import ScrollToTop from './components/ScrollToTop';
+
 import WhatsAppChatbot from './components/WhatsAppChatbot';
+import ScrollToTop from './components/ScrollToTop';
 
 const CLERK_PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || 'your_clerk_publishable_key_here';
 

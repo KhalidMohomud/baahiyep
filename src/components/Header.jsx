@@ -5,19 +5,12 @@ import { UserButton } from '@clerk/clerk-react';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { isAuthenticated, signOut } = useClerkAuth();
+  const { isAuthenticated } = useClerkAuth();
 
-  const handleLogout = () => {
-    signOut();
-    setMobileOpen(false);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileOpen(false);
-  };
+  const closeMobileMenu = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100">
+    <header className="sticky top-0 z-50 border-b border-gray-100 shadow-lg bg-white/95 backdrop-blur-sm">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
@@ -25,44 +18,47 @@ const Header = () => {
             <img
               src="/image/logo.png"
               alt="Baahiye Digital Marketing logo"
-              className="object-contain w-auto h-16 md:h-20 transition-transform duration-300 group-hover:scale-105"
+              className="object-contain w-auto h-12 transition-transform duration-300 md:h-14 group-hover:scale-105"
             />
           </NavLink>
 
-          {/* Desktop Navigation */}
-          <nav className="items-center hidden space-x-8 md:flex">
-            {[
-              { to: '/', label: 'Home' },
-              { to: '/about', label: 'About' },
-              { to: '/service', label: 'Services' },
-              { to: '/Contact', label: 'Contact' },
-              { to: '/Portifole', label: 'Portfolio' },
-            ].map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  `text-gray-700 hover:text-brandOrange transition-all duration-300 font-medium relative group ${
-                    isActive ? 'text-brandOrange' : ''
-                  }`
-                }
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full"></span>
-              </NavLink>
-            ))}
-          </nav>
+          {/* Desktop Navigation & Auth */}
+          <div className="flex items-center space-x-8">
+            <nav className="hidden space-x-8 md:flex">
+              {[
+               
 
-          {/* Authentication Section */}
-          <div className="flex items-center space-x-4">
-            {isAuthenticated ? (
-              <div className="flex items-center space-x-4">
+              { to: '/', label: 'Home' },
+              { to: '/service', label: 'Services' },
+                { to: '/about', label: 'About' },
+                 { to: '/Contact', label: 'Contact' },
+              { to: '/Portifole', label: 'Portfolio' },
+              ].map((link) => (
                 <NavLink
-                  to="/profile"
-                  className="hidden md:block px-4 py-2 text-gray-700 hover:text-brandOrange transition-colors duration-300 font-medium"
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `relative font-medium transition-all duration-300 group ${
+                      isActive
+                        ? 'text-brandOrange font-semibold'
+                        : 'text-gray-700 hover:text-brandOrange'
+                    }`
+                  }
+                  onClick={closeMobileMenu}
                 >
-                  Profile
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full ${
+                      location.pathname === link.to ? 'w-full' : 'w-0'
+                    }`}
+                  ></span>
                 </NavLink>
+              ))}
+            </nav>
+
+            {/* User Avatar */}
+            {isAuthenticated && (
+              <div className="hidden md:block">
                 <UserButton
                   appearance={{
                     elements: {
@@ -74,21 +70,6 @@ const Header = () => {
                   }}
                   afterSignOutUrl="/"
                 />
-              </div>
-            ) : (
-              <div className="hidden md:flex items-center space-x-3">
-                <NavLink
-                  to="/SingIn"
-                  className="px-4 py-2 text-gray-700 hover:text-brandOrange transition-colors duration-300 font-medium"
-                >
-                  Sign In
-                </NavLink>
-                <NavLink
-                  to="/SingUp"
-                  className="px-4 py-2 bg-brandOrange text-white rounded-lg hover:bg-brandNavy transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-                >
-                  Sign Up
-                </NavLink>
               </div>
             )}
 
@@ -127,14 +108,15 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {mobileOpen && (
-        <div className="py-4 border-t border-gray-200 md:hidden animate-in slide-in-from-top-2 duration-300">
-          <nav className="flex flex-col space-y-3">
+        <div className="py-4 border-t border-gray-200 md:hidden animate-in slide-in-from-top-2">
+          <nav className="flex flex-col px-4 space-y-3">
             {[
               { to: '/', label: 'Home' },
-              { to: '/about', label: 'About' },
               { to: '/service', label: 'Services' },
+                { to: '/about', label: 'About' },
+                 { to: '/Contact', label: 'Contact' },
               { to: '/Portifole', label: 'Portfolio' },
-              { to: '/Contact', label: 'Contact' },
+             
             ].map((link) => (
               <NavLink
                 key={link.to}
@@ -151,26 +133,6 @@ const Header = () => {
                 {link.label}
               </NavLink>
             ))}
-
-            {/* Mobile Authentication */}
-            {!isAuthenticated && (
-              <div className="pt-4 border-t border-gray-200 space-y-2">
-                <NavLink
-                  to="/SingIn"
-                  onClick={closeMobileMenu}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brandOrange hover:bg-gray-100 rounded-md transition-all duration-300"
-                >
-                  Sign In
-                </NavLink>
-                <NavLink
-                  to="/SingUp"
-                  onClick={closeMobileMenu}
-                  className="block px-3 py-2 text-base font-medium bg-brandOrange text-white rounded-md hover:bg-brandNavy transition-all duration-300 shadow-md"
-                >
-                  Sign Up
-                </NavLink>
-              </div>
-            )}
           </nav>
         </div>
       )}

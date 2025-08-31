@@ -152,98 +152,98 @@ const Contact = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="min-h-screen bg-white relative overflow-hidden">
+    <div ref={sectionRef} className="relative min-h-screen overflow-hidden bg-white">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white/50"></div>
       
-      <div className="container mx-auto px-6 py-16 relative z-10">
-        <div className="max-w-7xl mx-auto">
+      <div className="container relative z-10 px-6 py-16 mx-auto">
+        <div className="mx-auto max-w-7xl">
           {/* Section Header */}
           <div ref={headerRef} className="mb-16 text-center">
-            <h2 className="text-5xl md:text-6xl font-bold text-brandNavy mb-6">Get in Touch</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <h2 className="mb-6 text-5xl font-bold md:text-6xl text-brandNavy">Get in Touch</h2>
+            <p className="max-w-3xl mx-auto mb-8 text-xl text-gray-600">
               Ready to start your digital transformation journey? Let's discuss how we can help your business grow
             </p>
-            <div className="w-32 h-1 bg-brandOrange mx-auto"></div>
+            <div className="w-32 h-1 mx-auto bg-brandOrange"></div>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid items-start gap-16 lg:grid-cols-2">
             
             {/* Contact Form */}
-            <div ref={formRef} className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-3">Send us a Message</h3>
+            <div ref={formRef} className="p-8 bg-white border border-gray-100 shadow-2xl rounded-3xl">
+              <div className="mb-8 text-center">
+                <h3 className="mb-3 text-3xl font-bold text-gray-900">Send us a Message</h3>
                 <p className="text-gray-600">Fill out the form below and we'll get back to you soon</p>
               </div>
               
               {isSubmitted ? (
-                <div className="text-center py-12">
-                  <FaCheckCircle className="text-6xl text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                <div className="py-12 text-center">
+                  <FaCheckCircle className="mx-auto mb-4 text-6xl text-green-500" />
+                  <h3 className="mb-2 text-2xl font-bold text-gray-900">Message Sent!</h3>
                   <p className="text-gray-600">Thank you for contacting us. We'll respond within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                      <label className="block mb-2 text-sm font-medium text-gray-700">Full Name</label>
                       <div className="relative">
-                        <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                        <FaUser className="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
                         <input
                           type="text"
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none transition-all duration-300 group-hover:border-brandOrange/50"
+                          className="w-full py-3 pl-10 pr-4 transition-all duration-300 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none group-hover:border-brandOrange/50"
                           placeholder="Enter your full name"
                         />
                       </div>
                     </div>
                     
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                      <label className="block mb-2 text-sm font-medium text-gray-700">Email Address</label>
                       <div className="relative">
-                        <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                        <FaEnvelope className="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
                         <input
                           type="email"
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none transition-all duration-300 group-hover:border-brandOrange/50"
+                          className="w-full py-3 pl-10 pr-4 transition-all duration-300 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none group-hover:border-brandOrange/50"
                           placeholder="Enter your email"
                         />
                       </div>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                      <label className="block mb-2 text-sm font-medium text-gray-700">Phone Number</label>
                       <div className="relative">
-                        <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                        <FaPhone className="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
                         <input
                           type="tel"
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none transition-all duration-300 group-hover:border-brandOrange/50"
+                          className="w-full py-3 pl-10 pr-4 transition-all duration-300 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none group-hover:border-brandOrange/50"
                           placeholder="Enter your phone number"
                         />
                       </div>
                     </div>
                     
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                      <label className="block mb-2 text-sm font-medium text-gray-700">Subject</label>
                       <div className="relative">
-                        <FaComments className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                        <FaComments className="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2" />
                         <input
                           type="text"
                           name="subject"
                           value={formData.subject}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none transition-all duration-300 group-hover:border-brandOrange/50"
+                          className="w-full py-3 pl-10 pr-4 transition-all duration-300 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none group-hover:border-brandOrange/50"
                           placeholder="What's this about?"
                         />
                       </div>
@@ -251,14 +251,14 @@ const Contact = () => {
                   </div>
                   
                   <div className="group">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                    <label className="block mb-2 text-sm font-medium text-gray-700">Message</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brandOrange focus:outline-none transition-all duration-300 group-hover:border-brandOrange/50 resize-none"
+                      className="w-full px-4 py-3 transition-all duration-300 border-2 border-gray-200 resize-none rounded-xl focus:border-brandOrange focus:outline-none group-hover:border-brandOrange/50"
                       placeholder="Tell us about your project or inquiry..."
                     ></textarea>
                   </div>
@@ -266,11 +266,11 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-brandOrange to-brandNavy text-white py-4 rounded-xl font-semibold text-lg hover:from-brandNavy hover:to-brandOrange transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full py-4 text-lg font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-brandOrange to-brandNavy rounded-xl hover:from-brandNavy hover:to-brandOrange hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                        <div className="w-5 h-5 mr-2 border-b-2 border-white rounded-full animate-spin"></div>
                         Sending Message...
                       </span>
                     ) : (
@@ -287,22 +287,22 @@ const Contact = () => {
             {/* Contact Information */}
             <div ref={infoRef} className="space-y-8">
               <div className="text-center lg:text-left">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">Contact Information</h3>
-                <p className="text-gray-600 text-lg">Get in touch with us through any of these channels</p>
+                <h3 className="mb-4 text-3xl font-bold text-gray-900">Contact Information</h3>
+                <p className="text-lg text-gray-600">Get in touch with us through any of these channels</p>
               </div>
               
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 cursor-pointer"
+                  className="p-6 transition-all duration-300 bg-white border border-gray-100 shadow-lg cursor-pointer group rounded-2xl hover:shadow-2xl"
                 >
                   <div className="flex items-start space-x-4">
                     <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       {info.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h4>
-                      <p className="text-gray-600 leading-relaxed whitespace-pre-line">{info.details}</p>
+                      <h4 className="mb-2 text-xl font-bold text-gray-900">{info.title}</h4>
+                      <p className="leading-relaxed text-gray-600 whitespace-pre-line">{info.details}</p>
                     </div>
                   </div>
                 </div>
@@ -311,12 +311,12 @@ const Contact = () => {
               {/* Features */}
               <div className="grid grid-cols-1 gap-4 mt-8">
                 {features.map((feature, index) => (
-                  <div key={index} className="text-center p-4 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-brandOrange/10 to-brandNavy/10 rounded-full mb-3">
+                  <div key={index} className="p-4 text-center border border-gray-100 bg-gradient-to-r from-gray-50 to-white rounded-xl">
+                    <div className="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-full bg-gradient-to-br from-brandOrange/10 to-brandNavy/10">
                       {feature.icon}
                     </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">{feature.title}</h4>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                    <h4 className="mb-1 text-lg font-bold text-gray-900">{feature.title}</h4>
+                    <p className="text-sm text-gray-600">{feature.description}</p>
                   </div>
                 ))}
               </div>
@@ -326,9 +326,9 @@ const Contact = () => {
       </div>
       
       {/* Bottom section */}
-      <div className="bg-brandOrange py-6">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 text-white">
+      <div className="py-6 bg-brandOrange">
+        <div className="container px-6 mx-auto">
+          <div className="flex flex-col items-center justify-center space-y-4 text-white md:flex-row md:space-y-0 md:space-x-6">
             <div className="flex items-center space-x-4">
               <FaGlobe className="w-6 h-6" />
               <FaClock className="w-6 h-6" />
@@ -340,7 +340,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

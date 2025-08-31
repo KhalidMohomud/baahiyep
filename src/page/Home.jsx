@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Testimonials from '../components/Testimonials';
 import DomainSearch from '../components/DomainSearch';
 import Homehero from '../components/Homehero';
-import WebHostingPackages from '../components/WebHostingPackages';
+import WebDesign from '../components/WebDesign';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -384,7 +384,7 @@ const Home = () => {
       {/* Hero Section */}
         <Homehero/>
       {/* Domain Search Section */}
-        <DomainSearch/>
+    
 
       {/* Services Section */}
       
@@ -412,10 +412,13 @@ const Home = () => {
    
 
       {/* Web Hosting Packages Section */}
-      <WebHostingPackages/>
+      
+   
    
 
       <Packages/>
+
+      <WebDesign/>
 
       {/* Achievements Section */}
       <section ref={achievementsRef} className="py-20 bg-white">
