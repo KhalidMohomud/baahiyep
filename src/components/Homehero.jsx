@@ -128,82 +128,46 @@ function Homehero() {
   }, []);
 
   return (
-    <section
+  <section
   ref={heroRef}
-  className={`relative py-2 px-3 overflow-hidden text-white bg-gradient-to-br ${heroSlides[currentSlide].bgGradient} transition-all duration-1000 ease-in-out`}
+  className={`relative py-6 px-4 sm:py-10 sm:px-6 overflow-hidden text-white bg-gradient-to-br ${heroSlides[currentSlide].bgGradient} transition-all duration-1000 ease-in-out`}
 >
   {/* Animated Background Elements */}
   <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute w-32 h-32 rounded-full top-20 left-20 bg-white/10 blur-2xl animate-pulse"></div>
-    <div className="absolute w-40 h-40 delay-1000 rounded-full bottom-20 right-20 bg-white/10 blur-2xl animate-pulse"></div>
-    <div className="absolute w-24 h-24 delay-500 rounded-full top-1/2 left-1/4 bg-white/10 blur-xl animate-pulse"></div>
-    <div className="absolute w-16 h-16 rounded-full top-1/3 right-1/3 bg-white/5 blur-lg animate-pulse delay-1500"></div>
+    <div className="absolute w-24 h-24 rounded-full top-16 left-10 bg-white/10 blur-2xl animate-pulse sm:w-32 sm:h-32 sm:top-20 sm:left-20"></div>
+    <div className="absolute w-32 h-32 delay-1000 rounded-full bottom-16 right-10 bg-white/10 blur-2xl animate-pulse sm:w-40 sm:h-40 sm:bottom-20 sm:right-20"></div>
+    <div className="absolute w-20 h-20 delay-500 rounded-full top-1/2 left-1/4 bg-white/10 blur-xl animate-pulse sm:w-24 sm:h-24"></div>
+    <div className="absolute w-12 h-12 rounded-full top-1/3 right-1/3 bg-white/5 blur-lg animate-pulse delay-1500 sm:w-16 sm:h-16"></div>
   </div>
 
-  {/* Navigation Arrows */}
-  {/* <button
-    onClick={prevSlide}
-    className="absolute z-10 text-white transition-all duration-300 transform -translate-y-1/2 left-6 top-1/2 hover:text-white/90 hover:scale-125 group"
-    aria-label="Previous slide"
-  >
-    <div className="p-4 transition-all duration-300 border rounded-full shadow-lg bg-white/20 backdrop-blur-md border-white/30 group-hover:bg-white/30">
-      <FaArrowLeft className="w-6 h-6" />
-    </div>
-  </button> */}
-{/* 
-  <button
-    onClick={nextSlide}
-    className="absolute z-10 text-white transition-all duration-300 transform -translate-y-1/2 right-6 top-1/2 hover:text-white/90 hover:scale-125 group"
-    aria-label="Next slide"
-  >
-    <div className="p-4 transition-all duration-300 border rounded-full shadow-lg bg-white/20 backdrop-blur-md border-white/30 group-hover:bg-white/30">
-      <FaArrowRight className="w-6 h-6" />
-    </div>
-  </button> */}
-
-  <div className="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+  <div className="relative z-10 px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div className="grid items-center gap-10 sm:gap-16 lg:grid-cols-2">
       {/* Left Column */}
-      <div className="relative ml-3 mr-2 sm:ml-7 hero-slide">
+      <div className="relative ml-0 mr-0 sm:ml-7 hero-slide">
         {/* Subtitle */}
-        <div className="mb-4 text-center lg:text-left">
-          <span className={`inline-block px-5 py-2 sm:px-6 sm:py-3 bg-gradient-to-r ${heroSlides[currentSlide].accentColor} text-white text-xs sm:text-sm font-semibold rounded-full shadow-xl backdrop-blur-sm`}>
+        <div className="mb-4 text-left lg:text-left sm:text-left ">
+          <span className={`inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r ${heroSlides[currentSlide].accentColor} text-white text-xs sm:text-sm font-semibold rounded-full shadow-xl backdrop-blur-sm`}>
             {heroSlides[currentSlide].subtitle}
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight text-center sm:text-5xl md:text-6xl lg:text-7xl lg:text-left">
+        <h1 className="mb-6 text-2xl font-bold leading-tight tracking-tight text-center sm:text-5xl md:text-6xl lg:text-7xl lg:text-left">
           {heroSlides[currentSlide].title}
         </h1>
 
         {/* Description */}
-        <p className="max-w-2xl mb-8 text-lg leading-relaxed text-center sm:text-2xl md:text-xl text-white/95 lg:text-left">
+        <p className="max-w-2xl mb-8 text-base leading-relaxed text-center sm:text-xl md:text-xl lg:text-left text-white/95">
           {heroSlides[currentSlide].description}
         </p>
-
-        {/* Features */}
-        {/* <div className="flex flex-wrap justify-center gap-3 mb-10 lg:justify-start">
-          {heroSlides[currentSlide].features.map((feature, index) => (
-            <span
-              key={index}
-              className="px-4 py-2 text-xs font-medium text-white transition-all duration-300 border rounded-full shadow-lg cursor-pointer sm:px-5 sm:py-3 sm:text-sm bg-white/20 backdrop-blur-md border-white/30 hover:bg-white/30 hover:scale-110 group"
-            >
-              <span className="flex items-center gap-2">
-                <FaStar className="text-yellow-300 transition-transform duration-500 group-hover:rotate-180" />
-                {feature}
-              </span>
-            </span>
-          ))}
-        </div> */}
 
         {/* CTA Button */}
         <div className="text-center lg:text-left">
           <button
             onClick={() => handleSeeMore(heroSlides[currentSlide].serviceId)}
-            className="relative px-6 py-4 overflow-hidden text-base font-semibold text-white transition-all duration-300 transform border shadow-xl sm:px-12 sm:py-6 sm:text-lg group bg-gradient-to-r from-white/30 to-white/20 backdrop-blur-md rounded-3xl border-white/40 hover:from-white/40 hover:to-white/30 hover:scale-105 hover:shadow-2xl"
+            className="relative px-5 py-3 text-base font-semibold text-white transition-all duration-300 transform border shadow-xl sm:px-12 sm:py-6 sm:text-lg group bg-gradient-to-r from-white/30 to-white/20 backdrop-blur-md rounded-3xl border-white/40 hover:from-white/40 hover:to-white/30 hover:scale-105 hover:shadow-2xl"
           >
-            <span className="relative z-10 flex items-center gap-3">
+            <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
               See More Details
               <FaStar className="text-yellow-300 transition-transform duration-500 group-hover:rotate-180" />
             </span>
@@ -215,71 +179,64 @@ function Homehero() {
       {/* Right Column - Circle Graphic */}
       <div className="flex justify-center">
         <div className="relative">
-          <div className="w-72 h-72 sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-md flex items-center justify-center shadow-2xl relative overflow-hidden group">
+          <div className="w-56 h-56 sm:w-72 sm:h-72 md:w-[450px] md:h-[450px] rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-md flex items-center justify-center shadow-2xl relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent animate-spin-slow"></div>
 
             <div className="relative z-10 space-y-6 text-center sm:space-y-8">
-              <div className="p-4 transition-all duration-500 border shadow-2xl sm:p-6 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
+              <div className="p-3 transition-all duration-500 border shadow-2xl sm:p-6 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
                 <div className="mb-2 text-white transition-transform duration-500 sm:mb-3 group-hover:scale-110">
                   {heroSlides[currentSlide].graphicIcon}
                 </div>
-                <div className="text-sm font-bold text-white sm:text-lg">{heroSlides[currentSlide].graphic}</div>
+                <div className="text-sm font-bold text-white sm:text-lg">
+                  {heroSlides[currentSlide].graphic}
+                </div>
               </div>
 
-              <div className="flex justify-center space-x-4 sm:space-x-6">
-                <div className="p-3 transition-all duration-500 border shadow-2xl sm:p-4 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
-                  <FaCode className="text-xl text-white sm:text-3xl" />
+              <div className="flex justify-center space-x-3 sm:space-x-6">
+                <div className="p-2 transition-all duration-500 border shadow-2xl sm:p-4 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
+                  <FaCode className="text-lg text-white sm:text-3xl" />
                 </div>
-                <div className="p-3 transition-all duration-500 border shadow-2xl sm:p-4 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
-                  <FaShieldAlt className="text-xl text-white sm:text-3xl" />
+                <div className="p-2 transition-all duration-500 border shadow-2xl sm:p-4 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
+                  <FaShieldAlt className="text-lg text-white sm:text-3xl" />
                 </div>
-                <div className="p-3 transition-all duration-500 border shadow-2xl sm:p-4 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
-                  <FaLightbulb className="text-xl text-white sm:text-3xl" />
+                <div className="p-2 transition-all duration-500 border shadow-2xl sm:p-4 bg-white/25 backdrop-blur-md rounded-3xl border-white/40 hover:scale-110 group-hover:shadow-white/20">
+                  <FaLightbulb className="text-lg text-white sm:text-3xl" />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Floating Elements */}
-          <div className="absolute w-12 h-12 rounded-full shadow-xl -top-6 -right-6 bg-gradient-to-r from-pink-400 to-purple-500 animate-pulse floating-element"></div>
-          <div className="absolute w-10 h-10 delay-1000 rounded-full shadow-xl -bottom-6 -left-6 bg-gradient-to-r from-blue-400 to-cyan-500 animate-pulse floating-element"></div>
-          <div className="absolute w-8 h-8 delay-500 rounded-full shadow-xl top-1/2 -left-8 bg-gradient-to-r from-emerald-400 to-green-500 animate-pulse floating-element"></div>
+          <div className="absolute w-10 h-10 rounded-full shadow-xl -top-5 -right-5 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-400 to-purple-500 animate-pulse floating-element"></div>
+          <div className="absolute w-8 h-8 delay-1000 rounded-full shadow-xl -bottom-5 -left-5 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-400 to-cyan-500 animate-pulse floating-element"></div>
+          <div className="absolute w-6 h-6 delay-500 rounded-full shadow-xl top-1/2 -left-6 sm:w-8 sm:h-8 bg-gradient-to-r from-emerald-400 to-green-500 animate-pulse floating-element"></div>
 
           {/* Decorative Icons */}
           <div className="absolute top-0 right-0 text-white/20">
-            <FaCrown className="text-3xl sm:text-4xl animate-bounce" />
+            <FaCrown className="text-2xl sm:text-4xl animate-bounce" />
           </div>
           <div className="absolute bottom-0 left-0 text-white/20">
-            <FaGem className="text-3xl delay-1000 sm:text-4xl animate-bounce" />
+            <FaGem className="text-2xl delay-1000 sm:text-4xl animate-bounce" />
           </div>
         </div>
       </div>
     </div>
 
     {/* Navigation Dots */}
-    <div className="flex justify-center mt-20 space-x-4">
+    <div className="flex justify-center mt-10 space-x-4 sm:mt-20">
       {heroSlides.map((_, index) => (
         <button
           key={index}
           onClick={() => setCurrentSlide(index)}
-          className={`w-4 h-4 rounded-full nav-dot transition-all duration-500 ${
+          className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full nav-dot transition-all duration-500 ${
             index === currentSlide
-              ? 'bg-white scale-150 shadow-2xl shadow-white/50'
-              : 'bg-white/50 hover:bg-white/70 hover:scale-125'
+              ? 'bg-white scale-125 sm:scale-150 shadow-2xl shadow-white/50'
+              : 'bg-white/50 hover:bg-white/70 hover:scale-110 sm:hover:scale-125'
           }`}
           aria-label={`Go to slide ${index + 1}`}
         />
       ))}
     </div>
-
-    {/* Slide Counter */}
-    {/* <div className="mt-8 text-center text-white/90">
-      <span className="inline-block px-6 py-3 border rounded-full shadow-xl bg-white/20 backdrop-blur-md border-white/30">
-        <span className="text-sm font-medium">
-          {currentSlide + 1} / {heroSlides.length}
-        </span>
-      </span>
-    </div> */}
   </div>
 
   {/* Custom CSS for slow spin animation */}
