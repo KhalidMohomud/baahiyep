@@ -152,9 +152,9 @@ function Homehero() {
         </div>
 
         {/* Title */}
-        <h1 className="mb-6 text-2xl font-bold leading-tight tracking-tight text-center sm:text-5xl md:text-6xl lg:text-7xl lg:text-left">
+        {/* <h1 className="mb-6 text-2xl font-bold leading-tight tracking-tight text-center sm:text-5xl md:text-6xl lg:text-7xl lg:text-left">
           {heroSlides[currentSlide].title}
-        </h1>
+        </h1> */}
 
         {/* Description */}
         <p className="max-w-2xl mb-8 text-base leading-relaxed text-center sm:text-xl md:text-xl lg:text-left text-white/95">
