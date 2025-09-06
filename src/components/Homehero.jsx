@@ -145,11 +145,11 @@ function Homehero() {
       {/* Left Column */}
       <div className="relative ml-0 mr-0 sm:ml-7 hero-slide">
         {/* Subtitle */}
-        {/* <div className="mb-4 text-left lg:text-left sm:text-left ">
+        <div className="mb-4 text-left lg:text-left sm:text-left ">
           <span className={`inline-block px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r ${heroSlides[currentSlide].accentColor} text-white text-xs sm:text-sm font-semibold rounded-full shadow-xl backdrop-blur-sm`}>
             {heroSlides[currentSlide].subtitle}
           </span>
-        </div> */}
+        </div>
 
         {/* Title */}
         <h1 className="mb-6 text-2xl font-bold leading-tight tracking-tight text-center sm:text-5xl md:text-6xl lg:text-7xl lg:text-left">
@@ -207,9 +207,9 @@ function Homehero() {
           </div>
 
           {/* Floating Elements */}
-          <div className="absolute w-10 h-10 rounded-full shadow-xl -top-5 -right-5 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-400 to-purple-500 animate-pulse floating-element"></div>
+          {/* <div className="absolute w-10 h-10 rounded-full shadow-xl -top-5 -right-5 sm:w-12 sm:h-12 bg-gradient-to-r from-pink-400 to-purple-500 animate-pulse floating-element"></div>
           <div className="absolute w-8 h-8 delay-1000 rounded-full shadow-xl -bottom-5 -left-5 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-400 to-cyan-500 animate-pulse floating-element"></div>
-          <div className="absolute w-6 h-6 delay-500 rounded-full shadow-xl top-1/2 -left-6 sm:w-8 sm:h-8 bg-gradient-to-r from-emerald-400 to-green-500 animate-pulse floating-element"></div>
+          <div className="absolute w-6 h-6 delay-500 rounded-full shadow-xl top-1/2 -left-6 sm:w-8 sm:h-8 bg-gradient-to-r from-emerald-400 to-green-500 animate-pulse floating-element"></div> */}
 
           {/* Decorative Icons */}
           <div className="absolute top-0 right-0 text-white/20">
