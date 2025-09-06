@@ -21,7 +21,7 @@ const SERVICE_CONTENT = {
     title: 'Digital Marketing',
     subtitle: 'Strategic Growth',
     icon: <FaChartLine className="text-6xl" />,
-    gradient: 'from-blue-900 via-blue-800 to-cyan-700',
+    gradient: 'from-red-800 via-red-700 to-brandOrange',
     intro: 'Data-driven strategies to grow your brand, increase conversions, and build long-term customer relationships.',
     points: [
       'Social media strategy and management',
@@ -35,7 +35,7 @@ const SERVICE_CONTENT = {
     title: 'Web Solutions',
     subtitle: 'Digital Excellence',
     icon: <FaGlobe className="text-6xl" />,
-    gradient: 'from-green-900 via-green-800 to-emerald-700',
+    gradient: 'from-red-800 via-red-700 to-brandOrange',
     intro: 'Modern websites and hosting solutions that are fast, secure, and built to convert visitors into customers.',
     points: [
       'Responsive web design and development',
@@ -60,16 +60,16 @@ function InformtionSevices() {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <button
             onClick={() => navigate(-1)}
-            className="inline-flex items-center gap-2 px-5 py-2 mb-8 bg-white/20 rounded-full border border-white/30 hover:bg-white/30"
+            className="inline-flex items-center gap-2 px-5 py-2 mb-8 border rounded-full bg-white/20 border-white/30 hover:bg-white/30"
           >
             <FaArrowLeft /> Back
           </button>
 
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-2xl bg-white/20 border border-white/30">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 mx-auto mb-6 border rounded-2xl bg-white/20 border-white/30">
               {service.icon}
             </div>
-            <span className="inline-block px-4 py-1 mb-3 text-sm font-semibold bg-white/20 rounded-full border border-white/30">
+            <span className="inline-block px-4 py-1 mb-3 text-sm font-semibold border rounded-full bg-white/20 border-white/30">
               {service.subtitle}
             </span>
             <h1 className="mb-4 text-4xl font-extrabold md:text-6xl">
@@ -86,7 +86,7 @@ function InformtionSevices() {
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           {/* What you get */}
-          <div className="p-8 bg-white rounded-2xl shadow-lg border border-gray-100">
+          <div className="p-8 bg-white border border-gray-100 shadow-lg rounded-2xl">
             <h2 className="mb-4 text-2xl font-bold text-gray-900">What You Get</h2>
             <ul className="space-y-3">
               {service.points.map((p) => (
@@ -99,22 +99,22 @@ function InformtionSevices() {
           </div>
 
           {/* Highlights */}
-          <div className="p-8 bg-white rounded-2xl shadow-lg border border-gray-100">
+          <div className="p-8 bg-white border border-gray-100 shadow-lg rounded-2xl">
             <h2 className="mb-4 text-2xl font-bold text-gray-900">Highlights</h2>
             <div className="flex flex-wrap gap-3">
               {service.highlights.map((h) => (
-                <span key={h} className="px-4 py-2 text-sm font-semibold rounded-full border bg-gray-50 border-gray-200 text-gray-700">
+                <span key={h} className="px-4 py-2 text-sm font-semibold text-gray-700 border border-gray-200 rounded-full bg-gray-50">
                   {h}
                 </span>
               ))}
             </div>
 
-            <div className="mt-8 p-6 rounded-xl bg-gradient-to-r from-brandOrange to-brandNavy text-white">
+            <div className="p-6 mt-8 text-white rounded-xl bg-gradient-to-r from-brandOrange to-brandNavy">
               <h3 className="mb-2 text-xl font-semibold">Need this service?</h3>
               <p className="mb-4 text-white/90">Contact us to get a tailored plan and timeline for your project.</p>
               <button
                 onClick={() => navigate('/Contact')}
-                className="px-6 py-3 font-semibold bg-white/20 rounded-lg border border-white/30 hover:bg-white/30"
+                className="px-6 py-3 font-semibold border rounded-lg bg-white/20 border-white/30 hover:bg-white/30"
               >
                 Contact Us
               </button>

@@ -379,7 +379,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen px-3 pt-1 bg-white">
+    <div className="min-h-screen px-3 pt-1 bg-white " >
       
       {/* Hero Section */}
         <Homehero />
@@ -387,7 +387,8 @@ const Home = () => {
     
 
       {/* Services Section */}
- <section ref={servicesRef} className="py-20 bg-lightGray">
+      <div className='relative mt-3 '>
+ <section ref={servicesRef} className="py-20 bg-slate-100 ">
   <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">
       Our Services
@@ -397,28 +398,39 @@ const Home = () => {
       {services.map((service) => (
         <div
           key={service.name}
-          className="group text-center transition-all duration-500 transform cursor-pointer service-card hover:scale-110 hover:-translate-y-2"
+          className="text-center transition-all duration-500 transform cursor-pointer group service-card hover:scale-105 hover:-translate-y-1"
         >
-          <div className="relative mx-auto mb-6 overflow-hidden rounded-2xl shadow-xl w-28 h-28">
-            <img
-              src={service.image}
-              alt={service.name}
-              className="object-cover w-full h-full transition-all duration-500 group-hover:scale-125 group-hover:rotate-3 filter group-hover:brightness-110"
-            />
+          <div className='hover:bg-orange-100 hover:rounded-xl'>
+          <img
+            src={service.image}
+            alt={service.name}
+      
+          />
+
+          {/* 🖋 Title with subtle animation */}
+          <h3 className="text-lg font-semibold tracking-wide transition-colors duration-300 text-brandNavy group-hover:text-brandOrange">
+            {service.name}
+          </h3>
           </div>
-          <h3 className="text-lg font-bold text-brandNavy group-hover:text-brandOrange transition-colors duration-300 tracking-wide">{service.name}</h3>
-          <div className="w-0 h-0.5 bg-gradient-to-r from-brandOrange to-brandNavy mx-auto mt-2 group-hover:w-12 transition-all duration-300"></div>
+
+      
+          <div className="w-0 h-0.5 bg-gradient-to-r from-brandOrange to-brandNavy mx-auto mt-2 group-hover:w-10 transition-all duration-300"></div>
         </div>
       ))}
     </div>
 
-    {/* <div className="mt-12 text-center">
+    {/* Future button (currently hidden) */}
+    {/* 
+    <div className="mt-12 text-center">
       <button className="px-8 py-4 text-lg font-semibold text-white transition-colors rounded-lg cta-button bg-brandOrange hover:bg-brandNavy">
         VIEW MORE
       </button>
-    </div> */}
+    </div> 
+    */}
   </div>
 </section>
+</div>
+
 
 
    
