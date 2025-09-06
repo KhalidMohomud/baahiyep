@@ -27,12 +27,12 @@ const Home = () => {
  
 
   const services = [
-    { name: "Graphic Design", icon: <FaPaintBrush /> },
-    { name: "Digital Marketing", icon: <FaBullhorn /> },
-    { name: "Web Solutions", icon: <FaGlobe /> },
-    { name: "Motion Graphics", icon: <FaFilm /> },
-    { name: "Event Branding", icon: <MdEvent /> },
-    { name: "Digital Consulting", icon: <FaRegLightbulb /> },
+    { name: "Graphic Design", image: '/image/Graphic design-01.png' },
+    { name: "Digital Marketing", image: '/image/digital marketing-01.png' },
+    { name: "Web Design", image: '/image/web design-01.png'},
+    { name: "Video Production", image: '/image/Video Production.png' },
+    { name: "Event Branding", image: '/image/evanty  barnding branding-01.png' },
+    { name: "Print Services", image: '/image/Printing Services.png' },
   ];
 
   const achievements = [
@@ -393,16 +393,21 @@ const Home = () => {
       Our Services
     </h2>
 
-    <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+    <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
       {services.map((service) => (
         <div
           key={service.name}
-          className="text-center transition-all duration-300 transform rounded-lg cursor-pointer service-card active:bg-gray-200 active:shadow-inner"
+          className="group text-center transition-all duration-500 transform cursor-pointer service-card hover:scale-110 hover:-translate-y-2"
         >
-          <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full bg-brandOrange">
-            <span className="text-3xl text-white">{service.icon}</span>
+          <div className="relative mx-auto mb-6 overflow-hidden rounded-2xl shadow-xl w-28 h-28">
+            <img
+              src={service.image}
+              alt={service.name}
+              className="object-cover w-full h-full transition-all duration-500 group-hover:scale-125 group-hover:rotate-3 filter group-hover:brightness-110"
+            />
           </div>
-          <h3 className="text-xl font-semibold text-brandNavy">{service.name}</h3>
+          <h3 className="text-lg font-bold text-brandNavy group-hover:text-brandOrange transition-colors duration-300 tracking-wide">{service.name}</h3>
+          <div className="w-0 h-0.5 bg-gradient-to-r from-brandOrange to-brandNavy mx-auto mt-2 group-hover:w-12 transition-all duration-300"></div>
         </div>
       ))}
     </div>
