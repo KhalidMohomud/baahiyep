@@ -10,12 +10,13 @@ import Testimonials from '../components/Testimonials';
 // import DomainSearch from '../components/DomainSearch';
 import Homehero from '../components/Homehero';
 import SocialMediaPackages from '../components/SocialMediaPackages';
+import { useNavigate } from 'react-router-dom';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-
+  const navigate = useNavigate();
   
   // Refs for animations
   const heroRef = useRef(null);
@@ -24,15 +25,19 @@ const Home = () => {
 
   const achievementsRef = useRef(null);
   const blogRef = useRef(null);
- 
+
+  // Handle service click
+  const handleServiceClick = (serviceId) => {
+    navigate(`/service/${serviceId}`);
+  };
 
   const services = [
-    { name: "Graphic Design", image: '/image/Graphic design-01.png' },
-    { name: "Digital Marketing", image: '/image/digital marketing-01.png' },
-    { name: "Web Design", image: '/image/web design-01.png'},
-    { name: "Video Production", image: '/image/Video Production.png' },
-    { name: "Event Branding", image: '/image/evanty  barnding branding-01.png' },
-    { name: "Print Services", image: '/image/Printing Services.png' },
+    { name: "Graphic Design", image: '/image/Graphic design-01.png', serviceId: 'graphic-design' },
+    { name: "Digital Marketing", image: '/image/digital marketing-01.png', serviceId: 'digital-marketing' },
+    { name: "Web Design", image: '/image/web design-01.png', serviceId: 'web-design'},
+    { name: "Video Production", image: '/image/Video Production.png', serviceId: 'video-production' },
+    { name: "Event Branding", image: '/image/evanty  barnding branding-01.png', serviceId: 'event-branding' },
+    { name: "Print Services", image: '/image/Printing Services.png', serviceId: 'print-services' },
   ];
 
   const achievements = [
@@ -379,10 +384,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen px-3 pt-1 bg-white " >
+    <div className="min-h-screen  bg-white " >
       
       {/* Hero Section */}
+      <div className='px-3 pt-1'>
         <Homehero />
+        </div>
       {/* Domain Search Section */}
     
 
@@ -398,19 +405,20 @@ const Home = () => {
       {services.map((service) => (
         <div
           key={service.name}
+          onClick={() => handleServiceClick(service.serviceId)}
           className="text-center transition-all duration-500 transform cursor-pointer group service-card hover:scale-105 hover:-translate-y-1"
         >
           <div className='hover:bg-orange-100 hover:rounded-xl'>
           <img
             src={service.image}
             alt={service.name}
-      
+            className="w-full h-auto"
           />
 
           {/* 🖋 Title with subtle animation */}
-          <h3 className="text-lg font-semibold tracking-wide transition-colors duration-300 text-brandNavy group-hover:text-brandOrange">
+          {/* <h3 className="text-lg font-semibold tracking-wide transition-colors duration-300 text-brandNavy group-hover:text-brandOrange">
             {service.name}
-          </h3>
+          </h3> */}
           </div>
 
       

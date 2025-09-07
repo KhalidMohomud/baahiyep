@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { FaPalette, FaChartLine, FaGlobe, FaUsers, FaRocket, FaCheck, FaArrowLeft } from 'react-icons/fa'
+import { FaPalette, FaChartLine, FaGlobe, FaUsers, FaRocket, FaCheck, FaArrowLeft, FaVideo, FaCalendarAlt, FaPrint } from 'react-icons/fa'
 
 const SERVICE_CONTENT = {
   'graphic-design': {
@@ -31,8 +31,8 @@ const SERVICE_CONTENT = {
     ],
     highlights: ['Social Media', 'SEO', 'Content Strategy', 'PPC']
   },
-  'web-solutions': {
-    title: 'Web Solutions',
+  'web-design': {
+    title: 'Web Design',
     subtitle: 'Digital Excellence',
     icon: <FaGlobe className="text-6xl" />,
     gradient: 'from-red-800 via-red-700 to-brandOrange',
@@ -44,6 +44,48 @@ const SERVICE_CONTENT = {
       'Performance and SEO best practices'
     ],
     highlights: ['Web Design', 'Hosting', 'Domains', 'SSL']
+  },
+  'video-production': {
+    title: 'Video Production',
+    subtitle: 'Visual Storytelling',
+    icon: <FaVideo className="text-6xl" />,
+    gradient: 'from-red-800 via-red-700 to-brandOrange',
+    intro: 'High-quality video production services to tell your story and engage your audience effectively.',
+    points: [
+      'Script writing and storyboarding',
+      'Professional filming and direction',
+      'Video editing and post-production',
+      'Animation and motion graphics'
+    ],
+    highlights: ['Script Writing', 'Filming', 'Editing', 'Animation']
+  },
+  'event-branding': {
+    title: 'Event Branding',
+    subtitle: 'Memorable Experiences',
+    icon: <FaCalendarAlt className="text-6xl" />,
+    gradient: 'from-red-800 via-red-700 to-brandOrange',
+    intro: 'Unique event branding solutions to create memorable and engaging event experiences.',
+    points: [
+      'Event logos and theme development',
+      'Signage and booth design',
+      'Printed and digital materials',
+      'On-site branding and support'
+    ],
+    highlights: ['Event Logos', 'Signage Design', 'Booth Design', 'Promotional Materials']
+  },
+  'print-services': {
+    title: 'Print Services',
+    subtitle: 'Quality Materials',
+    icon: <FaPrint className="text-6xl" />,
+    gradient: 'from-red-800 via-red-700 to-brandOrange',
+    intro: 'Professional print services for all your marketing and business needs with high-quality materials.',
+    points: [
+      'Business cards and stationery',
+      'Brochures and marketing materials',
+      'Posters and large format printing',
+      'Custom packaging and labels'
+    ],
+    highlights: ['Business Cards', 'Brochures', 'Posters', 'Flyers']
   },
 }
 

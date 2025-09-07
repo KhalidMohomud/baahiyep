@@ -3,8 +3,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
 import { 
-  FaRocket, FaUsers, FaLightbulb, FaChartLine, FaCode, FaPalette, FaGlobe, FaShieldAlt,
-  FaStar, FaAward, FaGem, FaCrown, FaMagic, FaArrowRight, FaArrowLeft
+  FaLightbulb, FaChartLine, FaCode, FaPalette, FaGlobe, FaShieldAlt,
+ FaStar,  FaGem, FaCrown, 
+ FaPrint,
+ FaCalendarAlt,
+ FaVideo
 } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,76 +21,91 @@ function Homehero() {
     {
       title: "Graphic Design",
       subtitle: "Creative Excellence",
-      description: "We offer range of graphic design services encompasses logo design, UI design, event branding, and brand identity. With our expertise, we create captivating and memorable brands that resonate with the public, leaving a lasting impression.",
+      description:
+        "Our graphic design services cover logo design, UI/UX, brand identity, and more. We create visually stunning and memorable designs that elevate your brand.",
       icon: <FaPalette className="text-pink-400 text-7xl" />,
-      bgGradient: "from-red-900 via-red-800 to-orange-600",
+      bgGradient: "from-red-800 via-red-700 to-brandOrange",
       graphic: "Graphic Design & Branding",
       graphicIcon: <FaPalette className="text-5xl" />,
-      features: ["Logo Design", "UI/UX", "Brand Identity", "Event Branding"],
-      accentColor: "from-pink-400 to-purple-500",
-      serviceId: "graphic-design"
+      features: ["Logo Design", "UI/UX", "Brand Identity", "Print & Digital"],
+      accentColor: "from-pink-400 to-purple-600",
+      serviceId: "graphic-design",
     },
     {
       title: "Digital Marketing",
       subtitle: "Strategic Growth",
-      description: "We offer complete digital marketing services, including social media marketing strategy, social media analytics, branding, content writing and social media management. The strategy team understands business cases and how to align digital marketing activities to ensure they deliver on your objectives.",
+      description:
+        "We provide comprehensive digital marketing services including social media strategy, SEO, content marketing, and analytics to drive measurable growth.",
       icon: <FaChartLine className="text-blue-400 text-7xl" />,
-      // bgGradient: "from-blue-900 via-blue-800 to-cyan-600",
-       bgGradient: "from-red-900 via-red-800 to-orange-600",
+      bgGradient: "from-red-800 via-red-700 to-brandOrange",
       graphic: "Digital Marketing",
       graphicIcon: <FaChartLine className="text-5xl" />,
-      features: ["Social Media", "Analytics", "Content Strategy", "SEO"],
+      features: ["Social Media", "SEO", "Content Strategy", "Analytics"],
       accentColor: "from-blue-400 to-cyan-500",
-      serviceId: "digital-marketing"
+      serviceId: "digital-marketing",
     },
     {
-      title: "Web Solutions",
+      title: "Web Design",
       subtitle: "Digital Excellence",
-      description: "We offer complete web services, including web design, domain registration, domain transfer, SSL certificates, and web hosting. We create responsive websites that look wonderful on any device, including smartphones, tablets, and desktop computers.",
+      description:
+        "We design and develop responsive, user-friendly websites that look great on any device and help convert visitors into customers.",
       icon: <FaGlobe className="text-7xl text-emerald-400" />,
-     // bgGradient: "from-emerald-900 via-emerald-800 to-green-600",
-        bgGradient: "from-red-900 via-red-800 to-orange-600", 
-     graphic: "Web Solutions",
+      bgGradient: "from-red-800 via-red-700 to-brandOrange",
+      graphic: "Web Design",
       graphicIcon: <FaGlobe className="text-5xl" />,
-      features: ["Web Design", "Hosting", "Domains", "SSL Security"],
-      accentColor: "from-emerald-400 to-green-500",
-      serviceId: "web-solutions"
+      features: ["Responsive Design", "E-commerce", "SEO Optimized", "CMS Integration"],
+      accentColor: "from-green-400 to-emerald-500",
+      serviceId: "web-design",
     },
     {
-      title: "Project Innovation",
-      subtitle: "Future Technology",
-      description: "Our project stands at the forefront of digital innovation, combining cutting-edge technology with creative design solutions. We've built a comprehensive platform that revolutionizes how businesses approach their digital presence and marketing strategies.",
-      icon: <FaRocket className="text-purple-400 text-7xl" />,
-       bgGradient: "from-red-900 via-red-800 to-orange-600",
-      //bgGradient: "from-purple-900 via-purple-800 to-pink-600",
-      graphic: "Innovation Hub",
-      graphicIcon: <FaLightbulb className="text-5xl" />,
-      features: ["AI-Powered", "Real-time Analytics", "Smart Automation", "Future-Ready"],
+      title: "Video Production",
+      subtitle: "Visual Storytelling",
+      description:
+        "From concept to final cut, we produce high-quality videos that engage your audience and tell your brand’s story effectively.",
+      icon: <FaVideo className="text-red-500 text-7xl" />,
+      bgGradient: "from-red-800 via-red-700 to-brandOrange",
+      graphic: "Video Production",
+      graphicIcon: <FaVideo className="text-5xl" />,
+      features: ["Scriptwriting", "Filming", "Editing", "Motion Graphics"],
+      accentColor: "from-red-400 to-yellow-500",
+      serviceId: "video-production",
+    },
+    {
+      title: "Event Branding",
+      subtitle: "Memorable Experiences",
+      description:
+        "We create cohesive event branding including signage, collateral, and digital assets that make your event stand out and leave a lasting impression.",
+      icon: <FaCalendarAlt className="text-purple-500 text-7xl" />,
+      bgGradient: "from-red-800 via-red-700 to-brandOrange",
+      graphic: "Event Branding",
+      graphicIcon: <FaCalendarAlt className="text-5xl" />,
+      features: ["Event Logos", "Signage", "Digital Assets", "Print Collateral"],
       accentColor: "from-purple-400 to-pink-500",
-      serviceId: "project-innovation"
+      serviceId: "event-branding",
     },
     {
-      title: "Team Excellence",
-      subtitle: "Expert Collaboration",
-      description: "Our dedicated team of experts brings together years of experience in design, development, and digital strategy. We collaborate closely with clients to understand their unique needs and deliver solutions that exceed expectations.",
-      icon: <FaUsers className="text-indigo-400 text-7xl" />,
-       bgGradient: "from-red-900 via-red-800 to-orange-600",
-      //bgGradient: "from-indigo-900 via-indigo-800 to-blue-600",
-      graphic: "Expert Team",
-      graphicIcon: <FaUsers className="text-5xl" />,
-      features: ["Expert Designers", "Developers", "Strategists", "Support"],
+      title: "Print Services",
+      subtitle: "Tangible Quality",
+      description:
+        "Our print services cover everything from business cards to brochures, ensuring your brand looks professional in every physical format.",
+      icon: <FaPrint className="text-indigo-500 text-7xl" />,
+      bgGradient: "from-red-800 via-red-700 to-brandOrange",
+      graphic: "Print Services",
+      graphicIcon: <FaPrint className="text-5xl" />,
+      features: ["Business Cards", "Brochures", "Posters", "Custom Prints"],
       accentColor: "from-indigo-400 to-blue-500",
-      serviceId: "team-excellence"
-    }
+      serviceId: "print-services",
+    },
   ];
+  
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  // };
 
   const handleSeeMore = (serviceId) => {
     navigate(`/service/${serviceId}`);
