@@ -5,7 +5,7 @@ import { TextPlugin } from 'gsap/TextPlugin'
 import Vision from '../components/Vision'
 import SectionFooter from '../components/SectionFooter'
 import { Achievement } from   '../components/Achievement'
-import Clients from '../components/clients'
+import Clients from '../components/Clients'
 import Aboutcom from '../components/Aboutcom'
 import Approaches from '../components/Approaches'
 
