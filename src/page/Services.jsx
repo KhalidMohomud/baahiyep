@@ -4,9 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
 import { useNavigate } from 'react-router-dom'
 
+
 import SectionFooter from '../components/SectionFooter'
 import { FaRocket, FaPalette, FaCode, FaBullhorn, FaChartLine, FaMobile, FaSearch, FaUsers, FaLightbulb, FaCog, FaVideo, FaCalendarAlt, FaPrint } from 'react-icons/fa'
 import Packages from '../components/Packages'
+import SocialMediaPackages from '../components/SocialMediaPackages'
 // import WebDesign from '../components/WebDesign'
 
 // Register GSAP plugins
@@ -133,50 +135,81 @@ const Services = () => {
 
 
 
-const services = [ 
+              const services = [ 
   {
-    icon: <FaPalette className="text-4xl text-brandOrange" />,
-    title: "Graphic Design",
+    icon: (
+      <img
+        src="/image/Graphic design-01.png"
+        alt="Graphic Design"
+        className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
     description: "Creative brand identity and graphic design to make your business visually stunning.",
     features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Marketing Materials"],
     serviceId: 'graphic-design'
   },
   {
-    icon: <FaRocket className="text-4xl text-brandOrange" />,
-    title: "Digital Marketing",
+    icon: (
+      <img
+        src="/image/digital marketing-01.png"
+        alt="Digital Marketing"
+          className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
     description: "Comprehensive digital marketing strategies to boost your online presence and drive conversions.",
     features: ["SEO Optimization", "Social Media Marketing", "Content Marketing", "PPC Campaigns"],
     serviceId: 'digital-marketing'
   },
   {
-    icon: <FaCode className="text-4xl text-brandOrange" />,
-    title: "Web Design",
+    icon: (
+      <img
+        src="/image/web design-01.png"
+        alt="Web Design"
+         className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
     description: "Custom web design focused on user experience and modern aesthetics.",
     features: ["Responsive Design", "E-commerce Solutions", "Custom Applications", "Performance Optimization"],
     serviceId: 'web-design'
   },
   {
-    icon: <FaVideo className="text-4xl text-brandOrange" />,
-    title: "Video Production",
+    icon: (
+      <img
+        src="/image/Video Production.png"
+        alt="Video Production"
+         className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
     description: "High-quality video production to tell your story and engage your audience.",
     features: ["Script Writing", "Filming", "Editing", "Animation"],
     serviceId: 'video-production'
   },
   {
-    icon: <FaCalendarAlt className="text-4xl text-brandOrange" />,
-    title: "Event Branding",
+    icon: (
+      <img
+        src="/image/evanty  barnding branding-01.png"
+        alt="Event Branding"
+        className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
     description: "Unique event branding solutions to create memorable experiences.",
     features: ["Event Logos", "Signage Design", "Booth Design", "Promotional Materials"],
     serviceId: 'event-branding'
   },
   {
-    icon: <FaPrint className="text-4xl text-brandOrange" />,
-    title: "Print Services",
+    icon: (
+      <img
+        src="/image/Printing Services.png"
+        alt="Print Services"
+        className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
     description: "Professional print services for all your marketing and business needs.",
     features: ["Business Cards", "Brochures", "Posters", "Flyers"],
     serviceId: 'print-services'
   }
 ]
+
 
 
   const features = [
@@ -206,8 +239,8 @@ const services = [
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 ">
       
       {/* Hero Section */}
-      <div className='px-2  '>
-      <div ref={heroRef} className="relative pt-32 pb-20 overflow-hidden bg-primaryDark    ">
+      <div className='px-2 '>
+      <div ref={heroRef} className="relative pt-32 pb-20 overflow-hidden bg-primaryDark ">
         <div className="absolute inset-0 bg-gradient-to-r from-red-800 via-red-700 to-brandOrange"></div>
         <div className="relative px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <h1 
@@ -227,7 +260,7 @@ const services = [
             <button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg bg-white/20 hover:bg-white/30 hover:scale-105 hover:shadow-xl">
               Get Started
             </button>
-            <button className="px-8 py-4 text-lg font-semibold transition-all duration-300 transform border-2 rounded-full border-white text-white hover:bg-white hover:text-primary hover:scale-105">
+            <button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:bg-white hover:text-primary hover:scale-105">
               View Portfolio
             </button>
           </div>
@@ -263,13 +296,11 @@ const services = [
                 onMouseEnter={handleCardHover}
                 onMouseLeave={handleCardLeave}
               >
-                <div className="mb-6 text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 mb-4 transition-transform duration-300 rounded-full bg-gradient-to-br from-brandOrange/10 to-brandNavy/10 group-hover:scale-110">
-                    {service.icon}
-                  </div>
-                  <h3 className="mb-3 text-2xl font-bold text-gray-900">{service.title}</h3>
-                  <p className="leading-relaxed text-gray-600">{service.description}</p>
-                </div>
+                 <div className="mb-6 text-center">
+    <div className="mb-4">{service.icon}</div>
+    <h3 className="mb-3 text-2xl font-bold text-gray-900">{service.title}</h3>
+    <p className="leading-relaxed text-gray-600">{service.description}</p>
+  </div>
                 
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
@@ -296,6 +327,8 @@ const services = [
 
        <Packages/>
        {/* <WebDesign/> */}
+
+       <SocialMediaPackages/>
 
       {/* Features Section */}
       <div ref={featuresRef} className="py-20 bg-gradient-to-r from-gray-50 to-white">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import  { useEffect, useRef } from 'react'
 import { FaPaintBrush, FaBullhorn, FaGlobe, FaFilm, FaRegLightbulb } from "react-icons/fa";
 import { MdEvent } from "react-icons/md";
 import SectionFooter from '../components/SectionFooter'
@@ -384,7 +384,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen  bg-white " >
+    <div className="min-h-screen bg-white " >
       
       {/* Hero Section */}
       <div className='px-3 pt-1'>
