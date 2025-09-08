@@ -105,7 +105,7 @@ function About() {
   return (
     <div ref={pageRef} className="min-h-screen bg-white">
       {/* Hero banner */}
-      <section ref={heroRef} className="relative overflow-hidden">
+      <section ref={heroRef} className="relative ml-2 mr-2 overflow-hidden ">
   <div className="pb-16 bg-gradient-to-r from-red-800 via-red-700 to-brandOrange pt-28">
     <div className="flex items-center justify-around mx-auto max-w-7xl sm:py-20">
       {/* Left side - Title */}
