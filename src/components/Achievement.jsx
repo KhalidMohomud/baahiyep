@@ -162,7 +162,7 @@ export const Achievement = () => {
                 <img
                   src={achievement.img}
                   alt={achievement.label}
-                  className="object-contain h-24"
+                  className="object-contain h-36"
                 />
               </div>
               <div
