@@ -31,33 +31,49 @@ function Approaches() {
   }, []);
 
   return (
-    <div className="ml-2 mr-2 bg-gradient-to-br from-gray-50 via-white to-gray-100">
-      <section ref={containerRef} className="px-4 mx-auto py-14 max-w-7xl">
-        <h3 className="mb-16 text-3xl font-bold text-center text-black">
-          Our Approaches
-        </h3>
+    <div className="relative mt-3">
+      <section
+        ref={containerRef}
+        className="py-20 bg-slate-100"
+      >
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        
+          <h2 className="mb-16 text-4xl font-bold text-center text-brandNavy">
+            Our Approaches
+          </h2>
 
-        {/* ✅ base = 2 cols (mobile), md = 3, lg = 5 */}
-        <div className="grid max-w-6xl grid-cols-2 gap-8 mx-auto md:grid-cols-3 lg:grid-cols-5">
-          {ITEMS.map((item, idx) => (
-            <div
-              key={item.title}
-              className={`transition-all duration-700 transform ${
-                visible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
-              }`}
-              style={{ transitionDelay: `${idx * 100}ms` }}
-            >
-              <div className="grid-cols-2 p-6 hover:shadow-xl group">
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-auto mx-auto transition-transform duration-300 group-hover:scale-110"
-                />
+   
+
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+            {ITEMS.map((item, idx) => (
+              <div
+                key={item.title}
+                className={`text-center transition-all duration-700 transform cursor-pointer group hover:scale-105 hover:-translate-y-1 ${
+                  visible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                }`}
+                style={{ transitionDelay: `${idx * 100}ms` }}
+              >
+                <div className="hover:bg-orange-100 hover:rounded-xl">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-auto mx-auto"
+                  />
+                  {/* Optional: title like Services */}
+                  {/* 
+                  <h3 className="mt-3 text-lg font-semibold tracking-wide transition-colors duration-300 text-brandNavy group-hover:text-brandOrange">
+                    {item.title}
+                  </h3> 
+                  */}
+                </div>
+
+                {/* underline animation */}
+                <div className="w-0 h-0.5 bg-gradient-to-r from-brandOrange to-brandNavy mx-auto mt-2 group-hover:w-10 transition-all duration-300"></div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </div>
