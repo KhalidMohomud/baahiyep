@@ -100,8 +100,8 @@ export const Achievement = () => {
 
   // Use images from public/image/Achievements
   const achievements = [
-    { label: 'Happy Clients', number: '500+', img: '/image/Achievements/Happy Clients-01 (1).png' },
-    { label: 'Projects Completed', number: '300+', img: '/image/Achievements/Completed Projects-01-01 (1).png' },
+    { label: 'Happy Clients', number: '299+', img: '/image/Achievements/Happy Clients-01 (1).png' },
+    { label: 'Projects Completed', number: '199+', img: '/image/Achievements/Completed Projects-01-01 (1).png' },
     { label: 'Professional Team', number: '7+', img: '/image/Achievements/Profesional Team-01 (1).png' },
     { label: 'Countries Served', number: '15+', img: '/image/Achievements/Countries service-01 (1).png' },
   ];
