@@ -2,13 +2,14 @@ import  { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
-import { useNavigate } from 'react-router-dom'
+
 
 
 import SectionFooter from '../components/SectionFooter'
 import { FaRocket, FaPalette, FaCode, FaBullhorn, FaChartLine, FaMobile, FaSearch, FaUsers, FaLightbulb, FaCog, FaVideo, FaCalendarAlt, FaPrint } from 'react-icons/fa'
 import Packages from '../components/Packages'
 import SocialMediaPackages from '../components/SocialMediaPackages'
+import { useNavigate } from 'react-router-dom'
 // import WebDesign from '../components/WebDesign'
 
 // Register GSAP plugins
@@ -24,6 +25,8 @@ const Services = () => {
   const serviceCardsRef = useRef(null)
   const featureCardsRef = useRef(null)
   const navigate = useNavigate()
+
+  
 
   useEffect(() => {
     // Hero section animations
@@ -248,7 +251,7 @@ const Services = () => {
             className="mb-6 text-5xl font-bold text-white md:text-7xl hero-element"
           >
             Our
-            <span className="block text-white">Services</span>
+            <span className="block text-white" >Services</span>
           </h1>
           <p 
             ref={subtitleRef}
@@ -260,9 +263,12 @@ const Services = () => {
             <button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg bg-white/20 hover:bg-white/30 hover:scale-105 hover:shadow-xl">
               Get Started
             </button>
-            <button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:bg-white hover:text-primary hover:scale-105">
-              View Portfolio
-            </button>
+            <button
+      className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:bg-white hover:text-primary hover:scale-105"
+      onClick={() => navigate('/Portifole')} 
+    >
+      View Portfolio
+    </button>
           </div>
         </div>
         
