@@ -9,16 +9,13 @@ const Vision = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section header
+      // Section header animation
       gsap.from(".vision-header", {
         y: -50,
         opacity: 0,
         duration: 1,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
       });
 
       // Target circles pulse
@@ -38,23 +35,17 @@ const Vision = () => {
         duration: 1,
         stagger: 0.3,
         ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: ".target-graphic",
-          start: "top 75%",
-        },
+        scrollTrigger: { trigger: ".target-graphic", start: "top 75%" },
       });
 
-      // Content cards (Vision, Mission, Values)
+      // Vision/Mission/Values cards
       gsap.from(".vision-item", {
         x: -100,
         opacity: 0,
         duration: 1,
         stagger: 0.4,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".vision-item",
-          start: "top 85%",
-        },
+        scrollTrigger: { trigger: ".vision-item", start: "top 85%" },
       });
 
       // Background floating effect
@@ -75,7 +66,7 @@ const Vision = () => {
       ref={sectionRef}
       className="relative min-h-screen overflow-hidden bg-white"
     >
-      {/* Background */}
+      {/* Background Pattern */}
       <div className="absolute inset-0 network-pattern opacity-20"></div>
 
       <div className="container relative z-10 px-6 py-16 mx-auto">
@@ -90,10 +81,10 @@ const Vision = () => {
           </div>
 
           <div className="grid items-center gap-16 lg:grid-cols-2">
-            {/* Target graphic */}
+            {/* 🎯 Target Graphic */}
             <div className="relative flex justify-center target-graphic">
               <div className="relative">
-                {/* Target circles */}
+                {/* Target Circles */}
                 <div className="relative flex items-center justify-center border-8 rounded-full w-80 h-80 border-navy circle-pulse">
                   <div className="flex items-center justify-center border-8 rounded-full w-60 h-60 border-primary circle-pulse">
                     <div className="flex items-center justify-center w-40 h-40 rounded-full bg-primary circle-pulse">
@@ -147,7 +138,7 @@ const Vision = () => {
               </div>
             </div>
 
-            {/* Content */}
+            {/* 📌 Content */}
             <div className="space-y-12">
               {/* Vision */}
               <div className="flex items-start space-x-6 vision-item">
@@ -168,7 +159,7 @@ const Vision = () => {
                     <span className="text-sm font-bold text-white">Vision</span>
                   </div>
                 </div>
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="relative mt-4 text-lg leading-relaxed text-gray-700">
                   Provide quality services with our innovation and creativity
                 </p>
               </div>
@@ -193,7 +184,7 @@ const Vision = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="relative mt-4 text-lg leading-relaxed text-gray-700">
                   To Become The largest Content marketing hub in Somalia and
                   Horn of Africa
                 </p>
@@ -217,7 +208,7 @@ const Vision = () => {
                     <span className="text-sm font-bold text-white">Values</span>
                   </div>
                 </div>
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="relative mt-4 text-lg leading-relaxed text-gray-700 ">
                   Creativity, Customer Support, Reputation, Quality
                 </p>
               </div>

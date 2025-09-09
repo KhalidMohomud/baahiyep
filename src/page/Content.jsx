@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaUser, FaComments, FaPaperPlane, FaCheckCircle, FaRocket, FaLightbulb, FaUsers, FaGlobe, FaClock } from 'react-icons/fa';
+import SectionFooter from '../components/SectionFooter';
 
 
 // Register GSAP plugins
@@ -153,7 +154,7 @@ const Contact = () => {
 
   return (
     <div ref={sectionRef} className="relative min-h-screen overflow-hidden bg-white">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white/50"></div>
+    
       
       <div className="container relative z-10 px-6 py-16 mx-auto">
         <div className="mx-auto max-w-7xl">
@@ -326,21 +327,11 @@ const Contact = () => {
       </div>
       
       {/* Bottom section */}
-      <div className="py-6 bg-brandOrange">
-        <div className="container px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-white md:flex-row md:space-y-0 md:space-x-6">
-            <div className="flex items-center space-x-4">
-              <FaGlobe className="w-6 h-6" />
-              <FaClock className="w-6 h-6" />
-              <span className="font-semibold">Baahiye Digital Marketing</span>
-            </div>
-            <div className="text-sm opacity-90">
-              Transforming businesses through digital innovation
-            </div>
-          </div>
-        </div>
-      </div>
+   
+          <SectionFooter />
     </div>
+
+
   );
 };
 
