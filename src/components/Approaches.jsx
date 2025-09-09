@@ -34,7 +34,7 @@ function Approaches() {
   return (
 <div className="ml-2 mr-2 bg-gradient-to-br from-gray-50 via-white to-gray-100 ">
   <section ref={containerRef} className="px-4 mx-auto py-14 max-w-7xl">
-    <h3 className="mb-16 text-3xl font-bold text-center text-white">Our Approaches</h3>
+    <h3 className="mb-16 text-3xl font-bold text-center text-black">Our Approaches</h3>
 
     <div className="grid max-w-6xl gap-8 mx-auto md:grid-cols-3 lg:grid-cols-5">
       {ITEMS.map((item, idx) => (

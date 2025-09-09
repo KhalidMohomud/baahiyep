@@ -11,6 +11,7 @@ import Testimonials from '../components/Testimonials';
 import Homehero from '../components/Homehero';
 import SocialMediaPackages from '../components/SocialMediaPackages';
 import { useNavigate } from 'react-router-dom';
+import Clients from '../components/Clients';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +23,7 @@ const Home = () => {
   const heroRef = useRef(null);
   const servicesRef = useRef(null);
   const portfolioRef = useRef(null);
-
+ const clientsRef = useRef(null);
   const achievementsRef = useRef(null);
   const blogRef = useRef(null);
 
@@ -82,12 +83,7 @@ const Home = () => {
 
  
 
-  // const clients = [
-  //   { name: 'SIMAD UNIVERSITY', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.25-removebg-preview.png' },
-  //   { name: 'SOMALI SUDANESE SPECIALIZED HOSPITAL', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png' },
-  //   { name: 'AL-BIRRI', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png' },
-  //   { name: 'MAD Lab', logo: '/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png' }
-  // ];
+
 
   // const blogPosts = [
   //   {
@@ -528,6 +524,10 @@ const Home = () => {
     </div>
   </div>
 </section>
+     {/* Clients */}
+      <div ref={clientsRef}>
+        <Clients />
+      </div>
 
 
       {/* Testimonials Section */}
