@@ -32,7 +32,7 @@ const Header = () => {
               { to: '/service', label: 'Services' },
                 { to: '/about', label: 'About' },
                  { to: '/Contact', label: 'Contact' },
-              { to: '/Portifole', label: 'Portfolio' },
+              { to: 'https://www.behance.net/baahiyedigitalmark', label: 'Portfolio' },
               ].map((link) => (
                 <NavLink
                   key={link.to}

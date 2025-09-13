@@ -13,6 +13,7 @@ import SocialMediaPackages from '../components/SocialMediaPackages';
 import { useNavigate } from 'react-router-dom';
 import Clients from '../components/Clients';
 import { Achievement } from '../components/Achievement';
+import EventBrandingPackages from '../components/EventBrandingPackages';
 // import Achievement  "../components/Achievement";
 
 // Register ScrollTrigger plugin
@@ -451,6 +452,10 @@ const Home = () => {
       {/* <WebDesign/> */}
       <div>
           <SocialMediaPackages/>
+      </div>
+
+      <div>
+        <EventBrandingPackages/>
       </div>
     
 

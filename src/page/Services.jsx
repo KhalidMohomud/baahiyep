@@ -10,6 +10,7 @@ import { FaRocket, FaPalette, FaCode, FaBullhorn, FaChartLine, FaMobile, FaSearc
 import Packages from '../components/Packages'
 import SocialMediaPackages from '../components/SocialMediaPackages'
 import { useNavigate } from 'react-router-dom'
+import EventBrandingPackages from '../components/EventBrandingPackages'
 // import WebDesign from '../components/WebDesign'
 
 // Register GSAP plugins
@@ -333,6 +334,9 @@ const Services = () => {
 
        <Packages/>
        {/* <WebDesign/> */}
+           <div>
+               <EventBrandingPackages/>
+             </div>
 
        <SocialMediaPackages/>
 

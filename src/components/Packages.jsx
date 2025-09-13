@@ -2,22 +2,65 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setAmount, setMeta } from '../store/paymentSlice';
 import { useNavigate } from 'react-router-dom';
-import SectionFooter from './SectionFooter';
-
-const features = [
-  'Logo Design',
-  'Letter Head & Envelope',
-  'Stamp & Business Card',
-  'Profile Book',
-  'Brochure & Roll Up',
-  'Billboard & Flayer',
-  'Social Media Setup',
-];
 
 const data = [
-  { name: 'Basic Package', stars: 1, checks: [0, 1], price: 49 },
-  { name: 'Silver Package', stars: 2, checks: [0, 1, 2], price: 91 },
-  { name: 'Gold Package', stars: 3, checks: [0, 1, 2, 3, 4, 5, 6], price: 199 },
+  {
+    name: 'Kaaliye',
+    stars: 1,
+    price: 120,
+    features: [
+      { label: 'Logo option 2', included: true },
+      { label: 'Business Card & id', included: true },
+      { label: 'Letter Head & Envelope', included: true },
+      { label: 'Finance Document', included: true },
+      { label: 'Profile Book', included: false },
+      { label: 'Banners', included: false },
+      { label: 'Brochure/flyer', included: false },
+      { label: 'Social Media Setup', included: false },
+      { label: 'Marketing Plan and Strategy', included: false },
+      { label: 'Brand Consult 1h', included: false },
+      { label: '5 poster design and cover', included: false },
+      { label: '1 intro video', included: false },
+    ],
+  },
+  {
+    name: 'Kaabe',
+    stars: 2,
+    price: 200,
+    features: [
+      { label: 'Logo option 3', included: true },
+      { label: 'Business Card & id', included: true },
+      { label: 'Letter Head & Envelope', included: true },
+      { label: 'Finance Document', included: true },
+      { label: 'Profile Book', included: true },
+      { label: 'Banners', included: true },
+      { label: 'Brochure/flyer', included: true },
+      { label: 'Social Media Setup', included: false },
+      { label: 'Marketing Plan and Strategy', included: false },
+      { label: 'Brand Consult 2h', included: true },
+      { label: '5 poster design and cover', included: true },
+      { label: '1 intro video', included: false },
+    ],
+  },
+  {
+    name: 'Kudhan',
+    stars: 3,
+    price: 350,
+    features: [
+      { label: 'Logo option 3', included: true },
+      { label: 'Business Card & id', included: true },
+      { label: 'Letter Head & Envelope', included: true },
+      { label: 'Finance Document', included: true },
+      { label: 'Profile Book', included: true },
+      { label: 'Banners', included: true },
+      { label: 'Brochure/flyer', included: true },
+      { label: 'Social Media Setup', included: true },
+      { label: 'Marketing Plan and Strategy', included: true },
+      { label: 'Brand Consult 3h', included: true },
+      { label: '5 poster design and cover', included: true },
+      { label: '1 intro video', included: true },
+    ],
+  },
 ];
 
 const Packages = () => {
@@ -75,26 +118,23 @@ const Packages = () => {
 
                 {/* Features */}
                 <ul className="flex-1 px-6 space-y-4 text-base">
-                  {features.map((label, idx) => {
-                    const isChecked = pkg.checks.includes(idx);
-                    return (
-                      <li
-                        key={label}
-                        className="flex items-center gap-3 text-gray-700"
+                  {pkg.features.map((f, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-700"
+                    >
+                      <span
+                        className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
+                          f.included
+                            ? 'bg-green-100 text-green-600'
+                            : 'bg-red-100 text-red-500'
+                        }`}
                       >
-                        <span
-                          className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
-                            isChecked
-                              ? 'bg-green-100 text-green-600'
-                              : 'bg-red-100 text-red-500'
-                          }`}
-                        >
-                          {isChecked ? '✔' : '✖'}
-                        </span>
-                        <span>{label}</span>
-                      </li>
-                    );
-                  })}
+                        {f.included ? '✔' : '✖'}
+                      </span>
+                      <span>{f.label}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 {/* Choose Plan Button */}
@@ -115,8 +155,6 @@ const Packages = () => {
           ))}
         </div>
       </div>
-{/* 
-      <SectionFooter /> */}
     </div>
   );
 };

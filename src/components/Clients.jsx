@@ -2,11 +2,11 @@ import React, { useEffect, useMemo, useRef } from 'react'
 
 // Source images
 const DEFAULT_LOGOS = [
-  { src: '/image/WhatsApp_Image_2025-08-22_at_14.23.25-removebg-preview.png', alt: 'Client A' },
+  { src: '/image/clients/logo111-01.png', alt: 'Client A' },
   { src: '/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png', alt: 'Client B' },
   { src: '/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png', alt: 'Client C' },
-  { src: '/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png', alt: 'Client D' },
-  { src: '/image/logo.png', alt: 'Client E' },
+  { src: '/image/clients/cm.jpg', alt: 'Client D' },
+  { src: '/image/clients/ccr.png', alt: 'Client E' },
 ]
 
 // Card with elegant styling
