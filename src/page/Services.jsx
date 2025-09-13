@@ -9,7 +9,7 @@ import SectionFooter from '../components/SectionFooter'
 import { FaRocket, FaPalette, FaCode, FaBullhorn, FaChartLine, FaMobile, FaSearch, FaUsers, FaLightbulb, FaCog, FaVideo, FaCalendarAlt, FaPrint } from 'react-icons/fa'
 import Packages from '../components/Packages'
 import SocialMediaPackages from '../components/SocialMediaPackages'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import EventBrandingPackages from '../components/EventBrandingPackages'
 // import WebDesign from '../components/WebDesign'
 
@@ -264,12 +264,15 @@ const Services = () => {
             <button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg bg-white/20 hover:bg-white/30 hover:scale-105 hover:shadow-xl">
               Get Started
             </button>
+           
             <button
-      className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:bg-white hover:text-primary hover:scale-105"
-      onClick={() => navigate('/Portifole')} 
-    >
-      View Portfolio
-    </button>
+  className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform border-2 border-white rounded-full hover:bg-white hover:text-primary hover:scale-105"
+  onClick={() => window.open('https://www.behance.net/baahiyedigitalmark', '_blank')}
+>
+  View Portfolio
+</button>
+
+    
           </div>
         </div>
         

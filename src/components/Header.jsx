@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useClerkAuth } from '../contexts/ClerkAuthContext';
 import { UserButton } from '@clerk/clerk-react';
@@ -115,7 +115,8 @@ const Header = () => {
               { to: '/service', label: 'Services' },
                 { to: '/about', label: 'About' },
                  { to: '/Contact', label: 'Contact' },
-              { to: '/Portifole', label: 'Portfolio' },
+             
+                 { to: 'https://www.behance.net/baahiyedigitalmark', label: 'Portfolio' },
              
             ].map((link) => (
               <NavLink
