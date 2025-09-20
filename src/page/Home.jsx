@@ -450,13 +450,13 @@ const Home = () => {
       <Packages/>
 
       {/* <WebDesign/> */}
-      <div>
+      {/* <div>
           <SocialMediaPackages/>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <EventBrandingPackages/>
-      </div>
+      </div> */}
     
 
       {/* Achievements Section */}
