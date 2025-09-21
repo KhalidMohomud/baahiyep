@@ -34,11 +34,11 @@ function Approaches() {
     <div className="relative mt-3">
       <section
         ref={containerRef}
-        className="py-20 bg-slate-100"
+        className="py-20 bg-slate-100 dark:bg-dark-surface transition-colors duration-300"
       >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         
-          <h2 className="mb-16 text-4xl font-bold text-center text-brandNavy">
+          <h2 className="mb-16 text-4xl font-bold text-center text-brandNavy dark:text-dark-text">
             Our Approaches
           </h2>
 

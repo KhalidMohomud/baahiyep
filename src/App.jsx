@@ -3,6 +3,7 @@ import './App.css';
 import { Outlet } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/clerk-react';
 import { ClerkAuthProvider } from './contexts/ClerkAuthContext';
+import { DarkModeProvider } from './contexts/DarkModeContext';
 import Header from './components/Header';
 
 import WhatsAppChatbot from './components/WhatsAppChatbot';
@@ -14,14 +15,16 @@ function App() {
   return (
     <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY}>
       <ClerkAuthProvider>
-        <div className="flex flex-col min-h-screen">
-          <ScrollToTop />
-          <Header />
-          <main className="flex-1">
-            <Outlet />
-          </main>
-          <WhatsAppChatbot />
-        </div>
+        <DarkModeProvider>
+          <div className="flex flex-col min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300">
+            <ScrollToTop />
+            <Header />
+            <main className="flex-1">
+              <Outlet />
+            </main>
+            <WhatsAppChatbot />
+          </div>
+        </DarkModeProvider>
       </ClerkAuthProvider>
     </ClerkProvider>
   );

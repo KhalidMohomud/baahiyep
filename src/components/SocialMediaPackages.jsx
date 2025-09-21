@@ -56,7 +56,7 @@ const SocialMediaPackages = () => {
   ];
 
   return (
-    <section className="relative py-20 overflow-visible bg-gradient-to-b from-white via-gray-50 to-white">
+    <section className="relative py-20 overflow-visible bg-gradient-to-b from-white via-gray-50 to-white dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg transition-colors duration-300">
       {/* background */}
       <div className="absolute inset-0 pointer-events-none network-pattern opacity-10"></div>
 
@@ -67,7 +67,7 @@ const SocialMediaPackages = () => {
             Social Media Packages
           </h2>
         </div>
-        <p className="max-w-5xl mx-auto mb-10 text-base leading-relaxed text-center text-gray-600 md:mb-16 md:text-lg">
+        <p className="max-w-5xl mx-auto mb-10 text-base leading-relaxed text-center text-gray-600 dark:text-gray-300 md:mb-16 md:text-lg">
           Get the very best <span className="font-bold text-brandOrange">Social Media Packages</span> specifically suited to your budget.
           Each package includes the perfect balance of strategy, creative design, management, advertising, and reporting.
         </p>
@@ -80,7 +80,7 @@ const SocialMediaPackages = () => {
               className="relative transition transform group hover:-translate-y-2"
             >
               {/* Card */}
-              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg rounded-2xl hover:shadow-2xl">
+              <div className="flex flex-col h-full overflow-hidden transition bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 shadow-lg rounded-2xl hover:shadow-2xl">
                 {/* Card header */}
                 <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
                   {pkg.name}
@@ -88,7 +88,7 @@ const SocialMediaPackages = () => {
 
                 {/* Pricing */}
                 <div className="my-6 text-center">
-                  <span className="text-4xl font-extrabold text-brandNavy">
+                  <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
                     ${pkg.price}
                   </span>
                 </div>
@@ -99,7 +99,7 @@ const SocialMediaPackages = () => {
                     <li
                       key={idx}
                       className={`flex items-center gap-3 ${
-                        f.included ? 'text-gray-700' : 'text-gray-400 line-through'
+                        f.included ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 dark:text-gray-500 line-through'
                       }`}
                     >
                       <span

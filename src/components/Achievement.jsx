@@ -150,9 +150,9 @@ export const Achievement = () => {
   }, []);
 
   return (
-    <section ref={achievementsRef} className="py-20 bg-white">
+    <section ref={achievementsRef} className="py-20 bg-white dark:bg-dark-bg transition-colors duration-300">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">
+        <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy dark:text-dark-text">
           Our Achievements
         </h2>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
@@ -168,11 +168,11 @@ export const Achievement = () => {
               <div
                 id={`counter-${index}`}
                 data-target={achievement.number.replace(/\D/g, '')}
-                className="mb-2 text-3xl font-bold text-brandNavy"
+                className="mb-2 text-3xl font-bold text-brandNavy dark:text-dark-text"
               >
                 0+
               </div>
-              <div className="text-gray-600">{achievement.label}</div>
+              <div className="text-gray-600 dark:text-gray-300">{achievement.label}</div>
             </div>
           ))}
         </div>

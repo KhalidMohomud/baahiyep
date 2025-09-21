@@ -5,12 +5,10 @@ import Home from "./page/Home";
 import About from "./page/About";
 import Services from "./page/Services";
 import Contact from "./page/Content";
-import SingUp from  "./page/SingUp";
-import SingIn from "./page/SingIn";
 import Portifole from "./page/Portifole";
-import UserProfile from "./components/UserProfile";
+
 import ProtectedRoute from "./components/ProtectedRoute";
-import VerifyEmail from "./page/VerifyEmail";
+
 import Payments from "./page/Payments";
 import InformtionSevices from "./page/InformtionSevices";
 
@@ -29,14 +27,11 @@ const router = createBrowserRouter([
       { path: '/Contact', element: <Contact /> },
       { path: '/payments', element: <Payments /> },
      
-      { path: '/SingUp', element: <SingUp /> },
-      { path: '/SingIn', element: <SingIn /> },
-      { path: 'verify-email', element: <VerifyEmail /> },
       {
         path: 'profile',
         element: (
           <ProtectedRoute>
-            <UserProfile />
+        
           </ProtectedRoute>
         )
       },

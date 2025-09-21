@@ -240,7 +240,7 @@ const Services = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 ">
+    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg">
       
       {/* Hero Section */}
       <div className='px-2 '>
@@ -284,13 +284,13 @@ const Services = () => {
       </div>
 
       {/* Services Section */}
-      <div ref={servicesRef} className="py-20 bg-white">
+      <div ref={servicesRef} className="py-20 transition-colors duration-300 bg-white dark:bg-dark-surface">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
+            <h2 className="mb-6 text-4xl font-bold text-gray-900 dark:text-dark-text md:text-5xl">
               What We Offer
             </h2>
-            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+            <p className="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300">
               From digital marketing to web development, we provide end-to-end solutions to help your business thrive in the digital age.
             </p>
           </div>
@@ -302,19 +302,19 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-8 transition-all duration-300 bg-white border border-gray-100 shadow-lg cursor-pointer group rounded-2xl hover:shadow-2xl"
+                className="p-8 transition-all duration-300 bg-white border border-gray-100 shadow-lg cursor-pointer dark:bg-dark-card dark:border-gray-600 group rounded-2xl hover:shadow-2xl"
                 onMouseEnter={handleCardHover}
                 onMouseLeave={handleCardLeave}
               >
                  <div className="mb-6 text-center">
     <div className="mb-4">{service.icon}</div>
-    <h3 className="mb-3 text-2xl font-bold text-gray-900">{service.title}</h3>
-    <p className="leading-relaxed text-gray-600">{service.description}</p>
+    <h3 className="mb-3 text-2xl font-bold text-gray-900 dark:text-dark-text">{service.title}</h3>
+    <p className="leading-relaxed text-gray-600 dark:text-gray-300">{service.description}</p>
   </div>
                 
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-600">
+                    <li key={featureIndex} className="flex items-center text-gray-600 dark:text-gray-300">
                       <div className="w-2 h-2 mr-3 rounded-full bg-brandOrange"></div>
                       {feature}
                     </li>
@@ -344,13 +344,13 @@ const Services = () => {
        <SocialMediaPackages/>
 
       {/* Features Section */}
-      <div ref={featuresRef} className="py-20 bg-gradient-to-r from-gray-50 to-white">
+      <div ref={featuresRef} className="py-20 transition-colors duration-300 bg-gradient-to-r from-gray-50 to-white dark:from-dark-surface dark:to-dark-bg">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
+            <h2 className="mb-6 text-4xl font-bold text-gray-900 dark:text-dark-text md:text-5xl">
               Why Choose Us
             </h2>
-            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+            <p className="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300">
               We combine creativity, technology, and strategy to deliver exceptional results for our clients.
             </p>
           </div>
@@ -367,8 +367,8 @@ const Services = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 mb-6 transition-transform duration-300 rounded-full bg-gradient-to-br from-brandOrange to-brandNavy group-hover:scale-110">
                   <div className="text-white">{feature.icon}</div>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-dark-text">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
               </div>
             ))}
           </div>

@@ -96,7 +96,7 @@ function InformtionSevices() {
   const service = SERVICE_CONTENT[title] || SERVICE_CONTENT['digital-marketing']
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-dark-bg dark:to-dark-surface transition-colors duration-300">
       {/* Hero */}
       <section className={`relative py-20 text-white bg-gradient-to-r ${service.gradient}`}>
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -128,11 +128,11 @@ function InformtionSevices() {
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           {/* What you get */}
-          <div className="p-8 bg-white border border-gray-100 shadow-lg rounded-2xl">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">What You Get</h2>
+          <div className="p-8 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-600 shadow-lg rounded-2xl">
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-dark-text">What You Get</h2>
             <ul className="space-y-3">
               {service.points.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-gray-700">
+                <li key={p} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
                   <FaCheck className="mt-1 text-green-600" />
                   <span>{p}</span>
                 </li>
@@ -141,11 +141,11 @@ function InformtionSevices() {
           </div>
 
           {/* Highlights */}
-          <div className="p-8 bg-white border border-gray-100 shadow-lg rounded-2xl">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">Highlights</h2>
+          <div className="p-8 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-600 shadow-lg rounded-2xl">
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-dark-text">Highlights</h2>
             <div className="flex flex-wrap gap-3">
               {service.highlights.map((h) => (
-                <span key={h} className="px-4 py-2 text-sm font-semibold text-gray-700 border border-gray-200 rounded-full bg-gray-50">
+                <span key={h} className="px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 rounded-full bg-gray-50 dark:bg-dark-surface">
                   {h}
                 </span>
               ))}

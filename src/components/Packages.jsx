@@ -68,7 +68,7 @@ const Packages = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative py-20 overflow-visible bg-gradient-to-b from-white via-gray-50 to-white">
+    <div className="relative py-20 overflow-visible transition-colors duration-300 bg-gradient-to-b from-white via-gray-50 to-white dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg">
       {/* background pattern */}
       <div className="absolute inset-0 pointer-events-none network-pattern opacity-10"></div>
 
@@ -79,17 +79,17 @@ const Packages = () => {
             Branding Packages
           </h2>
         </div>
-        <p className="max-w-5xl mx-auto mb-10 text-base leading-relaxed text-center text-gray-600 md:mb-16 md:text-lg">
+        <p className="max-w-5xl mx-auto mb-10 text-base leading-relaxed text-center text-gray-600 dark:text-gray-300 md:mb-16 md:text-lg">
           A <span className="font-bold text-brandOrange">Branding Package</span> is a set of digital and physical resources developed to
           establish a brand's image.
         </p>
 
         {/* Packages */}
-        <div className="grid w-full gap-10 md:grid-cols-3">
+        <div className="grid w-full grid-cols-2 gap-8 lg:grid-cols-3">
           {data.map((pkg) => (
             <div
               key={pkg.name}
-              className="relative transition transform group hover:-translate-y-2"
+              className="relative flex flex-col h-full transition transform group hover:-translate-y-2"
             >
               {/* Stars above card */}
               <div className="absolute flex gap-1 -translate-x-1/2 -top-7 left-1/2">
@@ -104,14 +104,14 @@ const Packages = () => {
               </div>
 
               {/* Card */}
-              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg rounded-2xl hover:shadow-2xl">
+              <div className="flex flex-col flex-1 overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-surface dark:border-gray-600 rounded-2xl hover:shadow-2xl">
                 <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
                   {pkg.name}
                 </div>
 
                 {/* Pricing */}
                 <div className="my-6 text-center">
-                  <span className="text-4xl font-extrabold text-brandNavy">
+                  <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
                     ${pkg.price}
                   </span>
                 </div>
@@ -121,7 +121,7 @@ const Packages = () => {
                   {pkg.features.map((f, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center gap-3 text-gray-700"
+                      className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
                     >
                       <span
                         className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${

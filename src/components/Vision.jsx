@@ -64,7 +64,7 @@ const Vision = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-white"
+      className="relative min-h-screen overflow-hidden bg-white dark:bg-dark-bg transition-colors duration-300"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 network-pattern opacity-20"></div>
@@ -159,7 +159,7 @@ const Vision = () => {
                     <span className="text-sm font-bold text-white">Vision</span>
                   </div>
                 </div>
-                <p className="relative mt-4 text-lg leading-relaxed text-gray-700">
+                <p className="relative mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Provide quality services with our innovation and creativity
                 </p>
               </div>
@@ -184,7 +184,7 @@ const Vision = () => {
                     </span>
                   </div>
                 </div>
-                <p className="relative mt-4 text-lg leading-relaxed text-gray-700">
+                <p className="relative mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   To Become The largest Content marketing hub in Somalia and
                   Horn of Africa
                 </p>
@@ -208,7 +208,7 @@ const Vision = () => {
                     <span className="text-sm font-bold text-white">Values</span>
                   </div>
                 </div>
-                <p className="relative mt-4 text-lg leading-relaxed text-gray-700 ">
+                <p className="relative mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Creativity, Customer Support, Reputation, Quality
                 </p>
               </div>

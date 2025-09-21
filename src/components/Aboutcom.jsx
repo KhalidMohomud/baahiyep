@@ -70,8 +70,8 @@ const Aboutcom = () => {
         </div>
 
         {/* Text Content */}
-        <div className="space-y-6 text-gray-600 about-text">
-  <h2 className="text-3xl font-extrabold leading-snug text-brandNavy">
+        <div className="space-y-6 text-gray-600 dark:text-gray-300 about-text">
+  <h2 className="text-3xl font-extrabold leading-snug text-brandNavy dark:text-dark-text">
     About <span className="text-brandOrange">Baahiye</span>
   </h2>
 
@@ -92,7 +92,7 @@ const Aboutcom = () => {
       Our mission is to <span className="font-semibold">exceed expectations</span> 
       and craft solutions that align with our clients’ goals while elevating
       their brand presence. We help businesses embrace{" "}
-      <span className="font-semibold text-brandNavy">digital transformation</span> 
+      <span className="font-semibold text-brandNavy dark:text-dark-text">digital transformation</span> 
       and unlock new opportunities with creativity and efficiency.
     </p>
   </div>

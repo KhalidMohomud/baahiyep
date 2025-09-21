@@ -5,8 +5,11 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Instantly scroll to top when pathname changes (no smooth scrolling)
-    window.scrollTo(0, 0);
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0); // can increase to 50 or 100 if needed
+
+    return () => clearTimeout(timeout);
   }, [pathname]);
 
   return null;

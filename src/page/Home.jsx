@@ -383,7 +383,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white " >
+    <div className="min-h-screen transition-colors duration-300 bg-white dark:bg-dark-bg" >
       
       {/* Hero Section */}
       <div className='px-3 pt-1'>
@@ -394,9 +394,9 @@ const Home = () => {
 
       {/* Services Section */}
       <div className='relative mt-3 '>
- <section ref={servicesRef} className="py-20 bg-slate-100 ">
+ <section ref={servicesRef} className="py-20 transition-colors duration-300 bg-slate-100 dark:bg-dark-surface">
   <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">
+    <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy dark:text-dark-text">
       Our Services
     </h2>
 
@@ -465,33 +465,47 @@ const Home = () => {
       
    
          {/* Portfolio Section */}
-       <section ref={portfolioRef} className="py-20 bg-[#f7f9fb]">
+    <section
+  ref={portfolioRef}
+  className="py-20 bg-[#f7f9fb] dark:bg-dark-surface transition-colors duration-300"
+>
   <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <h2 className="mb-6 text-4xl font-extrabold tracking-tight text-center text-brandNavy">
-      Our Portfolios
-    </h2>
-    <p className="max-w-3xl mx-auto mb-16 text-lg text-center text-gray-500">
-      Our portfolios speak for themselves. Check out all projects and see for yourself.
-    </p>
+    {/* Heading */}
+    <div className="text-center mb-14">
+      <h2 className="text-4xl font-extrabold tracking-tight text-brandNavy dark:text-dark-text">
+        Our Portfolios
+      </h2>
+      <p className="max-w-3xl mx-auto mt-4 text-lg text-gray-500 dark:text-gray-300">
+        Our portfolios speak for themselves. Explore our latest projects that
+        showcase creativity, quality, and innovation.
+      </p>
+    </div>
 
-    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+    {/* Portfolio Grid */}
+    <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:gap-12">
       {portfolioItems.map((item, index) => (
         <div
           key={index}
-          className="relative overflow-hidden transition-shadow duration-300 bg-white shadow-lg group rounded-2xl hover:shadow-2xl"
+          className="relative overflow-hidden transition-all duration-500 bg-white shadow-md dark:bg-dark-card rounded-2xl group hover:shadow-2xl"
         >
-          <div className="overflow-hidden rounded-t-2xl">
+          {/* Image with Overlay */}
+          <div className="relative overflow-hidden rounded-t-2xl">
             <img
               src={item.image}
               alt={item.category}
-              className="object-cover w-full h-56 transition-transform duration-500 sm:h-64 md:h-56 lg:h-64 group-hover:scale-105"
+              className="object-cover w-full h-48 transition-transform duration-500 sm:h-56 lg:h-64 group-hover:scale-110"
             />
-            <div className="absolute flex items-center justify-center w-12 h-12 font-semibold text-white rounded-full shadow-lg top-4 right-4 bg-brandOrange">
-              {item.progress}
+            {/* Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-0 bg-black/40 group-hover:opacity-100">
+              <button className="px-5 py-2 text-sm font-medium text-white transition-colors duration-300 rounded-full shadow-md bg-brandOrange hover:bg-brandNavy">
+                View Project
+              </button>
             </div>
           </div>
-          <div className="p-6 text-center">
-            <h3 className="text-xl font-semibold tracking-wide text-brandNavy">
+
+          {/* Content */}
+          <div className="p-5 text-center">
+            <h3 className="text-lg font-semibold tracking-wide transition-colors duration-300 text-brandNavy dark:text-dark-text group-hover:text-brandOrange">
               {item.category}
             </h3>
           </div>
@@ -499,15 +513,15 @@ const Home = () => {
       ))}
     </div>
 
-    <div className="text-center mt-14">
-      <button
-        className="inline-block px-12 py-4 text-lg font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-brandOrange hover:bg-brandNavy hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-brandOrange/50"
-      >
-        VIEW MORE
+    {/* Main CTA Button */}
+    <div className="mt-16 text-center">
+      <button className="px-12 py-4 text-lg font-semibold text-white transition-all duration-500 transform rounded-full shadow-lg bg-gradient-to-r from-brandOrange to-brandNavy hover:opacity-90 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-brandOrange/40">
+        Discover More Projects
       </button>
     </div>
   </div>
 </section>
+
      {/* Clients */}
       <div ref={clientsRef}>
         <Clients />

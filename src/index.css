@@ -21,6 +21,12 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #ffffff;
   overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode body styles */
+.dark body {
+  background-color: #0F172A;
 }
 
 /* Ensure pages start at top */
@@ -142,6 +148,14 @@ body {
     radial-gradient(circle at 75% 75%, #E0E0E0 2px, transparent 2px),
     linear-gradient(45deg, transparent 40%, rgba(224,224,224,0.1) 50%, transparent 60%);
   background-size: 50px 50px, 50px 50px, 100px 100px;
+}
+
+/* Dark mode network pattern */
+.dark .network-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, #374151 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #374151 2px, transparent 2px),
+    linear-gradient(45deg, transparent 40%, rgba(55,65,81,0.1) 50%, transparent 60%);
 }
 
 /* Service detail page animations */

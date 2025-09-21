@@ -103,7 +103,7 @@ function About() {
   }, [])
 
   return (
-    <div ref={pageRef} className="min-h-screen bg-white">
+    <div ref={pageRef} className="min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300">
       {/* Hero banner */}
       <section ref={heroRef} className="relative ml-2 mr-2 overflow-hidden ">
   <div className="pb-16 bg-gradient-to-r from-red-800 via-red-700 to-brandOrange pt-28">

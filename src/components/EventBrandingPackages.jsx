@@ -56,7 +56,7 @@ const EventBrandingPackages = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+    <section className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-white dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg transition-colors duration-300">
       <div className="absolute inset-0 pointer-events-none network-pattern opacity-10"></div>
 
       <div className="relative px-6 mx-auto max-w-7xl">
@@ -66,27 +66,27 @@ const EventBrandingPackages = () => {
           </h2>
         </div>
 
-        <p className="max-w-5xl mx-auto mb-10 text-base leading-relaxed text-center text-gray-600 md:mb-16 md:text-lg">
+        <p className="max-w-5xl mx-auto mb-10 text-base leading-relaxed text-center text-gray-600 dark:text-gray-300 md:mb-16 md:text-lg">
           Choose from our <span className="font-bold text-brandOrange">Event Branding Packages</span> to match your event’s goals and budget.
         </p>
 
         <div className="grid w-full gap-10 md:grid-cols-3">
           {packages.map((pkg) => (
             <div key={pkg.name} className="relative transition transform group hover:-translate-y-2">
-              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg rounded-2xl hover:shadow-2xl">
+              <div className="flex flex-col h-full overflow-hidden transition bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 shadow-lg rounded-2xl hover:shadow-2xl">
                 <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
                   {pkg.name}
                 </div>
 
                 <div className="my-6 text-center">
-                  <span className="text-4xl font-extrabold text-brandNavy">${pkg.price}</span>
+                  <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">${pkg.price}</span>
                 </div>
 
                 <ul className="flex-1 px-6 space-y-4 text-base">
                   {pkg.features.map((f, idx) => (
                     <li
                       key={idx}
-                      className={`flex items-center gap-3 ${f.included ? 'text-gray-700' : 'text-gray-400 line-through'}`}
+                      className={`flex items-center gap-3 ${f.included ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 dark:text-gray-500 line-through'}`}
                     >
                       <span
                         className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${

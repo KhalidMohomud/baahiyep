@@ -111,9 +111,9 @@ const Testimonials = () => {
 
   return (
     <div>
-      <section ref={testimonialsRef} className="py-20 bg-gradient-to-br from-lightGray via-white to-lightGray">
+      <section ref={testimonialsRef} className="py-20 bg-gradient-to-br from-lightGray via-white to-lightGray dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface transition-colors duration-300">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy">
+          <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy dark:text-dark-text">
             What Our Clients Say
           </h2>
           
@@ -134,8 +134,8 @@ const Testimonials = () => {
             </button>
 
             <div className="text-center">
-              <div className="text-lg font-semibold text-brandNavy">Scroll to see more testimonials</div>
-              <div className="mt-1 text-sm text-gray-600">Use arrows or swipe</div>
+              <div className="text-lg font-semibold text-brandNavy dark:text-dark-text">Scroll to see more testimonials</div>
+              <div className="mt-1 text-sm text-gray-600 dark:text-gray-300">Use arrows or swipe</div>
             </div>
 
             <button
@@ -163,7 +163,7 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <div 
                   key={index} 
-                  className="relative flex-shrink-0 p-8 text-center transition-all duration-500 bg-white border border-gray-100 shadow-lg testimonial-card group rounded-2xl hover:shadow-2xl hover:-translate-y-2 w-80 snap-start"
+                  className="relative flex-shrink-0 p-8 text-center transition-all duration-500 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-600 shadow-lg testimonial-card group rounded-2xl hover:shadow-2xl hover:-translate-y-2 w-80 snap-start"
                 >
                 
               
@@ -189,13 +189,13 @@ const Testimonials = () => {
                   </div>
 
                   {/* Quote Text */}
-                  <blockquote className="mb-6 text-lg italic leading-relaxed text-gray-700">
+                  <blockquote className="mb-6 text-lg italic leading-relaxed text-gray-700 dark:text-gray-300">
                     "{testimonial.quote}"
                   </blockquote>
 
                   {/* Author Info */}
-                  <div className="pt-4 border-t border-gray-100">
-                    <div className="mb-1 text-lg font-bold text-brandNavy">{testimonial.author}</div>
+                  <div className="pt-4 border-t border-gray-100 dark:border-gray-600">
+                    <div className="mb-1 text-lg font-bold text-brandNavy dark:text-dark-text">{testimonial.author}</div>
                     <div className="font-medium text-brandOrange">{testimonial.title}</div>
                   </div>
 

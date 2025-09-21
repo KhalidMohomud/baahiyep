@@ -47,7 +47,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white">
+    <section className="relative min-h-screen overflow-hidden transition-colors duration-300 bg-white dark:bg-dark-bg">
       {/* background and accents */}
       <div className="absolute inset-0 network-pattern opacity-20"></div>
       <div className="absolute top-0 right-0 w-32 h-32 translate-x-16 -translate-y-16 rounded-full bg-primary"></div>
@@ -73,12 +73,12 @@ const Services = () => {
             {/* Quote with vertical divider */}
             <div className="space-y-8">
               <div className="flex">
-                <blockquote className="pr-6 text-xl leading-relaxed text-gray-700">
+                <blockquote className="pr-6 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
                   <span className="text-3xl font-bold text-primary">"</span>
                   We can help your business grow and reach more customers with the use of trending designs and creative production
                   <span className="text-3xl font-bold text-primary">"</span>
                 </blockquote>
-                <div className="w-px bg-gray-300" />
+                <div className="w-px bg-gray-300 dark:bg-gray-600" />
               </div>
             </div>
 
@@ -89,7 +89,7 @@ const Services = () => {
                   <div className="grid w-12 h-12 text-white rounded-full md:w-14 md:h-14 bg-primary place-items-center shadow-3xl">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-semibold md:text-3xl text-navy">{service.title}</h3>
+                  <h3 className="text-2xl font-semibold md:text-3xl text-navy dark:text-dark-text">{service.title}</h3>
                 </div>
               ))}
             </div>
