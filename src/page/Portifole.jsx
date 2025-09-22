@@ -106,10 +106,10 @@ const Portfolio = () => {
       </div>
     </section>
  
-              <div>
+              {/* <div>
     <Achievement/>
     </div>
-     
+      */}
 
 
       {/* Clients */}
