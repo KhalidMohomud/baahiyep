@@ -1,5 +1,6 @@
-import React, { useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 
+// Source images
 const DEFAULT_LOGOS = [
   { src: '/image/clients/logo111-01.png', alt: 'Client A' },
   { src: '/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png', alt: 'Client B' },
@@ -8,17 +9,20 @@ const DEFAULT_LOGOS = [
   { src: '/image/clients/ccr.png', alt: 'Client E' },
 ]
 
+// Card with elegant styling + dark mode
 const LogoCard = ({ src, alt }) => (
-  <div className="group relative flex items-center justify-center bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6 min-w-[200px] h-[100px]">
-    <img
-      src={src}
-      alt={alt}
-      loading="lazy"
-      className="max-h-[60px] object-contain transition-transform duration-300 group-hover:scale-105"
-      onError={(e) => {
-        e.currentTarget.outerHTML = `<div class='text-sm text-gray-500 dark:text-gray-300'>${alt}</div>`
-      }}
-    />
+  <div className="transition border shadow-sm rounded-2xl bg-white/80 dark:bg-dark-card backdrop-blur-md hover:shadow-lg">
+    <div className="flex items-center justify-center px-6 py-4">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="object-contain w-[180px] h-16 md:w-[220px] md:h-20 grayscale hover:grayscale-0 transition duration-500"
+        onError={(e) => {
+          e.currentTarget.outerHTML = `<div class='w-[180px] h-16 md:w-[220px] md:h-20 grid place-items-center rounded bg-[#fde5dc] text-brandNavy/70 dark:text-dark-text font-medium'>${alt}</div>`
+        }}
+      />
+    </div>
   </div>
 )
 
@@ -27,39 +31,33 @@ function Clients({ title = 'Our Clients', logos = DEFAULT_LOGOS }) {
   const duplicated = useMemo(() => [...logos, ...logos], [logos])
 
   return (
-    <section className="relative px-6 py-20 mx-auto max-w-7xl bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg transition-colors duration-300">
-      
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10 network-pattern opacity-5"></div>
+    <section className="relative px-6 py-20 mx-auto transition-colors duration-300 max-w-7xl">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brandOrange/5 via-white dark:via-dark-bg to-brandNavy/5" />
 
-      {/* Floating Blur Orbs */}
-      <div className="absolute top-12 left-12 w-24 h-24 rounded-full bg-brandOrange/10 blur-3xl"></div>
-      <div className="absolute bottom-12 right-12 w-32 h-32 rounded-full bg-brandNavy/10 blur-3xl"></div>
-
-      {/* Section Header */}
-      <div className="text-center mb-16">
-      <h2 className="inline-block px-6 py-3 text-2xl font-extrabold text-black   dark:text-dark-text md:text-4xl">
-  {title}
-</h2>
-
-        <div className="w-32 h-1 mx-auto my-4 rounded-full bg-gradient-to-r from-brandOrange to-brandNavy" />
-        <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-          We are proud to work with partners who trust our creativity and vision.
+      {/* Header */}
+      <div className="text-center mb-14">
+        <h3 className="text-3xl font-bold tracking-tight md:text-4xl text-brandNavy dark:text-dark-text">
+          {title}
+        </h3>
+        <div className="w-24 h-1 mx-auto mt-3 rounded-full bg-brandOrange" />
+        <p className="max-w-2xl mx-auto mt-4 text-sm text-brandNavy/70 dark:text-gray-400 md:text-base">
+          We are proud to work with amazing partners who trust our creativity and vision.
         </p>
       </div>
 
-      {/* Logo Marquee */}
+      {/* Marquee */}
       <div className="relative">
-        {/* Gradient edges for fade effect */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-50 dark:from-dark-bg to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-50 dark:from-dark-bg to-transparent z-10" />
+        {/* Gradient fade edges */}
+        <div className="absolute inset-y-0 left-0 w-24 pointer-events-none bg-gradient-to-r from-white dark:from-dark-bg via-white/90 dark:via-dark-bg/90 to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-24 pointer-events-none bg-gradient-to-l from-white dark:from-dark-bg via-white/90 dark:via-dark-bg/90 to-transparent" />
 
         <div
           ref={scrollerRef}
-          className="overflow-x-auto scroll-smooth scrollbar-hide"
+          className="overflow-x-auto scrollbar-hide scroll-smooth"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
-          <div className="flex items-center gap-6 px-12 py-4 animate-scroll-slow whitespace-nowrap">
+          <div className="flex items-center gap-10 px-10 py-2 select-none animate-scroll-slow">
             {duplicated.map((logo, idx) => (
               <div key={idx} className="shrink-0">
                 <LogoCard src={logo.src} alt={logo.alt} />

@@ -1,0 +1,93 @@
+{
+  "categories": [
+    "All",
+    "Graphic Design & Branding",
+    "Web Design",
+    "Event Branding",
+    "Motion Graphics",
+    "Digital Marketing",
+    "Digital Consulting"
+  ],
+  "portfolioItems": [
+    {
+      "id": 1,
+      "category": "Graphic Design & Branding",
+      "title": "Brand Identity Design",
+      "image": "/image/graphic design/Graphic Design & Branding.jpg",
+      "description": "Complete brand identity design including logo, business cards, and marketing materials",
+      "progress": "80%"
+    },
+    {
+      "id": 2,
+      "category": "Event Branding",
+      "title": "Event Branding Package",
+      "image": "/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png",
+      "description": "Comprehensive event branding with invitations, banners, and promotional materials",
+      "progress": "90%"
+    },
+    {
+      "id": 3,
+      "category": "Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%"
+    },
+    {
+      "id": 4,
+      "category": "Digital Marketing",
+      "title": "Social Media Campaign",
+      "image": "/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png",
+      "description": "Complete digital marketing strategy and social media management",
+      "progress": "85%"
+    },
+    {
+      "id": 5,
+      "category": "Motion Graphics",
+      "title": "Animated Video Production",
+      "image": "/image/clbg.jpeg",
+      "description": "Professional motion graphics and animated video content",
+      "progress": "88%"
+    },
+    {
+      "id": 6,
+      "category": "Digital Consulting",
+      "title": "Digital Strategy Consulting",
+      "image": "/image/logo.png",
+      "description": "Strategic digital transformation and technology consulting",
+      "progress": "92%"
+    },
+    {
+      "id": 7,
+      "category": "Graphic Design & Branding",
+      "title": "Corporate Branding",
+      "image": "/image/graphic design/iibdon-04.jpg",
+      "description": "Complete corporate branding solution for business growth",
+      "progress": "75%"
+    },
+    {
+      "id": 8,
+      "category": "Event Branding",
+      "title": "Conference Branding",
+      "image": "/image/evanty  barnding branding-01.png",
+      "description": "Professional conference and event branding package",
+      "progress": "95%"
+    },
+    {
+      "id": 9,
+      "category": "Web Design",
+      "title": "E-commerce Platform",
+      "image": "/image/web design-01.png",
+      "description": "Custom e-commerce website with advanced functionality",
+      "progress": "90%"
+    },
+    {
+      "id": 10,
+      "category": "Digital Marketing",
+      "title": "SEO & Content Marketing",
+      "image": "/image/digital marketing-01.png",
+      "description": "Search engine optimization and content marketing strategy",
+      "progress": "87%"
+    }
+  ]
+}

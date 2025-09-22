@@ -76,7 +76,7 @@ const Aboutcom = () => {
   </h2>
 
   <p className="text-lg leading-relaxed">
-    <span className="font-semibold text-brandNavy">
+    <span className="font-semibold text-brandNavy dark:text-dark-text ">
       Baahiye Advertising Agency
     </span>{" "}
     is one of the most innovative digital service providers in Somalia.

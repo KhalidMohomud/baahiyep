@@ -1,9 +1,129 @@
-import React from 'react'
+import  { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { getCategories, getPortfolioItemsByCategory, isValidCategory } from "../utils/portfolioUtils";
+import { Achievement } from "../components/Achievement";
+import Clients from "../components/Clients";
+import SectionFooter from "../components/SectionFooter";
 
-const Portifole = () => {
+// Get categories and portfolio items from external data
+const categories = getCategories();
+
+const Portfolio = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get('category');
+    if (categoryFromUrl && isValidCategory(categoryFromUrl)) {
+      setActiveCategory(categoryFromUrl);
+    }
+  }, [searchParams]);
+
+  const filteredItems = getPortfolioItemsByCategory(activeCategory);
+
   return (
-    <div>Portifole</div>
-  )
-}
+     <div>
+   <section r className="relative ml-2 mr-2 overflow-hidden ">
+  <div className="pb-16 bg-gradient-to-r from-red-800 via-red-700 to-brandOrange pt-28">
+    <div className="flex items-center justify-around mx-auto max-w-7xl sm:py-20">
+      {/* Left side - Title */}
+      <h1 className="text-4xl font-extrabold text-white md:text-5xl">Portifole</h1>
 
-export default Portifole
+      {/* Right side - Breadcrumb */}
+      <div className="flex items-center gap-2 text-lg font-bold text-white/90 ">
+        <a href="/" className="hover:underline">Home</a>
+        <span>›</span>
+        <span>Portfolio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+       <section className="py-20 bg-gradient-to-b from-[#f9fafb] to-white dark:from-dark-surface dark:to-dark-bg">
+      <div className="px-6 mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-extrabold text-brandNavy dark:text-white">
+            Our Portfolio
+          </h2>
+          <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-600 dark:text-gray-300">
+            Our portfolio speaks for itself. Check out our latest projects and
+            see the creativity, quality, and innovation we bring.
+          </p>
+        </div>
+
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
+                activeCategory === cat
+                  ? "bg-gradient-to-r from-brandOrange to-brandNavy text-white shadow-md"
+                  : "bg-gray-200 dark:bg-dark-card text-gray-700 dark:text-gray-300 hover:bg-brandOrange hover:text-white"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+          {filteredItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden shadow-lg rounded-2xl group"
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-0 bg-black/50 group-hover:opacity-100">
+                <div className="text-center">
+                  <span className="block px-6 py-2 font-semibold bg-white rounded-full shadow-md text-brandNavy">
+                    {item.title}
+                  </span>
+                  <span className="block px-4 py-1 mt-2 text-sm text-white rounded-full bg-brandOrange">
+                    {item.category}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Load More */}
+        <div className="mt-12 text-center">
+          <button className="px-10 py-3 text-lg font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-brandOrange to-brandNavy hover:opacity-90">
+            Load More
+          </button>
+        </div>
+      </div>
+    </section>
+ 
+              <div>
+    <Achievement/>
+    </div>
+     
+
+
+      {/* Clients */}
+      <div >
+        <Clients />
+      </div>
+
+       <div>
+            <SectionFooter />
+       </div>
+
+
+     </div>
+  );
+};
+
+export default Portfolio;
