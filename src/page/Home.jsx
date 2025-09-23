@@ -400,7 +400,7 @@ const Home = () => {
    
    
 
-      <Packages/>
+    
 
       {/* <WebDesign/> */}
       {/* <div>
@@ -412,8 +412,7 @@ const Home = () => {
       </div> */}
     
 
-      {/* Achievements Section */}
-    <Achievement/>
+  
 
       
    
@@ -421,6 +420,11 @@ const Home = () => {
  
           <Portfolio/>
      {/* Clients */}
+
+         {/* Achievements Section */}
+    <Achievement/>
+
+        <Packages/>
       <div ref={clientsRef}>
         <Clients />
       </div>

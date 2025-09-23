@@ -1,12 +1,16 @@
-import React, { useEffect, useMemo, useRef } from 'react'
+import React, { useMemo, useRef } from 'react'
 
 // Source images
 const DEFAULT_LOGOS = [
-  { src: '/image/clients/logo111-01.png', alt: 'Client A' },
-  { src: '/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png', alt: 'Client B' },
-  { src: '/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png', alt: 'Client C' },
-  { src: '/image/clients/cm.jpg', alt: 'Client D' },
-  { src: '/image/clients/ccr.png', alt: 'Client E' },
+  { src: '/image/clients/Banaadirmall.jpeg', alt: 'Client A' },
+  { src: '/image/clients/farayare.jpeg', alt: 'Client B' },
+  { src: '/image/clients/Al_nuurayn.jpeg', alt: 'Client C' },
+  { src: '/image/clients/sahalpolyclinicCenter.jpeg', alt: 'Client D' },
+  { src: '/image/clients/Istanbulfurniture.jpeg', alt: 'Client E' },
+  { src: '/image/clients/Rahmatullah.jpeg', alt: 'Client F' },
+  { src: '/image/clients/Al_Naciimaeye.jpeg', alt: 'Client g' },
+  { src: '/image/clients/sahalprint.jpeg', alt: 'Client h' },
+  { src: '/image/clients/Istanbulfurniture.jpeg', alt: 'Client I' },
 ]
 
 // Card with elegant styling + dark mode
@@ -54,7 +58,7 @@ function Clients({ title = 'Our Clients', logos = DEFAULT_LOGOS }) {
 
         <div
           ref={scrollerRef}
-          className="overflow-x-auto scrollbar-hide scroll-smooth"
+          className="overflow-x-auto scroll-smooth custom-scrollbar"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           <div className="flex items-center gap-10 px-10 py-2 select-none animate-scroll-slow">

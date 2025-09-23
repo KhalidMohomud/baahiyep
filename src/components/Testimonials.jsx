@@ -111,7 +111,7 @@ const Testimonials = () => {
 
   return (
     <div>
-      <section ref={testimonialsRef} className="py-20 bg-gradient-to-br from-lightGray via-white to-lightGray dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface transition-colors duration-300">
+      <section ref={testimonialsRef} className="py-20 transition-colors duration-300 bg-gradient-to-br from-lightGray via-white to-lightGray dark:from-dark-surface dark:via-dark-bg dark:to-dark-surface">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy dark:text-dark-text">
             What Our Clients Say
@@ -163,7 +163,7 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <div 
                   key={index} 
-                  className="relative flex-shrink-0 p-8 text-center transition-all duration-500 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-600 shadow-lg testimonial-card group rounded-2xl hover:shadow-2xl hover:-translate-y-2 w-80 snap-start"
+                  className="relative flex-shrink-0 p-8 text-center transition-all duration-500 bg-white border border-gray-100 shadow-lg dark:bg-dark-card dark:border-gray-600 testimonial-card group rounded-2xl hover:shadow-2xl hover:-translate-y-2 w-80 snap-start"
                 >
                 
               
