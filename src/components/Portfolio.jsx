@@ -1,11 +1,13 @@
 import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getMainPortfolioItems } from '../utils/portfolioUtils';
 
 function Portfolio() {
   const portfolioRef = useRef(null);
   const navigate = useNavigate();
+  const [lightboxImage, setLightboxImage] = useState(null);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   const handleViewProject = (category) => {
     navigate(`/Portifole?category=${encodeURIComponent(category)}`);
@@ -63,12 +65,15 @@ function Portfolio() {
               <div className="relative overflow-hidden rounded-t-2xl">
                 <img
                   src={item.image}
-                  srcSet={`${item.image2x || item.image} 2x`} // Optional: use item.image2x if you have high-res
+                  srcSet={`${item.image2x || item.image} 2x`}
                   alt={item.title}
                   width="800"
-                  height="512"
+                  height="600"
                   loading="lazy"
-                  className="object-cover w-full h-48 sm:h-56 lg:h-64"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  onClick={() => { setLightboxImage(item.image); setZoomLevel(1); }}
+                  className="object-cover w-full h-auto cursor-zoom-in aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9]"
                 />
 
                 {/* Overlay Button */}
@@ -101,6 +106,55 @@ function Portfolio() {
             Discover More Projects
           </button>
         </div> */}
+        {lightboxImage && (
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80"
+            onClick={() => setLightboxImage(null)}
+          >
+            <div
+              className="relative max-w-[95vw] max-h-[90vh] p-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={lightboxImage}
+                alt="Zoomed"
+                style={{ transform: `scale(${zoomLevel})` }}
+                className="object-contain w-[95vw] max-w-[1400px] h-[85vh] transition-transform duration-200"
+              />
+
+              <div className="absolute flex gap-2 right-3 top-3">
+                <button
+                  aria-label="Close"
+                  onClick={() => setLightboxImage(null)}
+                  className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+                >
+                  Close
+                </button>
+                <button
+                  aria-label="Zoom Out"
+                  onClick={() => setZoomLevel((z) => Math.max(0.5, +(z - 0.25).toFixed(2)))}
+                  className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+                >
+                  -
+                </button>
+                <button
+                  aria-label="Reset Zoom"
+                  onClick={() => setZoomLevel(1)}
+                  className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+                >
+                  100%
+                </button>
+                <button
+                  aria-label="Zoom In"
+                  onClick={() => setZoomLevel((z) => Math.min(5, +(z + 0.25).toFixed(2)))}
+                  className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

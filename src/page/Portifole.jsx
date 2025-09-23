@@ -11,6 +11,8 @@ const categories = getCategories();
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchParams] = useSearchParams();
+  const [lightboxImage, setLightboxImage] = useState(null);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   useEffect(() => {
     const categoryFromUrl = searchParams.get('category');
@@ -81,7 +83,13 @@ const Portfolio = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                onClick={() => { setLightboxImage(item.image); setZoomLevel(1); }}
+                className="object-cover w-full transition-transform duration-500 cursor-zoom-in group-hover:scale-110 aspect-[4/3] h-auto"
               />
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-0 bg-black/50 group-hover:opacity-100">
                 <div className="text-center">
@@ -121,6 +129,55 @@ const Portfolio = () => {
             <SectionFooter />
        </div>
 
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div
+            className="relative max-w-[95vw] max-h-[90vh] p-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightboxImage}
+              alt="Zoomed"
+              style={{ transform: `scale(${zoomLevel})` }}
+              className="object-contain w-[95vw] max-w-[1400px] h-[85vh] transition-transform duration-200"
+            />
+
+            <div className="absolute flex gap-2 right-3 top-3">
+              <button
+                aria-label="Close"
+                onClick={() => setLightboxImage(null)}
+                className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+              >
+                Close
+              </button>
+              <button
+                aria-label="Zoom Out"
+                onClick={() => setZoomLevel((z) => Math.max(0.5, +(z - 0.25).toFixed(2)))}
+                className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+              >
+                -
+              </button>
+              <button
+                aria-label="Reset Zoom"
+                onClick={() => setZoomLevel(1)}
+                className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+              >
+                100%
+              </button>
+              <button
+                aria-label="Zoom In"
+                onClick={() => setZoomLevel((z) => Math.min(5, +(z + 0.25).toFixed(2)))}
+                className="px-3 py-2 text-sm font-medium text-white bg-black/60 rounded-md hover:bg-black/80"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
      </div>
   );
