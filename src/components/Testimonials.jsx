@@ -8,46 +8,73 @@ const Testimonials = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const testimonials = [
-    { 
-      quote: "Baahiye Digital Marketing transformed our brand completely. Their expertise in digital strategy is unmatched and they delivered results beyond our expectations.", 
-      author: "Khalid Mohomud", 
-      title: "CEO, Hersi Solutions",
-      image: "/image/khalid.jpeg",
+  
+    {
+      quote: "Baahiye waxay si xirfad leh u kobciyeen sumaddeena. Natiijooyinka degdegga ah iyo isgaarsiin joogto ah ayaan aad uga helnay.",
+      author: "Dr. Mohamed Omar",
+      title: "haleel polyclinic",
+      image: "/image/TestimonialsiMage/DR Mohamed omar-01.jpg",
       rating: 5
     },
-    { 
-      quote: "Professional team with creative solutions. They delivered beyond our expectations and helped us achieve remarkable growth in our digital presence.", 
-      author: "Fatima Ali", 
-      title: "Marketing Director",
-      image: "/image/WhatsApp_Image_2025-08-22_at_14.23.25-removebg-preview.png",
+    {
+      quote: "Kooxdu waa hal-abuur leh oo daacad ah. Adeegyo heer sare ah ayey bixiyeen waana ku qanacsanahay.",
+      author: "Abdikafi Abdulahi Hassan",
+      title: "Yaziid Service Group Ltd",
+      image: "/image/TestimonialsiMage/abdikafi Abdulahi Hassan .jpg",
       rating: 5
     },
-    { 
-      quote: "Outstanding results and excellent communication throughout the project. Baahiye team is truly professional and delivers quality work consistently.", 
-      author: "Omar Yusuf", 
+    {
+      quote: "Shaqo cajiib ah iyo latalin sax ah. Baahiye waxay noo sahleen in aan si dhakhso leh u gaarno macaamiil cusub.",
+      author: "Shiikh Nuradiin",
+      title: "Al Nuureyn Travels",
+      image: "/image/TestimonialsiMage/shiikh nuradiin .png",
+      rating: 5
+    },
+
+    {
+      quote: "From strategy to execution, Baahiye delivered exceptional work and communication.",
+      author: "Feynuus",
+      title: "CEO, Electric Solutions",
+      image: "/image/TestimonialsiMage/feynuus Electric solutions  ceo.jpg",
+      rating: 5
+    },
+ 
+    {
+      quote: "Professional team and outstanding results. We saw real growth in a short time.",
+      author: "Abdikarin Hussan",
+      title: "Qudus Construction",
+      image: "/image/TestimonialsiMage/Abdikarin-Hussan-qudusconstruction..png",
+      rating: 5
+    },
+    {
+      quote: "Baahiye waxay si hufan noogu diyaariyeen ololaha onlayn-ka. Guul weyn ayaan ka gaarney.",
+      author: "Shaati Cade",
+      title: "CEO, Kiro Taat & Suud",
+      image: "/image/TestimonialsiMage/shaati Cade CEO KIRO TAAT AND SUUD.jpg",
+      rating: 5
+    },
+
+    {
+      quote: "Creative, reliable, and effective. The campaign exceeded our KPIs across the board.",
+      author: "Mohamed Abdikarin",
+      title: "CEO",
+      image: "/image/TestimonialsiMage/Mohamed Abdikarin CEO (1).jpg",
+      rating: 5
+    },
+  
+  
+    {
+      quote: "Excellent service quality and great attention to detail. Highly recommended!",
+      author: "Happy Client",
       title: "Business Owner",
-      image: "/image/WhatsApp_Image_2025-08-22_at_14.23.26-removebg-preview.png",
+      image: "/image/TestimonialsiMage/12.jpg",
       rating: 5
     },
-    { 
-      quote: "Incredible work ethic and attention to detail. Baahiye helped us launch our digital campaign successfully and exceeded all our targets.", 
-      author: "Amina Mohamed", 
-      title: "Digital Marketing Manager",
-      image: "/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png",
-      rating: 5
-    },
-    { 
-      quote: "The team at Baahiye is incredibly talented and professional. They transformed our online presence and helped us reach new customers.", 
-      author: "Hassan Abdi", 
-      title: "Startup Founder",
-      image: "/image/clbg.jpeg",
-      rating: 5
-    },
-    { 
-      quote: "Exceptional service and results! Baahiye Digital Marketing delivered everything they promised and more. Highly recommended!", 
-      author: "Zahra Omar", 
-      title: "Business Consultant",
-      image: "/image/logo.png",
+    {
+      quote: "They helped us reach new customers and elevate our brand online.",
+      author: "Abdifitaah Farayare",
+      title: "Entrepreneur",
+      image: "/image/TestimonialsiMage/abdifitaah Farayare.jpg",
       rating: 5
     }
   ];

@@ -105,7 +105,7 @@ const Packages = () => {
       </div>
 
       {/* Card */}
-      <div className="flex flex-col flex-1 overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-surface dark:border-gray-600 rounded-2xl hover:shadow-2xl">
+      <div className="flex flex-col flex-1 overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-surface dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient ">
         <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
           {pkg.name}
         </div>

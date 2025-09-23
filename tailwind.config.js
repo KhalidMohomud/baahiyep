@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
   content: [
     "./index.html",
@@ -15,6 +15,7 @@ export default {
         lightGray: '#F5F5F5',
         brandOrange: '#FF5722',
         brandNavy: '#1E2A4A',
+
         // Dark mode colors
         dark: {
           bg: '#0F172A',
@@ -22,8 +23,14 @@ export default {
           card: '#334155',
           text: '#F1F5F9',
           muted: '#94A3B8',
-        }
+        },
       },
+
+      // ✅ Move this OUT of `colors`
+      backgroundImage: {
+        'mini-kit-gradient': 'linear-gradient(180deg, #FFD3C2 0%, #FFE5DC 100%)',
+      },
+
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
