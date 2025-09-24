@@ -1,21 +1,22 @@
 {
   "categories": [
     "All",
-    "Brand Identity Design Graphic Design & Branding",
-    "Social Media Campaign Digital Marketing",
-    "Animated Video Production  Motion Graphics",
-    " Digital printing and sign Graphic Design & Branding",
-    "Modern Website Design",
-    " Event Branding FULL Event Branding"
+    "Brand  Design",
+    "Digital Marketing",
+    "Video Production",
+    " Digital printing ",
+    "Modern Web Design",
+    " Event Branding"
   ],
   "portfolioItems": [
     {
       "id": 1,
-      "category": "Brand Identity Design Graphic Design & Branding",
+      "category": "Digital Marketing",
       "title": "Brand Identity Design",
       "image": "/image/graphic design/Graphic Design & Branding.jpg",
       "description": "Complete brand identity design including logo, business cards, and marketing materials",
-      "progress": "80%"
+      "progress": "80%",
+      "link": "https://www.behance.net/gallery/234491159/logo-design"
     },
     {
       "id": 2,
@@ -23,7 +24,8 @@
       "title": "Social Media Campaign",
       "image": "/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png",
       "description": "Complete digital marketing strategy and social media management",
-      "progress": "85%"
+      "progress": "85%",
+      "link": "https://www.behance.net/gallery/234491159/logo-design"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "title": "Animated Video Production",
       "image": "/image/clbg.jpeg",
       "description": "Professional motion graphics and animated video content",
-      "progress": "88%"
+      "progress": "88%",
+      "link": "https://www.behance.net/gallery/177297215/Animated-Video"
     },
     {
       "id": 4,
@@ -39,7 +42,8 @@
       "title": "Digital Printing & Sign",
       "image": "/image/logo.png",
       "description": "High-quality digital printing and signage solutions",
-      "progress": "82%"
+      "progress": "82%",
+      "link": "https://www.behance.net/gallery/177297216/Digital-Printing"
     },
     {
       "id": 5,
@@ -47,7 +51,8 @@
       "title": "Modern Website Design",
       "image": "/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png",
       "description": "Responsive website design with modern UI/UX principles",
-      "progress": "95%"
+      "progress": "95%",
+      "link": "https://www.behance.net/gallery/177297217/Website-Design"
     },
     {
       "id": 6,
@@ -55,71 +60,37 @@
       "title": "Full Event Branding",
       "image": "/image/evanty  barnding branding-01.png",
       "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
+      "progress": "93%",
+      "link": "https://www.behance.net/gallery/177297218/Event-Branding"
     },
-       {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
-      "image": "/image/graphic design/postsimage/1 (1).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
-    },
-       {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
-      "image": "/image/graphic design/postsimage/1 (2).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
-    },
-        {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
-      "image": "/image/graphic design/postsimage/1 (5).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
-    },
-        {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
-      "image": "/image/graphic design/postsimage/1 (4).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
-    },
-        {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
-      "image": "/image/graphic design/postsimage/1 (8).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
-    },
-        {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
-      "image": "/image/graphic design/postsimage/1 (7).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
-    },
-        {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
+   
+      {
+      "id": 1,
+      "category": "Digital Marketing",
+      "title": "Brand Identity Design",
       "image": "/image/graphic design/postsimage/1 (10).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
+      "description": "Complete brand identity design including logo, business cards, and marketing materials",
+      "progress": "80%",
+      "link": "https://www.behance.net/gallery/235146101/poster-design?tracking_source=project_owner_other_projects"
     },
-        {
-      "id": 7,
-      "category": "Brand Identity Design Graphic Design & Branding",
-      "title": "Full Event Branding",
-      "image": "/image/graphic design/postsimage/1 (9).jpg",
-      "description": "Complete event branding including signage, backdrops, and promotional materials",
-      "progress": "93%"
+      {
+      "id": 1,
+      "category": "Digital Marketing",
+      "title": "Brand Identity Design",
+      "image": "/image/graphic design/postsimage/1 (6).jpg",
+      "description": "Complete brand identity design including logo, business cards, and marketing materials",
+      "progress": "80%",
+      "link": "https://www.behance.net/gallery/235146101/poster-design?tracking_source=project_owner_other_projects"
+    },
+       {
+      "id": 1,
+      "category": "Digital Marketing",
+      "title": "Brand Identity Design",
+      "image": "/image/graphic design/postsimage/1 (4).jpg",
+      "description": "Complete brand identity design including logo, business cards, and marketing materials",
+      "progress": "80%",
+      "link": "https://www.behance.net/gallery/235146101/poster-design?tracking_source=project_owner_other_projects"
     }
   ]
 }
+

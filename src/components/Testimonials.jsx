@@ -57,25 +57,17 @@ const Testimonials = () => {
     {
       quote: "Creative, reliable, and effective. The campaign exceeded our KPIs across the board.",
       author: "Mohamed Abdikarin",
-      title: "CEO",
+      title: "ceo of mck electronics",
       image: "/image/TestimonialsiMage/Mohamed Abdikarin CEO (1).jpg",
       rating: 5
     },
   
-  
-    {
-      quote: "Excellent service quality and great attention to detail. Highly recommended!",
-      author: "Happy Client",
-      title: "Business Owner",
-      image: "/image/TestimonialsiMage/12.jpg",
-      rating: 5
-    },
     {
       quote: "They helped us reach new customers and elevate our brand online.",
       author: "Abdifitaah Farayare",
-      title: "Entrepreneur",
+      title: "ceo of mck electronics",
       image: "/image/TestimonialsiMage/abdifitaah Farayare.jpg",
-      rating: 5
+      rating: 6
     }
   ];
 
