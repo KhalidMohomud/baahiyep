@@ -4,7 +4,7 @@
     "Brand  Design",
     "Digital Marketing",
     "Video Production",
-    " Digital printing ",
+    "Digital printing",
     "Modern Web Design",
     " Event Branding"
   ],
@@ -12,7 +12,7 @@
     {
       "id": 1,
       "category": "Digital Marketing",
-      "title": "Brand Identity Design",
+      "title": "Digital Marketing",
       "image": "/image/graphic design/Graphic Design & Branding.jpg",
       "description": "Complete brand identity design including logo, business cards, and marketing materials",
       "progress": "80%",
@@ -20,43 +20,43 @@
     },
     {
       "id": 2,
-      "category": "Social Media Campaign Digital Marketing",
-      "title": "Social Media Campaign",
-      "image": "/image/WhatsApp_Image_2025-08-22_at_14.23.26__1_-removebg-preview.png",
+      "category": "Brand  Design",
+      "title": "Brand  Design",
+      "image": "/image/printandBrandDesign/LOGO FAYNUUS-04 (1).jpg",
       "description": "Complete digital marketing strategy and social media management",
       "progress": "85%",
-      "link": "https://www.behance.net/gallery/234491159/logo-design"
+      "link": "https://www.behance.net/gallery/234491487/logo-design-and-branding"
     },
-    {
+      {
       "id": 3,
-      "category": "Animated Video Production  Motion Graphics",
-      "title": "Animated Video Production",
-      "image": "/image/clbg.jpeg",
-      "description": "Professional motion graphics and animated video content",
-      "progress": "88%",
-      "link": "https://www.behance.net/gallery/177297215/Animated-Video"
+      "category": "Video Production",
+      "title": "Video Production",
+      "image": "https://www.youtube.com/watch?v=u0XPyJfxGhI",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://www.youtube.com/watch?v=u0XPyJfxGhI"
     },
     {
       "id": 4,
-      "category": " Digital printing and sign Graphic Design & Branding",
+      "category": "Digital printing",
       "title": "Digital Printing & Sign",
-      "image": "/image/logo.png",
+      "image": "/image/printandBrandDesign/restaurant-menu_caasimahres.jpg",
       "description": "High-quality digital printing and signage solutions",
       "progress": "82%",
-      "link": "https://www.behance.net/gallery/177297216/Digital-Printing"
+      "link": "https://www.behance.net/gallery/235284431/restaurant-menu"
     },
     {
       "id": 5,
-      "category": "Modern Website Design",
+      "category": "Modern Web Design",
       "title": "Modern Website Design",
-      "image": "/image/WhatsApp_Image_2025-08-22_at_14.23.27-removebg-preview.png",
+      "image": "/image/websites/screencapture-qudusconstruction-so-2025-09-25-09_49_22.png",
       "description": "Responsive website design with modern UI/UX principles",
       "progress": "95%",
-      "link": "https://www.behance.net/gallery/177297217/Website-Design"
+      "link": "https://qudusconstruction.so"
     },
     {
       "id": 6,
-      "category": " Event Branding FULL Event Branding",
+      "category": "Event Branding",
       "title": "Full Event Branding",
       "image": "/image/evanty  barnding branding-01.png",
       "description": "Complete event branding including signage, backdrops, and promotional materials",
@@ -90,7 +90,100 @@
       "description": "Complete brand identity design including logo, business cards, and marketing materials",
       "progress": "80%",
       "link": "https://www.behance.net/gallery/235146101/poster-design?tracking_source=project_owner_other_projects"
+    },
+    
+      {
+      "id": 2,
+      "category": "Brand  Design",
+      "title": "Brand  Design",
+      "image": "/image/printandBrandDesign/iidhadhm DAAFI AND PIZZA.jpg",
+      "description": "Complete digital marketing strategy and social media management",
+      "progress": "85%",
+      "link": "https://www.behance.net/gallery/190178873/LOGO-DESIGN"
+    },
+       {
+      "id": 2,
+      "category": "Digital printing",
+      "title": "Brand  Design",
+      "image": "/image/printandBrandDesign/restaurant menu_sabiibres.jpg",
+      "description": "Complete digital marketing strategy and social media management",
+      "progress": "85%",
+      "link": "https://www.behance.net/gallery/235287155/restaurant-menu"
+    },
+       {
+      "id": 2,
+      "category": "Digital printing",
+      "title": "Brand  Design",
+      "image": "/image/printandBrandDesign/company profile_Rahman.jpg",
+      "description": "Complete digital marketing strategy and social media management",
+      "progress": "85%",
+      "link": "https://www.behance.net/gallery/235287155/restaurant-menu"
+    },
+       {
+      "id": 2,
+      "category": "Digital printing",
+      "title": "Brand  Design",
+      "image": "/image/printandBrandDesign/company profile (1)_feynuus.jpg",
+      "description": "Complete digital marketing strategy and social media management",
+      "progress": "85%",
+      "link": "https://www.behance.net/gallery/235287155/restaurant-menu"
+    },
+
+      {
+      "id": 5,
+      "category": "Modern Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/websites/screencapture-bluewavepms-2025-09-25-09_47_31.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://daacadcomputers.so/"
+    },
+       {
+      "id": 5,
+      "category": "Modern Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/websites/screencapture-ramadinteriordesign-so-2025-09-25-09_52_06.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://ramadinteriordesign.so/"
+    },
+     {
+      "id": 5,
+      "category": "Modern Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/websites/httpssavanauktravel.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://bluewavepms.com/"
+    },
+      {
+      "id": 5,
+      "category": "Video Production",
+      "title": "Video Production",
+      "image": "https://www.youtube.com/watch?v=ub8NreDwixM",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://www.youtube.com/watch?v=ub8NreDwixM"
+    },
+    {
+      "id": 5,
+      "category": "Video Production",
+      "title": "Video Production",
+      "image": "http://youtube.com/watch?v=qt6KCmnsKv8",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "http://youtube.com/watch?v=qt6KCmnsKv8"
+    },
+       {
+      "id": 5,
+      "category": "Video Production",
+      "title": "Video Production",
+      "image": "https://www.youtube.com/watch?v=JMfifrod7TU",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://www.youtube.com/watch?v=JMfifrod7TU"
     }
+     
   ]
 }
 

@@ -8,13 +8,30 @@ const Testimonials = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const testimonials = [
-  
-    {
-      quote: "Baahiye waxay si xirfad leh u kobciyeen sumaddeena. Natiijooyinka degdegga ah iyo isgaarsiin joogto ah ayaan aad uga helnay.",
-      author: "Dr. Mohamed Omar",
-      title: "haleel polyclinic",
-      image: "/image/TestimonialsiMage/DR Mohamed omar-01.jpg",
+
+        {
+      quote: "Shaqo cajiib ah iyo latalin sax ah. Baahiye waxay noo sahleen in aan si dhakhso leh u gaarno macaamiil cusub.",
+      author: "Shiikh Nuradiin",
+      title: "Al Nuureyn Travels",
+      image: "/image/TestimonialsiMage/shiikh nuradiin .png",
       rating: 5
+    },
+
+      {
+      quote: "Professional team and outstanding results. We saw real growth in a short time.",
+      author: "Abdikarin Hussan",
+      title: "Qudus Construction",
+      image: "/image/TestimonialsiMage/Abdikarin-Hussan-qudusconstruction..png",
+      rating: 5
+    }, 
+
+    
+    {
+      quote: "They helped us reach new customers and elevate our brand online.",
+      author: "Abdifitaah Farayare",
+      title: "CEO of Farayare Training Company.",
+      image: "/image/TestimonialsiMage/abdifitaah Farayare.jpg",
+      rating: 6
     },
     {
       quote: "Kooxdu waa hal-abuur leh oo daacad ah. Adeegyo heer sare ah ayey bixiyeen waana ku qanacsanahay.",
@@ -23,13 +40,7 @@ const Testimonials = () => {
       image: "/image/TestimonialsiMage/abdikafi Abdulahi Hassan .jpg",
       rating: 5
     },
-    {
-      quote: "Shaqo cajiib ah iyo latalin sax ah. Baahiye waxay noo sahleen in aan si dhakhso leh u gaarno macaamiil cusub.",
-      author: "Shiikh Nuradiin",
-      title: "Al Nuureyn Travels",
-      image: "/image/TestimonialsiMage/shiikh nuradiin .png",
-      rating: 5
-    },
+
 
     {
       quote: "From strategy to execution, Baahiye delivered exceptional work and communication.",
@@ -39,11 +50,11 @@ const Testimonials = () => {
       rating: 5
     },
  
-    {
-      quote: "Professional team and outstanding results. We saw real growth in a short time.",
-      author: "Abdikarin Hussan",
-      title: "Qudus Construction",
-      image: "/image/TestimonialsiMage/Abdikarin-Hussan-qudusconstruction..png",
+      {
+      quote: "Baahiye waxay si xirfad leh u kobciyeen sumaddeena. Natiijooyinka degdegga ah iyo isgaarsiin joogto ah ayaan aad uga helnay.",
+      author: "Dr. Mohamed Omar",
+      title: "haleel polyclinic",
+      image: "/image/TestimonialsiMage/DR Mohamed omar-01.jpg",
       rating: 5
     },
     {
@@ -60,14 +71,6 @@ const Testimonials = () => {
       title: "ceo of mck electronics",
       image: "/image/TestimonialsiMage/Mohamed Abdikarin CEO (1).jpg",
       rating: 5
-    },
-  
-    {
-      quote: "They helped us reach new customers and elevate our brand online.",
-      author: "Abdifitaah Farayare",
-      title: "ceo of mck electronics",
-      image: "/image/TestimonialsiMage/abdifitaah Farayare.jpg",
-      rating: 6
     }
   ];
 

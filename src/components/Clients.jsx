@@ -3,7 +3,8 @@ import React, { useMemo, useRef } from 'react'
 // Source images
 const DEFAULT_LOGOS = [
   { src: '/image/clients/Banaadirmall.jpeg', alt: 'Client A' },
-  { src: '/image/clients/farayare.jpeg', alt: 'Client B' },
+   { src: '/image/clients/logoimaan.jpg', alt: 'Client B' },
+  { src: '/image/clients/farayare.jpeg', alt: 'Client J' },
   { src: '/image/clients/Al_nuurayn.jpeg', alt: 'Client C' },
   { src: '/image/clients/sahalpolyclinicCenter.jpeg', alt: 'Client D' },
   { src: '/image/clients/Istanbulfurniture.jpeg', alt: 'Client E' },

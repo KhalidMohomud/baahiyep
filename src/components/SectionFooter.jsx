@@ -16,7 +16,7 @@ import {
 
 const SectionFooter = () => {
   return (
-    <footer className="text-white transition-colors duration-300 bg-gradient-to-br from-red-800 via-red-700 to-brandOrange">
+    <footer className="bg-gradient-to-br from-brandNavy via-[#1a1a2e] to-brandNavy text-white">
       {/* Main Content */}
       <div className="px-6 py-16 mx-auto max-w-7xl">
         <div className="grid gap-12 text-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:text-left">
