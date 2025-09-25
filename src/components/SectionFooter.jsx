@@ -29,7 +29,7 @@ const SectionFooter = () => {
               <div className="flex items-center justify-center w-16 h-16">
                 <img
                   src="/public/image/Bahiye.png"
-                  alt="Baahiye Digital Logo"
+                  // alt="Baahiye Digital Logo"
                   className="object-contain h-full"
                 />
               </div>
