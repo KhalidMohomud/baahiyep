@@ -91,6 +91,27 @@
       "progress": "80%",
       "link": "https://www.behance.net/gallery/235146101/poster-design?tracking_source=project_owner_other_projects"
     },
+
+      {
+      "id": 2,
+      "category": "Brand  Design",
+      "title": "Brand  Design",
+      "image": "/image/graphic design/kc logo-01.jpg",
+      "description": "Complete digital marketing strategy and social media management",
+      "progress": "85%",
+      "link": "https://www.behance.net/gallery/234491159/logo-design"
+    },
+
+    
+      {
+      "id": 2,
+      "category": "Brand  Design",
+      "title": "Brand  Design",
+      "image": "/image/graphic design/iibdon-05.jpg",
+      "description": "Complete digital marketing strategy and social media management",
+      "progress": "85%",
+      "link": "https://www.behance.net/gallery/182637525/logo-design"
+    },
     
       {
       "id": 2,
@@ -142,7 +163,7 @@
       "id": 5,
       "category": "Modern Web Design",
       "title": "Modern Website Design",
-      "image": "/image/websites/screencapture-ramadinteriordesign-so-2025-09-25-09_52_06.png",
+      "image": "/image/websites/screencapture-ramadinteriordesign-so-2025-09-25-09_51_34.png",
       "description": "Responsive website design with modern UI/UX principles",
       "progress": "95%",
       "link": "https://ramadinteriordesign.so/"
@@ -156,6 +177,26 @@
       "progress": "95%",
       "link": "https://bluewavepms.com/"
     },
+       {
+      "id": 5,
+      "category": "Modern Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/websites/screencapture-daacadcomputers-so-2025-09-25-09_46_02.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://daacadcomputers.so/"
+    },
+
+     {
+      "id": 5,
+      "category": "Modern Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/websites/screencapture-ikhlaasholidays-2025-09-25-09_48_25.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://ikhlaasholidays.com/"
+    },
+
       {
       "id": 5,
       "category": "Video Production",

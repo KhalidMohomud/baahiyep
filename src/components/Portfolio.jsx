@@ -105,7 +105,7 @@ function Portfolio() {
                   <h3 className="text-lg font-semibold tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm text-white/80">{item.category}</p>
+                  {/* <p className="mt-2 text-sm text-white/80">{item.category}</p> */}
                 </div>
               </div>
             );

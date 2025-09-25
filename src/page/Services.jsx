@@ -11,6 +11,7 @@ import Packages from '../components/Packages'
 import SocialMediaPackages from '../components/SocialMediaPackages'
 import { NavLink, useNavigate } from 'react-router-dom'
 import EventBrandingPackages from '../components/EventBrandingPackages'
+import Clients from '../components/Clients'
 // import WebDesign from '../components/WebDesign'
 
 // Register GSAP plugins
@@ -164,18 +165,7 @@ const Services = () => {
     features: ["SEO Optimization", "Social Media Marketing", "Content Marketing", "PPC Campaigns"],
     serviceId: 'digital-marketing'
   },
-  {
-    icon: (
-      <img
-        src="/image/web design-01.png"
-        alt="Web Design"
-         className="object-contain w-64 h-64 mx-auto"
-      />
-    ),
-    description: "Custom web design focused on user experience and modern aesthetics.",
-    features: ["Responsive Design", "E-commerce Solutions", "Custom Applications", "Performance Optimization"],
-    serviceId: 'web-design'
-  },
+ 
   {
     icon: (
       <img
@@ -188,18 +178,7 @@ const Services = () => {
     features: ["Script Writing", "Filming", "Editing", "Animation"],
     serviceId: 'video-production'
   },
-  {
-    icon: (
-      <img
-        src="/image/evanty  barnding branding-01.png"
-        alt="Event Branding"
-        className="object-contain w-64 h-64 mx-auto"
-      />
-    ),
-    description: "Unique event branding solutions to create memorable experiences.",
-    features: ["Event Logos", "Signage Design", "Booth Design", "Promotional Materials"],
-    serviceId: 'event-branding'
-  },
+
   {
     icon: (
       <img
@@ -211,7 +190,32 @@ const Services = () => {
     description: "Professional print services for all your marketing and business needs.",
     features: ["Business Cards", "Brochures", "Posters", "Flyers"],
     serviceId: 'print-services'
-  }
+  },
+
+   {
+    icon: (
+      <img
+        src="/image/web design-01.png"
+        alt="Web Design"
+         className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
+    description: "Custom web design focused on user experience and modern aesthetics.",
+    features: ["Responsive Design", "E-commerce Solutions", "Custom Applications", "Performance Optimization"],
+    serviceId: 'web-design'
+  },
+    {
+    icon: (
+      <img
+        src="/image/evanty  barnding branding-01.png"
+        alt="Event Branding"
+        className="object-contain w-64 h-64 mx-auto"
+      />
+    ),
+    description: "Unique event branding solutions to create memorable experiences.",
+    features: ["Event Logos", "Signage Design", "Booth Design", "Promotional Materials"],
+    serviceId: 'event-branding'
+  },
 ]
 
 
@@ -343,6 +347,9 @@ const Services = () => {
 
        <SocialMediaPackages/>
 
+
+         <Clients />
+
       {/* Features Section */}
       <div ref={featuresRef} className="py-20 transition-colors duration-300 bg-gradient-to-r from-gray-50 to-white dark:from-dark-surface dark:to-dark-bg">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -394,6 +401,9 @@ const Services = () => {
           </div>
         </div>
       </section> */}
+        
+        
+      
 
       <SectionFooter />
       

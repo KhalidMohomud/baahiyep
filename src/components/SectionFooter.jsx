@@ -1,8 +1,8 @@
-import React from 'react';
-import {
+import { 
   FaFacebookF,
   FaLinkedinIn,
   FaTwitter,
+  FaBehance,   // ✅ Added Behance
 } from 'react-icons/fa';
 import {
   FaInstagram,
@@ -14,6 +14,7 @@ import {
   FaPhone,
 } from 'react-icons/fa';
 
+// ✅ Import your new logo image
 const SectionFooter = () => {
   return (
     <footer className="bg-gradient-to-br from-brandNavy via-[#1a1a2e] to-brandNavy text-white">
@@ -24,8 +25,13 @@ const SectionFooter = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center justify-center space-x-3 md:justify-start">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brandOrange">
-                <span className="text-lg font-bold text-white">B</span>
+              {/* ✅ New Logo Here */}
+              <div className="flex items-center justify-center w-16 h-16">
+                <img
+                  src="/public/image/Bahiye.png"
+                  alt="Baahiye Digital Logo"
+                  className="object-contain h-full"
+                />
               </div>
               <h3 className="text-xl font-bold">Baahiye Digital</h3>
             </div>
@@ -75,6 +81,15 @@ const SectionFooter = () => {
               >
                 <FaTiktok className="w-4 h-4" />
               </a>
+              {/* ✅ Behance Link */}
+              <a
+                href="https://www.behance.net/baahiyedigitalmark"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-8 h-8 transition rounded-full bg-white/10 hover:bg-brandOrange"
+              >
+                <FaBehance className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -116,7 +131,7 @@ const SectionFooter = () => {
               </li>
               <li className="flex items-center justify-center space-x-2 md:justify-start">
                 <FaPhone className="text-brandOrange" />
-                <span>+252 618-046672</span>
+                <span>+252 61 3732356</span>
               </li>
             </ul>
           </div>
