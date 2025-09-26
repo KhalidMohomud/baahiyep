@@ -1,4 +1,4 @@
- import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   getCategories,
@@ -104,7 +104,7 @@ const Portfolio = () => {
               return (
                 <div
                   key={index}
-                  className="relative overflow-hidden shadow-lg rounded-2xl group"
+                  className="relative flex items-center justify-center overflow-hidden shadow-lg rounded-2xl group"
                 >
                   {/* VIDEO PROJECT */}
                   {item.category === "Video Production" && videoId ? (
@@ -115,11 +115,11 @@ const Portfolio = () => {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        className="w-full h-[400px] rounded-2xl"
+                        className="w-full h-[400px] rounded-2xl mx-auto"
                       ></iframe>
                     ) : (
                       <div
-                        className="relative w-full h-[400px] bg-black cursor-pointer rounded-2xl group overflow-hidden"
+                        className="relative w-full h-[400px] bg-black cursor-pointer rounded-2xl group overflow-hidden flex justify-center items-center"
                         onClick={() => handlePlayVideo(index)}
                       >
                         <img
@@ -146,12 +146,12 @@ const Portfolio = () => {
                       </div>
                     )
                   ) : item.category === "Modern Web Design" ? (
-                    /* WEB DESIGN SCROLL */
-                    <div className="w-full h-[400px] overflow-y-scroll bg-black rounded-2xl">
+                    /* SCROLLABLE WEB DESIGN */
+                    <div className="w-full h-[400px] overflow-y-scroll bg-black rounded-2xl flex justify-center items-start">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-top w-full"
+                        className="object-top mx-auto"
                         style={{ minHeight: "800px" }}
                       />
                     </div>
@@ -160,7 +160,7 @@ const Portfolio = () => {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="object-cover w-full h-[400px] transition-transform duration-500 group-hover:scale-105"
+                      className="object-contain max-w-full h-[400px] mx-auto transition-transform duration-500 group-hover:scale-105"
                     />
                   )}
 
