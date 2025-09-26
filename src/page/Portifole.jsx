@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   getCategories,
@@ -90,112 +90,110 @@ const Portfolio = () => {
           </div>
 
           {/* Portfolio Grid */}
-            {/* Portfolio Grid */}
-<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-  {filteredItems.map((item, index) => {
-    const videoId =
-      item.category === "Video Production"
-        ? getYouTubeId(item.link)
-        : null;
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+            {filteredItems.map((item, index) => {
+              const videoId =
+                item.category === "Video Production"
+                  ? getYouTubeId(item.link)
+                  : null;
 
-    const thumbnailUrl = videoId
-      ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
-      : "";
+              const thumbnailUrl = videoId
+                ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+                : "";
 
-    return (
-      <div
-        key={index}
-        className="relative overflow-hidden shadow-lg rounded-2xl group"
-      >
-        {/* VIDEO PROJECT */}
-        {item.category === "Video Production" && videoId ? (
-          playingVideos[index] ? (
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-              title={item.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-[400px] rounded-2xl"
-            ></iframe>
-          ) : (
-            <div
-              className="relative w-full h-[400px] bg-black cursor-pointer rounded-2xl group overflow-hidden"
-              onClick={() => handlePlayVideo(index)}
-            >
-              <img
-                src={thumbnailUrl}
-                alt={item.title}
-                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-                }}
-              />
-              <div className="absolute inset-0 transition-opacity duration-500 bg-gradient-to-t from-black/70 to-transparent opacity-80 group-hover:opacity-90"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative z-10 flex items-center justify-center w-20 h-20 transition-transform duration-300 transform bg-white rounded-full shadow-lg group-hover:scale-110">
-                  <svg
-                    className="w-10 h-10 text-brandNavy"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          )
-        ) : item.category === "Modern Web Design" ? (
-          /* WEB DESIGN SCROLL */
-          <div className="w-full h-[400px] overflow-y-scroll bg-black rounded-2xl">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="object-top w-full"
-              style={{ minHeight: "800px" }}
-            />
-          </div>
-        ) : (
-          /* DEFAULT IMAGE */
-          <img
-            src={item.image}
-            alt={item.title}
-            className="object-cover w-full h-[400px] transition-transform duration-500 group-hover:scale-105"
-          />
-        )}
-
-        {/* Overlay (skip for video) */}
-        {item.category !== "Video Production" && (
-          <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-0 bg-black/50 group-hover:opacity-100">
-            <div className="space-y-2 text-center">
-              <span className="block px-4 py-1 text-sm text-white rounded-full bg-brandOrange">
-                {item.category}
-              </span>
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 mt-2 text-sm font-semibold text-white transition rounded-full bg-brandNavy hover:bg-brandOrange"
+              return (
+                <div
+                  key={index}
+                  className="relative overflow-hidden shadow-lg rounded-2xl group"
                 >
-                  View Project
-                </a>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  })}
-</div>
+                  {/* VIDEO PROJECT */}
+                  {item.category === "Video Production" && videoId ? (
+                    playingVideos[index] ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                        title={item.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-[400px] rounded-2xl"
+                      ></iframe>
+                    ) : (
+                      <div
+                        className="relative w-full h-[400px] bg-black cursor-pointer rounded-2xl group overflow-hidden"
+                        onClick={() => handlePlayVideo(index)}
+                      >
+                        <img
+                          src={thumbnailUrl}
+                          alt={item.title}
+                          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                          }}
+                        />
+                        <div className="absolute inset-0 transition-opacity duration-500 bg-gradient-to-t from-black/70 to-transparent opacity-80 group-hover:opacity-90"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="relative z-10 flex items-center justify-center w-20 h-20 transition-transform duration-300 transform bg-white rounded-full shadow-lg group-hover:scale-110">
+                            <svg
+                              className="w-10 h-10 text-brandNavy"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  ) : item.category === "Modern Web Design" ? (
+                    /* WEB DESIGN SCROLL */
+                    <div className="w-full h-[400px] overflow-y-scroll bg-black rounded-2xl">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="object-top w-full"
+                        style={{ minHeight: "800px" }}
+                      />
+                    </div>
+                  ) : (
+                    /* DEFAULT IMAGE */
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="object-cover w-full h-[400px] transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
 
+                  {/* Overlay (skip for video) */}
+                  {item.category !== "Video Production" && (
+                    <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-0 bg-black/50 group-hover:opacity-100">
+                      <div className="space-y-2 text-center">
+                        <span className="block px-4 py-1 text-sm text-white rounded-full bg-brandOrange">
+                          {item.category}
+                        </span>
+                        {item.link && (
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-4 py-2 mt-2 text-sm font-semibold text-white transition rounded-full bg-brandNavy hover:bg-brandOrange"
+                          >
+                            View Project
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
 
           {/* Load More */}
           <div className="mt-12 text-center">
-            {/* <button className="px-10 py-3 text-lg font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-brandOrange to-brandNavy hover:opacity-90">
+            <button className="px-10 py-3 text-lg font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-brandOrange to-brandNavy hover:opacity-90">
               Load More
-            </button> */}
+            </button>
           </div>
         </div>
       </section>
