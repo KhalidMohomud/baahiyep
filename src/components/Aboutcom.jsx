@@ -105,9 +105,10 @@ const Aboutcom = () => {
             <li className="flex items-start">
               <HiCheckCircle className="w-5 h-5 mt-1 mr-2 text-brandOrange" />
               <span>
-                Printing Services – business cards, posters, books, menus, and
-                all kinds of professional print materials
-              </span>
+               Printing Services – business cards,posters, books, menus, <br />
+                 and all kinds of professional print materials
+               </span>
+
             </li>
           </ul>
 

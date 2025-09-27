@@ -39,7 +39,7 @@ function Portfolio() {
   return (
     <section
       ref={portfolioRef}
-      className="py-20 bg-[#f7f9fb] dark:bg-dark-surface transition-colors duration-300"
+      className="py-20 transition-colors duration-300 bg-white dark:bg-dark-surface"
     >
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Heading */}

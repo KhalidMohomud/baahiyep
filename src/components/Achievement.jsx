@@ -150,7 +150,7 @@ export const Achievement = () => {
   }, []);
 
   return (
-    <section ref={achievementsRef} className="py-20 bg-white dark:bg-dark-bg transition-colors duration-300">
+    <section ref={achievementsRef} className="py-20 transition-colors duration-300 bg-slate-100 dark:bg-dark-bg">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <h2 className="mb-16 text-4xl font-bold text-center section-heading text-brandNavy dark:text-dark-text">
           Our Achievements
