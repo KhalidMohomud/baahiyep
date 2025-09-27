@@ -12,7 +12,7 @@ const Testimonials = () => {
         {
       quote: "Shaqo cajiib ah iyo latalin sax ah. Baahiye waxay noo sahleen in aan si dhakhso leh u gaarno macaamiil cusub.",
       author: "Shiikh Nuradiin",
-      title: "Al Nuureyn Travels",
+      title: "Al Nuureyn Travel Agent",
       image: "/image/TestimonialsiMage/shiikh nuradiin .png",
       rating: 5
     },

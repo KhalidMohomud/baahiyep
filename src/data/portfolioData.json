@@ -6,7 +6,7 @@
     "Video Production",
     "Digital printing",
     "Modern Web Design",
-    " Event Branding"
+    "Event Branding"
   ],
   "portfolioItems": [
     {
@@ -58,10 +58,10 @@
       "id": 6,
       "category": "Event Branding",
       "title": "Full Event Branding",
-      "image": "/image/evanty  barnding branding-01.png",
+      "image": "/image/Event/envhamar.jpg",
       "description": "Complete event branding including signage, backdrops, and promotional materials",
       "progress": "93%",
-      "link": "https://www.behance.net/gallery/177297218/Event-Branding"
+      "link": "https://www.behance.net/gallery/235425827/Event-Branding-Packages"
     },
    
       {
@@ -223,7 +223,36 @@
       "description": "Responsive website design with modern UI/UX principles",
       "progress": "95%",
       "link": "https://www.youtube.com/watch?v=JMfifrod7TU"
+    },
+      {
+      "id": 6,
+      "category": "Event Branding",
+      "title": "Full Event Branding",
+      "image": "/image/Event/1 (1).jpg",
+      "description": "Complete event branding including signage, backdrops, and promotional materials",
+      "progress": "93%",
+      "link": "https://www.behance.net/gallery/235431217/Poster-design"
+    },
+       {
+      "id": 6,
+      "category": "Event Branding",
+      "title": "Full Event Branding",
+      "image": "/image/Event/56.jpg",
+      "description": "Complete event branding including signage, backdrops, and promotional materials",
+      "progress": "93%",
+      "link": "https://www.behance.net/gallery/235419181/social-media-marketing"
+    },
+  
+      {
+      "id": 6,
+      "category": "Digital Marketing",
+      "title": "Full Event Branding",
+      "image": "/image/Event/social media poster design.jpg",
+      "description": "Complete event branding including signage, backdrops, and promotional materials",
+      "progress": "93%",
+      "link": "https://www.behance.net/gallery/235413861/social-media-poster-design"
     }
+
      
   ]
 }

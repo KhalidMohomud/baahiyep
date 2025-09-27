@@ -36,7 +36,7 @@ const SectionFooter = () => {
               <h3 className="text-xl font-bold">Baahiye Digital</h3>
             </div>
             <p className="max-w-xs mx-auto text-sm leading-relaxed text-gray-300 md:mx-0">
-              Innovative digital service provider in Somalia since 2022. We specialize in marketing, web design, and video production.
+              Innovative digital service provider in Somalia since 2021. We specialize in marketing, web design, and video production.
             </p>
 
             {/* Social Icons */}

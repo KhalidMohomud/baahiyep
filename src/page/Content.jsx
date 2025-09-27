@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaUser, FaComments, FaPaperPlane, FaCheckCircle, FaRocket, FaLightbulb, FaUsers, FaGlobe, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaUser, FaComments, FaPaperPlane, FaCheckCircle, FaRocket, FaLightbulb, FaUsers} from 'react-icons/fa';
 import SectionFooter from '../components/SectionFooter';
+import Clients from '../components/Clients';
 
 
 // Register GSAP plugins
@@ -13,6 +14,8 @@ const Contact = () => {
   const formRef = useRef(null);
   const infoRef = useRef(null);
   const headerRef = useRef(null);
+    const featureCardsRef = useRef(null);
+     const featuresRef = useRef(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -129,7 +132,7 @@ const Contact = () => {
     {
       icon: <FaPhone className="text-2xl text-white" />,
       title: "Phone",
-      details: "+252618-046672\n+252682-569080",
+      details: "+252618-046672\n+252682-569080\n+252 61 3732356",
       color: "from-green-500 to-emerald-600"
     }
   ];
@@ -153,9 +156,21 @@ const Contact = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="relative min-h-screen overflow-hidden bg-white dark:bg-dark-bg transition-colors duration-300">
+    <div ref={sectionRef} className="relative min-h-screen overflow-hidden transition-colors duration-300 bg-white dark:bg-dark-bg">
     
-      
+        <div className="pb-16 bg-gradient-to-r from-red-800 via-red-700 to-brandOrange pt-28">
+    <div className="flex items-center justify-around mx-auto max-w-7xl sm:py-20">
+      {/* Left side - Title */}
+      <h1 className="text-4xl font-extrabold text-white md:text-5xl">Content</h1>
+
+      {/* Right side - Breadcrumb */}
+      <div className="flex items-center gap-2 text-lg font-bold text-white/90 ">
+        <a href="/" className="hover:underline">Home</a>
+        <span>›</span>
+        <span>Content</span>
+      </div>
+    </div>
+  </div>
       <div className="container relative z-10 px-6 py-16 mx-auto">
         <div className="mx-auto max-w-7xl">
           {/* Section Header */}
@@ -170,7 +185,7 @@ const Contact = () => {
           <div className="grid items-start gap-16 lg:grid-cols-2">
             
             {/* Contact Form */}
-            <div ref={formRef} className="p-8 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-600 shadow-2xl rounded-3xl">
+            <div ref={formRef} className="p-8 bg-white border border-gray-100 shadow-2xl dark:bg-dark-card dark:border-gray-600 rounded-3xl">
               <div className="mb-8 text-center">
                 <h3 className="mb-3 text-3xl font-bold text-gray-900 dark:text-dark-text">Send us a Message</h3>
                 <p className="text-gray-600 dark:text-gray-300">Fill out the form below and we'll get back to you soon</p>
@@ -259,7 +274,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 transition-all duration-300 border-2 border-gray-200 dark:border-gray-600 dark:bg-dark-surface dark:text-dark-text resize-none rounded-xl focus:border-brandOrange focus:outline-none group-hover:border-brandOrange/50"
+                      className="w-full px-4 py-3 transition-all duration-300 border-2 border-gray-200 resize-none dark:border-gray-600 dark:bg-dark-surface dark:text-dark-text rounded-xl focus:border-brandOrange focus:outline-none group-hover:border-brandOrange/50"
                       placeholder="Tell us about your project or inquiry..."
                     ></textarea>
                   </div>
@@ -295,7 +310,7 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="p-6 transition-all duration-300 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-600 shadow-lg cursor-pointer group rounded-2xl hover:shadow-2xl"
+                  className="p-6 transition-all duration-300 bg-white border border-gray-100 shadow-lg cursor-pointer dark:bg-dark-card dark:border-gray-600 group rounded-2xl hover:shadow-2xl"
                 >
                   <div className="flex items-start space-x-4">
                     <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
@@ -303,7 +318,7 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <h4 className="mb-2 text-xl font-bold text-gray-900 dark:text-dark-text">{info.title}</h4>
-                      <p className="leading-relaxed text-gray-600 dark:text-gray-300 whitespace-pre-line">{info.details}</p>
+                      <p className="leading-relaxed text-gray-600 whitespace-pre-line dark:text-gray-300">{info.details}</p>
                     </div>
                   </div>
                 </div>
@@ -325,7 +340,13 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+
       
+       
+       
+       <Clients/>
+
       {/* Bottom section */}
    
           <SectionFooter />

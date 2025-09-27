@@ -8,6 +8,7 @@ import { Achievement } from   '../components/Achievement'
 import Clients from '../components/Clients'
 import Aboutcom from '../components/Aboutcom'
 import Approaches from '../components/Approaches'
+import Portfolio from "../components/Portfolio"
 
 
 // Register GSAP plugins
@@ -103,7 +104,7 @@ function About() {
   }, [])
 
   return (
-    <div ref={pageRef} className="min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300">
+    <div ref={pageRef} className="min-h-screen transition-colors duration-300 bg-white dark:bg-dark-bg">
       {/* Hero banner */}
       <section ref={heroRef} className="relative ml-2 mr-2 overflow-hidden ">
   <div className="pb-16 bg-gradient-to-r from-red-800 via-red-700 to-brandOrange pt-28">
@@ -122,28 +123,7 @@ function About() {
 </section>
 
 
-      {/* About Us */}
-      {/* <section ref={aboutRef} className="relative px-6 py-16 mx-auto max-w-7xl">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div className="flex items-center justify-center">
-            <div className="relative w-72 h-72 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brandOrange/20 to-brandNavy/20" />
-              <div className="absolute grid bg-white rounded-full inset-6 ring-8 ring-brandNavy/20 place-items-center">
-                <div className="w-24 h-24 rounded-full bg-brandOrange/80" />
-              </div>
-            </div>
-          </div>
-          <div className="space-y-4 text-gray-700">
-            <h2 className="text-2xl font-bold text-brandNavy">About Us</h2>
-            <p>
-            Baahiye Advertising Agency is one of the innovative digital service providers in Somalia, founded in 2022 to offer a wide range of digital creative services. Baahiye Advert is the first advertising company that provides a wide variety of one-stop digital creative services (1-stop agency: marketing, creative, web, and video) in Somalia.
-            </p>
-            <p>
-            Baahiye always aims to exceed expectations and deliver results that are based on our clients’ marketing objectives while enhancing their brands. Baahiye helps businesses keep up with the digital transformation and capitalize on new markets and opportunities. We are pleased with our capacity to combine creativity and efficiency to provide our clients with top-notch services.
-            </p>
-          </div>
-        </div>
-      </section> */}
+    
       <Aboutcom/>
 
      <Vision />
@@ -154,6 +134,7 @@ function About() {
    
 
      <Approaches/>
+     <Portfolio/>
 
       {/* Achievements */}
    

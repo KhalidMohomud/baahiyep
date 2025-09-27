@@ -2,16 +2,28 @@ import React, { useMemo, useRef } from 'react'
 
 // Source images
 const DEFAULT_LOGOS = [
-  { src: '/image/clients/Banaadirmall.jpeg', alt: 'Client A' },
-   { src: '/image/clients/logoimaan.jpg', alt: 'Client B' },
-  { src: '/image/clients/farayare.jpeg', alt: 'Client J' },
-  { src: '/image/clients/Al_nuurayn.jpeg', alt: 'Client C' },
-  { src: '/image/clients/sahalpolyclinicCenter.jpeg', alt: 'Client D' },
-  { src: '/image/clients/Istanbulfurniture.jpeg', alt: 'Client E' },
-  { src: '/image/clients/Rahmatullah.jpeg', alt: 'Client F' },
-  { src: '/image/clients/Al_Naciimaeye.jpeg', alt: 'Client g' },
-  { src: '/image/clients/sahalprint.jpeg', alt: 'Client h' },
-  { src: '/image/clients/Istanbulfurniture.jpeg', alt: 'Client I' },
+  { src: '/image/clients/Banaadirmall.jpeg', alt: 'Client 1' },
+    { src: '/image/clients/hamarwayn mall.jpg', alt: 'Client 2' },
+   { src: '/image/clients/logoimaan.jpg', alt: 'Client 3' },
+  { src: '/image/clients/farayare.jpeg', alt: 'Client 4' },
+    { src: '/image/clients/Istanbulfurniture.jpeg', alt: 'Client 5' },
+  { src: '/image/clients/Al_nuurayn.jpeg', alt: 'Client 6' },
+   { src: '/image/clients/caashimares.png', alt: 'Client 21' },
+  { src: '/image/clients/sahalpolyclinicCenter.jpeg', alt: 'Client 7' },
+  { src: '/image/clients/sahal.jpeg', alt: 'Client 8' },
+  { src: '/image/clients/Rahmatullah.jpeg', alt: 'Client 9' },
+  { src: '/image/clients/Al_Naciimaeye.jpeg', alt: 'Client 10' },
+  { src: '/image/clients/sahalprint.jpeg', alt: 'Client 11' },
+  { src: '/image/clients/.jpeg', alt: 'Client 12' },
+  { src: '/image/clients/mucdanRes.jpeg', alt: 'Client 13' },
+  { src: '/image/clients/kitokito.jpeg', alt: 'Client 14' },
+  { src: '/image/clients/kirotaaySuud.jpeg', alt: 'Client 15' },
+  { src: '/image/clients/kaahele.jpeg', alt: 'Client 16' },
+  { src: '/image/clients/feynuus.png', alt: 'Client 17' },
+  { src: '/image/clients/ramadaanco.jpg', alt: 'Client 18' },
+   { src: '/image/clients/dhoolaskinkare.png', alt: 'Client 19' },
+    { src: '/image/clients/ìibdoon -01.png', alt: 'Client 20' },
+    
 ]
 
 // Card with elegant styling + dark mode

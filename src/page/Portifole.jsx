@@ -11,8 +11,7 @@ import SectionFooter from "../components/SectionFooter";
 // ✅ Extract YouTube ID safely
 const getYouTubeId = (url) => {
   try {
-    const regExp =
-      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
     return match && match[2].length === 11 ? match[2] : null;
   } catch {
@@ -42,13 +41,11 @@ const Portfolio = () => {
 
   return (
     <div>
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative ml-2 mr-2 overflow-hidden">
         <div className="pb-16 bg-gradient-to-r from-red-800 via-red-700 to-brandOrange pt-28">
           <div className="flex items-center justify-around mx-auto max-w-7xl sm:py-20">
-            <h1 className="text-4xl font-extrabold text-white md:text-5xl">
-              Portfolio
-            </h1>
+            <h1 className="text-4xl font-extrabold text-white md:text-5xl">Portfolio</h1>
             <div className="flex items-center gap-2 text-lg font-bold text-white/90">
               <a href="/" className="hover:underline">Home</a>
               <span>›</span>
@@ -58,17 +55,15 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Portfolio */}
+      {/* Portfolio Section */}
       <section className="py-20 bg-gradient-to-b from-[#f9fafb] to-white dark:from-dark-surface dark:to-dark-bg">
         <div className="px-6 mx-auto max-w-7xl">
           {/* Header */}
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-extrabold text-brandNavy dark:text-white">
-              Our Portfolio
-            </h2>
+            <h2 className="text-4xl font-extrabold text-brandNavy dark:text-white">Our Portfolio</h2>
             <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-600 dark:text-gray-300">
-              Our portfolio speaks for itself. Check out our latest projects and
-              see the creativity, quality, and innovation we bring.
+              Our portfolio speaks for itself. Check out our latest projects and see the creativity,
+              quality, and innovation we bring.
             </p>
           </div>
 
@@ -90,7 +85,7 @@ const Portfolio = () => {
           </div>
 
           {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2 auto-rows-fr">
             {filteredItems.map((item, index) => {
               const videoId =
                 item.category === "Video Production"
@@ -104,22 +99,23 @@ const Portfolio = () => {
               return (
                 <div
                   key={index}
-                  className="relative flex items-center justify-center overflow-hidden shadow-lg rounded-2xl group"
+                  className="relative flex flex-col justify-between h-full overflow-hidden bg-white shadow-lg rounded-2xl group dark:bg-dark-card"
                 >
                   {/* VIDEO PROJECT */}
                   {item.category === "Video Production" && videoId ? (
                     playingVideos[index] ? (
-                      <iframe
-                        src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                        title={item.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-[400px] rounded-2xl mx-auto"
-                      ></iframe>
+                      <div className="aspect-[16/9] w-full rounded-2xl overflow-hidden">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                          title={item.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
                     ) : (
                       <div
-                        className="relative w-full h-[400px] bg-black cursor-pointer rounded-2xl group overflow-hidden flex justify-center items-center"
+                        className="relative aspect-[16/9] w-full bg-black cursor-pointer rounded-2xl group overflow-hidden flex justify-center items-center"
                         onClick={() => handlePlayVideo(index)}
                       >
                         <img
@@ -145,26 +141,27 @@ const Portfolio = () => {
                         </div>
                       </div>
                     )
-                  ) : item.category === "Modern Web Design" ? (
-                    /* SCROLLABLE WEB DESIGN */
-                    <div className="w-full h-[400px] overflow-y-scroll bg-black rounded-2xl flex justify-center items-start">
+                  ) : item.category === "Modern Web Design" ? 
+                  (
+            <div className="w-full overflow-y-auto h-96 rounded-2xl">
+              <img
+            src={item.image}
+               alt={item.title}
+             className="object-contain w-full h-auto transition-transform duration-500 group-hover:scale-105"
+            />
+               </div>
+              ) : (
+                    // ✅ DEFAULT: other categories with aspect ratio
+                    <div className="aspect-[16/9] w-full rounded-2xl overflow-hidden bg-black">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-top mx-auto"
-                        style={{ minHeight: "800px" }}
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                  ) : (
-                    /* DEFAULT IMAGE */
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="object-contain max-w-full h-[400px] mx-auto transition-transform duration-500 group-hover:scale-105"
-                    />
                   )}
 
-                  {/* Overlay (skip for video) */}
+                  {/* Overlay for non-video items */}
                   {item.category !== "Video Production" && (
                     <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 opacity-0 bg-black/50 group-hover:opacity-100">
                       <div className="space-y-2 text-center">
@@ -188,16 +185,10 @@ const Portfolio = () => {
               );
             })}
           </div>
-
-          {/* Load More */}
-          <div className="mt-12 text-center">
-            <button className="px-10 py-3 text-lg font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-brandOrange to-brandNavy hover:opacity-90">
-              Load More
-            </button>
-          </div>
         </div>
       </section>
 
+      {/* Clients & Footer */}
       <Clients />
       <SectionFooter />
     </div>

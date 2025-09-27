@@ -56,7 +56,7 @@ const EventBrandingPackages = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-white dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg transition-colors duration-300">
+    <section className="relative py-20 transition-colors duration-300 bg-gradient-to-b from-white via-gray-50 to-white dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg">
       <div className="absolute inset-0 pointer-events-none network-pattern opacity-10"></div>
 
       <div className="relative px-6 mx-auto max-w-7xl">
@@ -73,7 +73,7 @@ const EventBrandingPackages = () => {
         <div className="grid w-full gap-10 md:grid-cols-3">
           {packages.map((pkg) => (
             <div key={pkg.name} className="relative transition transform group hover:-translate-y-2">
-              <div className="flex flex-col h-full overflow-hidden transition bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 shadow-lg rounded-2xl hover:shadow-2xl">
+              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-card dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient">
                 <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
                   {pkg.name}
                 </div>

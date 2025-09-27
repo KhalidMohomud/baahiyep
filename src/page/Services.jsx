@@ -244,7 +244,7 @@ const Services = () => {
   ]
 
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg">
+    <div className="min-h-screen transition-colors duration-300 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg ">
       
       {/* Hero Section */}
       <div className='px-2 '>
@@ -288,10 +288,10 @@ const Services = () => {
       </div>
 
       {/* Services Section */}
-      <div ref={servicesRef} className="py-20 transition-colors duration-300 bg-white dark:bg-dark-surface">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div ref={servicesRef} className="py-20 transition-colors duration-300 bg-white dark:bg-dark-surface ">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 ">
           <div className="mb-16 text-center">
-            <h2 className="mb-6 text-4xl font-bold text-gray-900 dark:text-dark-text md:text-5xl">
+            <h2 className="mb-6 text-4xl font-bold text-gray-900 dark:text-dark-text md:text-5xl ">
               What We Offer
             </h2>
             <p className="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300">
@@ -340,12 +340,14 @@ const Services = () => {
       </div>
 
        <Packages/>
+
+       
+       <SocialMediaPackages/>
        {/* <WebDesign/> */}
            <div>
                <EventBrandingPackages/>
              </div>
 
-       <SocialMediaPackages/>
 
 
          <Clients />
