@@ -1,7 +1,8 @@
-
 import { useDispatch } from 'react-redux';
 import { setAmount, setMeta } from '../store/paymentSlice';
 import { useNavigate } from 'react-router-dom';
+
+const TAX_RATE = 0.05;
 
 const EventBrandingPackages = () => {
   const dispatch = useDispatch();
@@ -60,6 +61,7 @@ const EventBrandingPackages = () => {
       <div className="absolute inset-0 pointer-events-none network-pattern opacity-10"></div>
 
       <div className="relative px-6 mx-auto max-w-7xl">
+        {/* Heading */}
         <div className="mb-6 text-center md:mb-10">
           <h2 className="inline-block px-6 py-3 text-2xl font-extrabold text-white rounded-full shadow-lg bg-brandOrange md:text-4xl">
             Event Branding Packages
@@ -70,51 +72,76 @@ const EventBrandingPackages = () => {
           Choose from our <span className="font-bold text-brandOrange">Event Branding Packages</span> to match your event’s goals and budget.
         </p>
 
+        {/* Packages Grid */}
         <div className="grid w-full gap-10 md:grid-cols-3">
-          {packages.map((pkg) => (
-            <div key={pkg.name} className="relative transition transform group hover:-translate-y-2">
-              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-card dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient">
-                <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
-                  {pkg.name}
-                </div>
+          {packages.map((pkg) => {
+            const tax = +(pkg.price * TAX_RATE).toFixed(2);
+            const total = +(pkg.price + tax).toFixed(2);
 
-                <div className="my-6 text-center">
-                  <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">${pkg.price}</span>
-                </div>
+            return (
+              <div key={pkg.name} className="relative transition transform group hover:-translate-y-2">
+                <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-card dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient">
+                  {/* Title */}
+                  <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
+                    {pkg.name}
+                  </div>
 
-                <ul className="flex-1 px-6 space-y-4 text-base">
-                  {pkg.features.map((f, idx) => (
-                    <li
-                      key={idx}
-                      className={`flex items-center gap-3 ${f.included ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 dark:text-gray-500 line-through'}`}
-                    >
-                      <span
-                        className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
-                          f.included ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-500'
+                  {/* Pricing */}
+                  <div className="my-6 text-center">
+                    <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
+                      ${pkg.price}
+                    </span>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      + tax: ${tax} = <strong>${total}</strong>
+                    </p>
+                  </div>
+
+                  {/* Features */}
+                  <ul className="flex-1 px-6 space-y-4 text-base">
+                    {pkg.features.map((f, idx) => (
+                      <li
+                        key={idx}
+                        className={`flex items-center gap-3 ${
+                          f.included
+                            ? 'text-gray-700 dark:text-gray-300'
+                            : 'text-gray-400 dark:text-gray-500 line-through'
                         }`}
                       >
-                        {f.included ? '✔' : '✖'}
-                      </span>
-                      <span>{f.label}</span>
-                    </li>
-                  ))}
-                </ul>
+                        <span
+                          className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
+                            f.included
+                              ? 'bg-green-100 text-green-600'
+                              : 'bg-red-100 text-red-500'
+                          }`}
+                        >
+                          {f.included ? '✔' : '✖'}
+                        </span>
+                        <span>{f.label}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <div className="mt-8 mb-6 text-center">
-                  <button
-                    onClick={() => {
-                      dispatch(setAmount(pkg.price));
-                      dispatch(setMeta({ source: 'event_branding', name: pkg.name }));
-                      navigate('/payments');
-                    }}
-                    className="px-6 py-3 font-semibold text-white transition-all rounded-full shadow-md bg-brandOrange hover:bg-brandNavy"
-                  >
-                    Choose Plan
-                  </button>
+                  {/* Choose Plan Button */}
+                  <div className="mt-8 mb-6 text-center">
+                    <button
+                      onClick={() => {
+                        dispatch(setAmount(total));
+                        dispatch(setMeta({
+                          source: 'event_branding',
+                          name: pkg.name,
+                          basePrice: pkg.price,
+                        }));
+                        navigate('/payments');
+                      }}
+                      className="px-6 py-3 font-semibold text-white transition-all rounded-full shadow-md bg-brandOrange hover:bg-brandNavy"
+                    >
+                      Choose Plan
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

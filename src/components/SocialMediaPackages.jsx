@@ -1,7 +1,8 @@
-
 import { useDispatch } from 'react-redux';
 import { setAmount, setMeta } from '../store/paymentSlice';
 import { useNavigate } from 'react-router-dom';
+
+const TAX_RATE = 0.05;
 
 const SocialMediaPackages = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const SocialMediaPackages = () => {
         { label: '2 products video', included: true },
         { label: 'Monthly Report', included: true },
         { label: 'Promotions Pay as you go', included: true },
-        { label: 'Marketing Plan and Strategy', included: false }, // crossed out
+        { label: 'Marketing Plan and Strategy', included: false },
       ],
     },
     {
@@ -57,7 +58,6 @@ const SocialMediaPackages = () => {
 
   return (
     <section className="relative py-20 overflow-visible transition-colors duration-300 bg-gradient-to-b from-white via-gray-50 to-white dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg">
-      {/* background */}
       <div className="absolute inset-0 pointer-events-none network-pattern opacity-10"></div>
 
       <div className="relative px-6 mx-auto max-w-7xl">
@@ -72,70 +72,76 @@ const SocialMediaPackages = () => {
           Each package includes the perfect balance of strategy, creative design, management, advertising, and reporting.
         </p>
 
-        {/* Packages Grid */}
+        {/* Packages */}
         <div className="grid w-full gap-10 md:grid-cols-3">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.name}
-              className="relative transition transform group hover:-translate-y-2"
-            >
-              {/* Card */}
-              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-card dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient">
-                {/* Card header */}
-                <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
-                  {pkg.name}
-                </div>
+          {packages.map((pkg) => {
+            const tax = +(pkg.price * TAX_RATE).toFixed(2);
+            const total = +(pkg.price + tax).toFixed(2);
 
-                {/* Pricing */}
-                <div className="my-6 text-center">
-                  <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
-                    ${pkg.price}
-                  </span>
-                </div>
+            return (
+              <div
+                key={pkg.name}
+                className="relative transition transform group hover:-translate-y-2"
+              >
+                {/* Card */}
+                <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-card dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient">
+                  {/* Header */}
+                  <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
+                    {pkg.name}
+                  </div>
 
-                {/* Features */}
-                <ul className="flex-1 px-6 space-y-4 text-base">
-                  {pkg.features.map((f, idx) => (
-                    <li
-                      key={idx}
-                      className={`flex items-center gap-3 ${
-                        f.included ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 dark:text-gray-500 line-through'
-                      }`}
-                    >
-                      <span
-                        className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
-                          f.included
-                            ? 'bg-green-100 text-green-600'
-                            : 'bg-red-100 text-red-500'
+                  {/* Pricing */}
+                  <div className="my-6 text-center">
+                    <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
+                      ${pkg.price}
+                    </span>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      + tax: ${tax} = <strong>${total}</strong>
+                    </p>
+                  </div>
+
+                  {/* Features */}
+                  <ul className="flex-1 px-6 space-y-4 text-base">
+                    {pkg.features.map((f, idx) => (
+                      <li
+                        key={idx}
+                        className={`flex items-center gap-3 ${
+                          f.included ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 dark:text-gray-500 line-through'
                         }`}
                       >
-                        {f.included ? '✔' : '✖'}
-                      </span>
-                      <span>{f.label}</span>
-                    </li>
-                  ))}
-                </ul>
+                        <span
+                          className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
+                            f.included
+                              ? 'bg-green-100 text-green-600'
+                              : 'bg-red-100 text-red-500'
+                          }`}
+                        >
+                          {f.included ? '✔' : '✖'}
+                        </span>
+                        <span>{f.label}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* Choose Plan Button */}
-                <div className="mt-8 mb-6 text-center">
-                  <button
-                    onClick={() => {
-                      dispatch(setAmount(pkg.price));
-                      dispatch(setMeta({ source: 'social_media', name: pkg.name }));
-                      navigate('/payments');
-                    }}
-                    className="px-6 py-3 font-semibold text-white transition-all rounded-full shadow-md bg-brandOrange hover:bg-brandNavy"
-                  >
-                    Choose Plan
-                  </button>
+                  {/* Button */}
+                  <div className="mt-8 mb-6 text-center">
+                    <button
+                      onClick={() => {
+                        dispatch(setAmount(total));
+                        dispatch(setMeta({ source: 'social_media', name: pkg.name, basePrice: pkg.price }));
+                        navigate('/payments');
+                      }}
+                      className="px-6 py-3 font-semibold text-white transition-all rounded-full shadow-md bg-brandOrange hover:bg-brandNavy"
+                    >
+                      Choose Plan
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
-
-      {/* <SectionFooter /> */}
     </section>
   );
 };

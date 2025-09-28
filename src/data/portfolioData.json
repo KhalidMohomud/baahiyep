@@ -27,15 +27,7 @@
       "progress": "85%",
       "link": "https://www.behance.net/gallery/234491487/logo-design-and-branding"
     },
-      {
-      "id": 3,
-      "category": "Video Production",
-      "title": "Video Production",
-      "image": "https://www.youtube.com/watch?v=u0XPyJfxGhI",
-      "description": "Responsive website design with modern UI/UX principles",
-      "progress": "95%",
-      "link": "https://www.youtube.com/watch?v=u0XPyJfxGhI"
-    },
+     
     {
       "id": 4,
       "category": "Digital printing",
@@ -62,6 +54,16 @@
       "description": "Complete event branding including signage, backdrops, and promotional materials",
       "progress": "93%",
       "link": "https://www.behance.net/gallery/235425827/Event-Branding-Packages"
+    },
+
+     {
+      "id": 3,
+      "category": "Video Production",
+      "title": "Video Production",
+      "image": "https://www.youtube.com/watch?v=u0XPyJfxGhI",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://www.youtube.com/watch?v=u0XPyJfxGhI"
     },
    
       {
@@ -226,7 +228,7 @@
     },
       {
       "id": 6,
-      "category": "Event Branding",
+      "category": "Digital Marketing",
       "title": "Full Event Branding",
       "image": "/image/Event/1 (1).jpg",
       "description": "Complete event branding including signage, backdrops, and promotional materials",
@@ -235,7 +237,7 @@
     },
        {
       "id": 6,
-      "category": "Event Branding",
+      "category": "Digital Marketing",
       "title": "Full Event Branding",
       "image": "/image/Event/56.jpg",
       "description": "Complete event branding including signage, backdrops, and promotional materials",
@@ -245,7 +247,7 @@
   
       {
       "id": 6,
-      "category": "Event Branding",
+      "category": "Digital Marketing",
       "title": "Full Event Branding",
       "image": "/image/Event/social media poster design.jpg",
       "description": "Complete event branding including signage, backdrops, and promotional materials",
