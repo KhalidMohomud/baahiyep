@@ -421,10 +421,12 @@ const Home = () => {
           <Portfolio/>
      {/* Clients */}
 
+      <Packages/>
+
          {/* Achievements Section */}
     <Achievement/>
 
-        <Packages/>
+       
       <div ref={clientsRef}>
         <Clients />
       </div>

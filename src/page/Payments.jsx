@@ -1,5 +1,5 @@
-// Payments.jsx
-import React, { useEffect, useState } from 'react';
+
+import  { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import CustomAlert from '../components/alerts/CustomAlert'
@@ -93,7 +93,7 @@ function Payments() {
       );
 
       // On success
-      setAlert({ message: '✅ Payment submitted successfully.', type: 'success' });
+      setAlert({ message: 'Payment submitted successfully.', type: 'success' });
       // Optionally clear form or parts of it
       // setFormData({...}); 
     } catch (error) {
@@ -102,7 +102,7 @@ function Payments() {
       else if (error.request) message = 'No response from server. Check your network.';
       else message = error.message || message;
 
-      setAlert({ message: `❌ ${message}`, type: 'error' });
+      setAlert({ message: ` ${message}`, type: 'error' });
     } finally {
       setLoading(false);
     }
@@ -115,7 +115,7 @@ function Payments() {
   return (
     <div className="min-h-screen px-4 py-12 text-gray-800 bg-white dark:bg-gray-900 dark:text-white">
       <div className="relative max-w-6xl mx-auto">
-        <h1 className="mb-8 text-4xl font-extrabold text-center">Payment Form</h1>
+        <h1 className="mb-8 text-4xl font-extrabold text-center text-primary ">Payment Form</h1>
 
         {/* Alert */}
         {alert.message && (
@@ -170,6 +170,14 @@ function Payments() {
                 <p className="mt-2 font-bold">Total: ${formData.amount}</p>
               </div>
             )}
+
+              <div className='p-4 border border-gray-200 shadow-sm rounded-2xl dark:border-gray-700'>
+                  <h3 className='mb-2 text-lg font-semibold'>Local payments.</h3>
+                  <p>EVC Plus:  061 xxxxxxx</p>
+                  <p>ZAAD: 63 xxxxx</p>
+                  <p>SAHAL: 37 xxxxx</p>
+                 
+              </div>
           </div>
 
           {/* Right Column (Form Fields) */}
@@ -203,7 +211,7 @@ function Payments() {
                 value={formData.email}
                 onChange={(v) => handleChange('email', v)}
                 error={errors.email}
-                placeholder="you@example.com"
+                placeholder="you@gmail.com"
               />
             </div>
 
@@ -214,7 +222,7 @@ function Payments() {
                 value={formData.phoneNumber}
                 onChange={(v) => handleChange('phoneNumber', v)}
                 error={errors.phoneNumber}
-                placeholder="123456789"
+                placeholder="061 xxxxxx"
               />
               <InputField
                 label="Amount"
@@ -253,8 +261,8 @@ function Payments() {
                 disabled={loading}
                 className={`px-6 py-3 text-white font-semibold rounded-xl transition ${
                   loading
-                    ? 'bg-blue-400 cursor-not-allowed'
-                    : 'bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300'
+                    ? 'bg-primary cursor-not-allowed'
+                    : 'bg-primary hover:bg-primaryDark focus:ring-4 focus:ring-blue-300'
                 }`}
               >
                 {loading ? 'Submitting...' : 'Submit Payment'}
