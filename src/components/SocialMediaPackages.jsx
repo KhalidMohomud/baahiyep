@@ -2,8 +2,6 @@ import { useDispatch } from 'react-redux';
 import { setAmount, setMeta } from '../store/paymentSlice';
 import { useNavigate } from 'react-router-dom';
 
-const TAX_RATE = 0.05;
-
 const SocialMediaPackages = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -75,9 +73,6 @@ const SocialMediaPackages = () => {
         {/* Packages */}
         <div className="grid w-full gap-10 md:grid-cols-3">
           {packages.map((pkg) => {
-            const tax = +(pkg.price * TAX_RATE).toFixed(2);
-            const total = +(pkg.price + tax).toFixed(2);
-
             return (
               <div
                 key={pkg.name}
@@ -95,9 +90,6 @@ const SocialMediaPackages = () => {
                     <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
                       ${pkg.price}
                     </span>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      + tax: ${tax} = <strong>${total}</strong>
-                    </p>
                   </div>
 
                   {/* Features */}
@@ -127,7 +119,7 @@ const SocialMediaPackages = () => {
                   <div className="mt-8 mb-6 text-center">
                     <button
                       onClick={() => {
-                        dispatch(setAmount(total));
+                        dispatch(setAmount(pkg.price));
                         dispatch(setMeta({ source: 'social_media', name: pkg.name, basePrice: pkg.price }));
                         navigate('/payments');
                       }}

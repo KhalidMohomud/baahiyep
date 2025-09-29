@@ -1,8 +1,7 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setAmount, setMeta } from '../store/paymentSlice';
 import { useNavigate } from 'react-router-dom';
-
-const TAX_RATE = 0.05;
 
 const EventBrandingPackages = () => {
   const dispatch = useDispatch();
@@ -74,74 +73,66 @@ const EventBrandingPackages = () => {
 
         {/* Packages Grid */}
         <div className="grid w-full gap-10 md:grid-cols-3">
-          {packages.map((pkg) => {
-            const tax = +(pkg.price * TAX_RATE).toFixed(2);
-            const total = +(pkg.price + tax).toFixed(2);
+          {packages.map((pkg) => (
+            <div key={pkg.name} className="relative transition transform group hover:-translate-y-2">
+              <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-card dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient">
+                {/* Title */}
+                <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
+                  {pkg.name}
+                </div>
 
-            return (
-              <div key={pkg.name} className="relative transition transform group hover:-translate-y-2">
-                <div className="flex flex-col h-full overflow-hidden transition bg-white border border-gray-200 shadow-lg dark:bg-dark-card dark:border-gray-600 rounded-2xl hover:shadow-2xl hover:bg-mini-kit-gradient">
-                  {/* Title */}
-                  <div className="py-4 text-lg font-semibold text-center text-white bg-gradient-to-r from-brandOrange to-brandNavy">
-                    {pkg.name}
-                  </div>
+                {/* Pricing */}
+                <div className="my-6 text-center">
+                  <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
+                    ${pkg.price}
+                  </span>
+                </div>
 
-                  {/* Pricing */}
-                  <div className="my-6 text-center">
-                    <span className="text-4xl font-extrabold text-brandNavy dark:text-dark-text">
-                      ${pkg.price}
-                    </span>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      + tax: ${tax} = <strong>${total}</strong>
-                    </p>
-                  </div>
-
-                  {/* Features */}
-                  <ul className="flex-1 px-6 space-y-4 text-base">
-                    {pkg.features.map((f, idx) => (
-                      <li
-                        key={idx}
-                        className={`flex items-center gap-3 ${
+                {/* Features */}
+                <ul className="flex-1 px-6 space-y-4 text-base">
+                  {pkg.features.map((f, idx) => (
+                    <li
+                      key={idx}
+                      className={`flex items-center gap-3 ${
+                        f.included
+                          ? 'text-gray-700 dark:text-gray-300'
+                          : 'text-gray-400 dark:text-gray-500 line-through'
+                      }`}
+                    >
+                      <span
+                        className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
                           f.included
-                            ? 'text-gray-700 dark:text-gray-300'
-                            : 'text-gray-400 dark:text-gray-500 line-through'
+                            ? 'bg-green-100 text-green-600'
+                            : 'bg-red-100 text-red-500'
                         }`}
                       >
-                        <span
-                          className={`w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold ${
-                            f.included
-                              ? 'bg-green-100 text-green-600'
-                              : 'bg-red-100 text-red-500'
-                          }`}
-                        >
-                          {f.included ? '✔' : '✖'}
-                        </span>
-                        <span>{f.label}</span>
-                      </li>
-                    ))}
-                  </ul>
+                        {f.included ? '✔' : '✖'}
+                      </span>
+                      <span>{f.label}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                  {/* Choose Plan Button */}
-                  <div className="mt-8 mb-6 text-center">
-                    <button
-                      onClick={() => {
-                        dispatch(setAmount(total));
-                        dispatch(setMeta({
-                          source: 'event_branding',
-                          name: pkg.name,
-                          basePrice: pkg.price,
-                        }));
-                        navigate('/payments');
-                      }}
-                      className="px-6 py-3 font-semibold text-white transition-all rounded-full shadow-md bg-brandOrange hover:bg-brandNavy"
-                    >
-                      Choose Plan
-                    </button>
-                  </div>
+                {/* Choose Plan Button */}
+                <div className="mt-8 mb-6 text-center">
+                  <button
+                    onClick={() => {
+                      dispatch(setAmount(pkg.price)); // ✅ No tax
+                      dispatch(setMeta({
+                        source: 'event_branding',
+                        name: pkg.name,
+                        basePrice: pkg.price,
+                      }));
+                      navigate('/payments');
+                    }}
+                    className="px-6 py-3 font-semibold text-white transition-all rounded-full shadow-md bg-brandOrange hover:bg-brandNavy"
+                  >
+                    Choose Plan
+                  </button>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

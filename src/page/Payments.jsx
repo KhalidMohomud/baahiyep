@@ -62,51 +62,107 @@ function Payments() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrors({});
-    setAlert({ message: '', type: '' });
+  e.preventDefault();
+  setErrors({});
+  setAlert({ message: '', type: '' });
 
-    if (!validate()) {
-      return;
-    }
+  if (!validate()) return;
 
-    const payload = {
-      phoneNumber: formData.phoneNumber,
-      amount: formData.amount,
-      email: formData.email,
-      packageName: meta?.name || '',
-      FullName: formData.FullName,
-      City: formData.City,
-      BussinesName: formData.BussinesName,
-      Message: formData.Message,
-    };
-
-    try {
-      setLoading(true);
-      const response = await axios.post(
-        'http://localhost:3000/api/v1/pay',
-        payload,
-        {
-          headers: { 'Content-Type': 'application/json' },
-          withCredentials: true,
-        }
-      );
-
-      // On success
-      setAlert({ message: 'Payment submitted successfully.', type: 'success' });
-      // Optionally clear form or parts of it
-      // setFormData({...}); 
-    } catch (error) {
-      let message = 'Payment failed. Please try again.';
-      if (error.response) message = error.response.data?.message || message;
-      else if (error.request) message = 'No response from server. Check your network.';
-      else message = error.message || message;
-
-      setAlert({ message: ` ${message}`, type: 'error' });
-    } finally {
-      setLoading(false);
-    }
+  const payload = {
+    phoneNumber: formData.phoneNumber,
+    amount: formData.amount,
+    email: formData.email,
+    packageName: meta?.name || '',
+    FullName: formData.FullName,
+    City: formData.City,
+    BussinesName: formData.BussinesName,
+    Message: formData.Message,
   };
+
+  try {
+    setLoading(true);
+    const response = await axios.post(
+      'https://baahiyebackendapi.onrender.com/api/v1/pay',
+      payload,
+      {
+        headers: { 'Content-Type': 'application/json' },
+        withCredentials: true,
+      }
+    );
+
+    // Success
+    setAlert({ message: 'Payment submitted successfully.', type: 'success' });
+    // Optionally clear form
+    // setFormData({...});
+  } catch (error) {
+    let message = 'Payment failed. Please try again.';
+
+    if (error.response?.data) {
+      const errData = error.response.data;
+      if (typeof errData.error === 'string') {
+        message = errData.error;
+      } else if (errData.error?.responseMsg) {
+        message = errData.error.responseMsg;
+      }
+    } else if (error.request) {
+      message = 'No response from server. Check your internet connection.';
+    } else {
+      message = error.message || message;
+    }
+
+    setAlert({ message, type: 'error' });
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setErrors({});
+  //   setAlert({ message: '', type: '' });
+
+  //   if (!validate()) {
+  //     return;
+  //   }
+
+  //   const payload = {
+  //     phoneNumber: formData.phoneNumber,
+  //     amount: formData.amount,
+  //     email: formData.email,
+  //     packageName: meta?.name || '',
+  //     FullName: formData.FullName,
+  //     City: formData.City,
+  //     BussinesName: formData.BussinesName,
+  //     Message: formData.Message,
+  //   };
+
+  //   try {
+  //     setLoading(true);
+  //     const response = await axios.post(
+  //       'https://baahiyebackendapi.onrender.com/api/v1/pay',
+  //       payload,
+  //       {
+  //         headers: { 'Content-Type': 'application/json' },
+  //         withCredentials: true,
+  //       }
+  //     );
+
+  //     // On success
+  //     setAlert({ message: 'Payment submitted successfully.', type: 'success' });
+  //     // Optionally clear form or parts of it
+  //     // setFormData({...}); 
+  //   } catch (error) {
+  //     let message = 'Payment failed. Please try again.';
+  //     if (error.response) message = error.response.data?.message || message;
+  //     else if (error.request) message = 'No response from server. Check your network.';
+  //     else message = error.message || message;
+
+  //     setAlert({ message: ` ${message}`, type: 'error' });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleAlertClose = () => {
     setAlert({ message: '', type: '' });
@@ -166,7 +222,7 @@ function Payments() {
               <div className="p-4 border border-gray-200 shadow-sm rounded-2xl dark:border-gray-700">
                 <h3 className="mb-2 text-lg font-semibold">{meta.name}</h3>
                 <p>Base Price: ${meta.basePrice.toFixed(2)}</p>
-                <p>Tax (5%): ${(meta.basePrice * 0.05).toFixed(2)}</p>
+                <p>Tax: 0.00 </p>
                 <p className="mt-2 font-bold">Total: ${formData.amount}</p>
               </div>
             )}
@@ -187,7 +243,7 @@ function Payments() {
               value={formData.FullName}
               onChange={(v) => handleChange('FullName', v)}
               error={errors.FullName}
-              placeholder="John Doe"
+              placeholder="Enter full name"
             />
             <InputField
               label="Business Name"
