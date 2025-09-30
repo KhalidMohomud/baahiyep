@@ -7,7 +7,7 @@ const data = [
   {
     name: 'Kaaliye',
     stars: 1,
-    price: 120,
+    price: 0.01,
     features: [
       { label: 'Logo option 2', included: true },
       { label: 'Business Card & id', included: true },
