@@ -25,6 +25,14 @@ const Testimonials = () => {
       rating: 5
     }, 
 
+     {
+      quote: "“I have full confidence in their work. They are a strong, united team, and I firmly believe they can accomplish great things.”",
+      author: "DR Abdullahi Sharif",
+      title: "PhDProfessor at Somali National University",
+      image: "/image/TestimonialsiMage/dr_k.jpeg",
+      rating: 6
+    },
+
     
     {
       quote: "They helped us reach new customers and elevate our brand online.",
