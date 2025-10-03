@@ -12,7 +12,7 @@ const Testimonials = () => {
         {
       quote: "Shaqo cajiib ah iyo latalin sax ah. Baahiye waxay noo sahleen in aan si dhakhso leh u gaarno macaamiil cusub.",
       author: "Shiikh Nuradiin",
-      title: "Al Nuureyn Travel Agent",
+      title: "Ceo al nuurayn Travel Agancy",
       image: "/image/TestimonialsiMage/shiikh nuradiin .png",
       rating: 5
     },
@@ -37,7 +37,7 @@ const Testimonials = () => {
     {
       quote: "They helped us reach new customers and elevate our brand online.",
       author: "Abdifitaah Farayare",
-      title: "CEO of Farayare Training Company.",
+      title: "Ceo Farayare Trading Company.",
       image: "/image/TestimonialsiMage/abdifitaah Farayare.jpg",
       rating: 6
     },

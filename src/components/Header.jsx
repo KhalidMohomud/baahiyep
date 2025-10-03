@@ -11,7 +11,7 @@ const Header = () => {
   const closeMobileMenu = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 dark:border-gray-700 shadow-lg bg-white/95 dark:bg-dark-surface/95 backdrop-blur-sm transition-colors duration-300">
+    <header className="sticky top-0 z-50 transition-colors duration-300 border-b border-gray-100 shadow-lg dark:border-gray-700 bg-white/95 dark:bg-dark-surface/95 backdrop-blur-sm">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
@@ -58,9 +58,9 @@ const Header = () => {
             </nav>
 
             {/* Dark Mode Toggle */}
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <DarkModeToggle />
-            </div>
+            </div> */}
 
             {/* User Avatar */}
             {isAuthenticated && (
@@ -87,7 +87,7 @@ const Header = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 text-gray-700 dark:text-gray-300 transition-colors duration-300 rounded-md md:hidden hover:text-brandOrange hover:bg-gray-100 dark:hover:bg-gray-600"
+              className="p-2 text-gray-700 transition-colors duration-300 rounded-md dark:text-gray-300 md:hidden hover:text-brandOrange hover:bg-gray-100 dark:hover:bg-gray-600"
               aria-label="Toggle mobile menu"
             >
               <svg
@@ -119,7 +119,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {mobileOpen && (
-        <div className="py-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-surface md:hidden animate-in slide-in-from-top-2 transition-colors duration-300">
+        <div className="py-4 transition-colors duration-300 bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-dark-surface md:hidden animate-in slide-in-from-top-2">
           <nav className="flex flex-col px-4 space-y-3">
             {[
               { to: '/', label: 'Home' },
