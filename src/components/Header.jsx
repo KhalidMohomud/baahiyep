@@ -2,7 +2,7 @@ import  { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useClerkAuth } from '../contexts/ClerkAuthContext';
 import { UserButton } from '@clerk/clerk-react';
-import DarkModeToggle from './DarkModeToggle';
+// import DarkModeToggle from './DarkModeToggle';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -80,9 +80,9 @@ const Header = () => {
             )}
 
             {/* Mobile Dark Mode Toggle */}
-            <div className="md:hidden">
+            {/* <div className="md:hidden">
               <DarkModeToggle />
-            </div>
+            </div> */}
 
             {/* Mobile menu button */}
             <button
