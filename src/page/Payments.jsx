@@ -1,8 +1,8 @@
-
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import CustomAlert from '../components/alerts/CustomAlert';
+import { FaSpinner } from 'react-icons/fa'; // Make sure you have react-icons installed
 
 function Payments() {
   const [method, setMethod] = useState('local');
@@ -23,6 +23,8 @@ function Payments() {
   const reduxAmount = useSelector((state) => state.payment.amount);
   const meta = useSelector((state) => state.payment.meta);
 
+  const firstErrorRef = useRef(null);
+
   useEffect(() => {
     if (typeof reduxAmount === 'number' && reduxAmount > 0) {
       setFormData((prev) => ({
@@ -37,12 +39,36 @@ function Payments() {
       ...prev,
       [field]: value,
     }));
+    setErrors((prev) => ({ ...prev, [field]: '' }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.FullName.trim()) newErrors.FullName = 'Full Name is required';
+    if (!formData.BussinesName.trim()) newErrors.BussinesName = 'Business Name is required';
+    if (!formData.City.trim()) newErrors.City = 'City is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email address';
+    if (!formData.phoneNumber.trim()) newErrors.phoneNumber = 'Phone number is required';
+    if (!formData.amount || Number(formData.amount) <= 0) newErrors.amount = 'Invalid amount';
+    return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors({});
     setAlert({ message: '', type: '' });
+
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+
+      // Focus on first error field
+      const firstErrorKey = Object.keys(validationErrors)[0];
+      const el = document.querySelector(`[name="${firstErrorKey}"]`);
+      if (el) el.focus();
+
+      return;
+    }
 
     const payload = {
       phoneNumber: formData.phoneNumber,
@@ -67,16 +93,13 @@ function Payments() {
       );
 
       setAlert({ message: 'Payment submitted successfully.', type: 'success' });
+      setFormData((prev) => ({ ...prev, Message: '' }));
     } catch (error) {
       let message = 'Payment failed. Please try again.';
-
-      if (error.response?.data) {
-        const errData = error.response.data;
-        if (typeof errData.error === 'string') {
-          message = errData.error;
-        } else if (errData.error?.responseMsg) {
-          message = errData.error.responseMsg;
-        }
+      if (error.response?.data?.error) {
+        message = typeof error.response.data.error === 'string'
+          ? error.response.data.error
+          : error.response.data.error.responseMsg || message;
       } else if (error.request) {
         message = 'No response from server. Check your internet connection.';
       } else {
@@ -89,48 +112,20 @@ function Payments() {
     }
   };
 
-  const handleAlertClose = () => {
-    setAlert({ message: '', type: '' });
-  };
+  const handleAlertClose = () => setAlert({ message: '', type: '' });
 
   return (
-    <>
-      {/* Loading Spinner */}
-      {loading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm">
-          <div className="relative w-[90%] max-w-sm p-6 text-center bg-white rounded-2xl shadow-2xl dark:bg-gray-900">
-            <div className="relative w-20 h-20 mx-auto mb-6">
-              <div className="absolute inset-0 border-4 border-purple-500 rounded-full border-t-transparent animate-spin"></div>
-              <div className="flex items-center justify-center w-full h-full">
-                <svg className="w-8 h-8 text-purple-500" fill="none" viewBox="0 0 24 24">
-                  <path d="M4 12a8 8 0 018-8v8H4z" fill="currentColor" className="opacity-75" />
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" className="opacity-25" />
-                </svg>
-              </div>
-            </div>
-            <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">
-              Processing Payment
-            </h2>
-            <p className="text-sm text-gray-500 dark:text-gray-300">
-              Please wait while we securely process your payment...
-            </p>
+    <div className="min-h-screen px-4 py-12 text-gray-800 bg-white dark:bg-gray-900 dark:text-white">
+      <div className="relative max-w-6xl mx-auto">
+        <h1 className="mb-8 text-4xl font-extrabold text-center text-primary">Payment Form</h1>
+
+        {alert.message && (
+          <div className="mb-6">
+            <CustomAlert message={alert.message} type={alert.type} onClose={handleAlertClose} />
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Main Content */}
- <div className="min-h-screen px-4 py-12 text-gray-800 bg-white dark:bg-gray-900 dark:text-white"> 
-  <div className="relative max-w-6xl mx-auto">
-    <h1 className="mb-8 text-4xl font-extrabold text-center text-primary">Payment Form</h1>
-
-    {/* Alert Message */}
-    {alert.message && (
-      <div className="mb-6">
-        <CustomAlert message={alert.message} type={alert.type} onClose={handleAlertClose} />
-      </div>
-    )}
-
-    <form onSubmit={handleSubmit} className="grid gap-8 md:grid-cols-3">
+        <form onSubmit={handleSubmit} className="grid gap-8 md:grid-cols-3">
       
       {/* RIGHT SIDE on Desktop / TOP on Mobile */}
       <div className="order-1 space-y-6 md:col-span-1 md:order-2">
@@ -297,22 +292,20 @@ function Payments() {
 
         {/* Submit Button */}
         <div className="flex justify-end">
-          <button
-            type="submit"
-            className="px-6 py-3 font-semibold text-white transition rounded-xl bg-primary hover:bg-primaryDark focus:ring-4 focus:ring-blue-300"
-          >
-            Submit Payment
-          </button>
+       <button
+      type="submit"
+      disabled={loading}
+      className="flex items-center gap-2 px-6 py-3 font-semibold text-white transition rounded-xl bg-primary hover:bg-primaryDark focus:ring-4 focus:ring-blue-300 disabled:opacity-50"
+    >
+      {loading && <FaSpinner className="w-5 h-5 animate-spin" />}
+      {loading ? 'Processing...' : 'Submit Payment'}
+    </button>
         </div>
       </div>
     </form>
-  </div>
-</div>
-
-
-    </>
+      </div>
+    </div>
   );
 }
 
 export default Payments;
-

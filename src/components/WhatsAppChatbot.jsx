@@ -31,7 +31,7 @@ const WhatsAppChatbot = () => {
     'price': "Our pricing varies based on project requirements. Would you like to schedule a consultation to discuss your specific needs?",
     'contact': "You can reach us at info@baahiyep.com or call us at +1234567890. I can also help you schedule a meeting!",
     'portfolio': "Check out our portfolio at /Portifole to see our latest work!",
-    'about': "Learn more about our team and mission at /about",
+    'about': "Baahiye Advertising Agency – where creativity meets technology! Since 2021, we have been empowering businesses in Somalia with complete digital and printing solutions. As the country’s first one-stop digital creative agency, we proudly offer",
     'default': "That's interesting! I'd be happy to connect you with our team for more detailed information. Would you like to schedule a consultation?"
   }
 
@@ -117,7 +117,7 @@ const WhatsAppChatbot = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold">Baahiyep Support</h3>
+                <h3 className="font-semibold">Baahiye Support</h3>
                 <p className="text-sm text-green-100">Usually responds instantly</p>
               </div>
             </div>

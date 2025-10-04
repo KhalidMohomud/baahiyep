@@ -21,8 +21,8 @@ const DEFAULT_LOGOS = [
   { src: '/image/clients/kaahele.jpeg', alt: 'Client 16' },
   { src: '/image/clients/feynuus.png', alt: 'Client 17' },
   { src: '/image/clients/ramadaanco.jpg', alt: 'Client 18' },
-   { src: '/image/clients/dhoolaskinkare.png', alt: 'Client 19' },
-    { src: '/image/clients/ìibdoon -01.png', alt: 'Client 20' },
+  { src: '/image/clients/dhoolaskinkare.png', alt: 'Client 19' },
+  { src: '/image/clients/ìibdoon -01.png', alt: 'Client 20' },
     
 ]
 

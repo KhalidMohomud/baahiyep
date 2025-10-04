@@ -14,7 +14,7 @@ import {
   FaPhone,
 } from 'react-icons/fa';
 
-// ✅ Import your new logo image
+//  Import your new logo image
 const SectionFooter = () => {
   return (
     <footer className="bg-gradient-to-br from-brandNavy via-[#1a1a2e] to-brandNavy text-white">
@@ -24,16 +24,16 @@ const SectionFooter = () => {
 
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center justify-center space-x-3 md:justify-start">
-              {/* ✅ New Logo Here */}
+            <div className="flex items-center justify-center space-x-1 md:justify-start">
+              {/*New Logo Here */}
               <div className="flex items-center justify-center w-16 h-16">
                 <img
                   src="/image/Bahiye.png"
                   // alt="Baahiye Digital Logo"
-                  className="object-contain h-full"
+                  className="object-contain h-full "
                 />
               </div>
-              <h3 className="text-xl font-bold">Baahiye Digital</h3>
+              <h3 className="text-xl font-bold ">Baahiye Digital Marketing</h3>
             </div>
             <p className="max-w-xs mx-auto text-sm leading-relaxed text-gray-300 md:mx-0">
               Innovative digital service provider in Somalia since 2021. We specialize in marketing, web design, and video production.
@@ -81,7 +81,7 @@ const SectionFooter = () => {
               >
                 <FaTiktok className="w-4 h-4" />
               </a>
-              {/* ✅ Behance Link */}
+              {/*  Behance Link */}
               <a
                 href="https://www.behance.net/baahiyedigitalmark"
                 target="_blank"
@@ -114,27 +114,31 @@ const SectionFooter = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contact Info</h4>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li className="flex flex-col items-center md:items-start sm:flex-row sm:space-x-2">
-                <FaMapMarkerAlt className="mb-1 text-brandOrange sm:mb-0" />
-                <div className="text-center sm:text-left">
-                  <div>City Tower 311, Floor 3</div>
-                  <div>Shaqaalaha Street, Waaberi District</div>
-                  <div>Mogadishu, Somalia</div>
-                </div>
-              </li>
-              <li className="flex items-center justify-center space-x-2 md:justify-start">
-                <FaEnvelope className="text-brandOrange" />
-                <span>info@baahiye.so</span>
-              </li>
-              <li className="flex items-center justify-center space-x-2 md:justify-start">
-                <FaPhone className="text-brandOrange" />
-                <span>+252 61 3732356</span>
-              </li>
-            </ul>
-          </div>
+        {/* Contact Info */}
+<div className="flex flex-col items-center space-y-4 text-center md:col-span-2 lg:col-span-1 md:items-center lg:items-start md:text-center lg:text-left">
+  <h4 className="text-lg font-semibold">Contact Info</h4>
+  <ul className="space-y-3 text-sm text-gray-300">
+    <li className="flex flex-col items-center md:items-center lg:items-start">
+      <div className="flex items-center space-x-2">
+        <FaMapMarkerAlt className="text-brandOrange" />
+        <span>City Tower 311, Floor 3</span>
+      </div>
+      <span>Shaqaalaha Street, Waaberi District</span>
+      <span>Mogadishu, Somalia</span>
+    </li>
+
+    <li className="flex items-center justify-center space-x-2 md:justify-center lg:justify-start">
+      <FaEnvelope className="text-brandOrange" />
+      <span>info@baahiye.so</span>
+    </li>
+
+    <li className="flex items-center justify-center space-x-2 md:justify-center lg:justify-start">
+      <FaPhone className="text-brandOrange" />
+      <span>+252 61 3732356</span>
+    </li>
+  </ul>
+</div>
+
         </div>
       </div>
 
