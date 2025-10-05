@@ -17,16 +17,16 @@ export default {
         brandNavy: '#1E2A4A',
 
         // Dark mode colors
-        dark: {
-          bg: '#0F172A',
-          surface: '#1E293B',
-          card: '#334155',
-          text: '#F1F5F9',
-          muted: '#94A3B8',
-        },
+        // dark: {
+        //   bg: '#0F172A',
+        //   surface: '#1E293B',
+        //   card: '#334155',
+        //   text: '#F1F5F9',
+        //   muted: '#94A3B8',
+        // },
       },
 
-      // ✅ Move this OUT of `colors`
+      //  Move this OUT of `colors`
       backgroundImage: {
         'mini-kit-gradient': 'linear-gradient(180deg, #FFD3C2 0%, #FFE5DC 100%)',
       },
