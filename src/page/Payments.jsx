@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import CustomAlert from '../components/alerts/CustomAlert';
-import { FaSpinner } from 'react-icons/fa'; // Make sure you have react-icons installed
+import { FaSpinner } from 'react-icons/fa'; 
 
 function Payments() {
   const [method, setMethod] = useState('local');

@@ -93,17 +93,59 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+  //   // Simulate form submission
+  //   await new Promise(resolve => setTimeout(resolve, 2000));
     
+  //   setIsSubmitting(false);
+  //   setIsSubmitted(true);
+    
+  //   // Reset form after 3 seconds
+  //   setTimeout(() => {
+  //     setIsSubmitted(false);
+  //     setFormData({
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //       subject: '',
+  //       message: ''
+  //     });
+  //   }, 3000);
+  // };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch('https://baahiyebackendapi.onrender.com/api/v1/message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fullName: formData.name,
+        EmailAddress: formData.email,
+        PhoneNumber: formData.phone,
+        Subject: formData.subject,
+        Message: formData.message,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to send message');
+    }
+
+    // Optional: You can log or handle the returned data
+    const data = await response.json();
+    console.log('Server response:', data);
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
+
+    // Reset form
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
@@ -114,7 +156,12 @@ const Contact = () => {
         message: ''
       });
     }, 3000);
-  };
+  } catch (error) {
+    console.error('Submission error:', error);
+    setIsSubmitting(false);
+    alert('Something went wrong while sending your message. Please try again.');
+  }
+};
 
   const contactInfo = [
     {
