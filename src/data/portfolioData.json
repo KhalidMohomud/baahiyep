@@ -199,6 +199,29 @@
       "link": "https://ikhlaasholidays.com/"
     },
 
+     {
+      "id": 5,
+      "category": "Modern Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/websites/screencapture-faynuusarchtect-so-2025-10-09-12_51_14.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://faynuusarchtect.so/"
+    },
+
+     {
+      "id": 5,
+      "category": "Modern Web Design",
+      "title": "Modern Website Design",
+      "image": "/image/websites/screencapture-samairtravel-2025-10-09-12_52_17.png",
+      "description": "Responsive website design with modern UI/UX principles",
+      "progress": "95%",
+      "link": "https://samairtravel.com/"
+    },
+
+
+
+
       {
       "id": 5,
       "category": "Video Production",
