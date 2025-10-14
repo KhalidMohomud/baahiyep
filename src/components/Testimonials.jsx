@@ -33,6 +33,14 @@ const Testimonials = () => {
       rating: 6
     },
 
+     {
+      quote: "Dhalinyaro xirfad sare leh oo kaa caawinkara horumarka ganacsigaaga..",
+      author: "Ayaanle Hussein Abdi",
+      title: "Director at Hanoolaato.",
+      image: "/image/TestimonialsiMage/hanoolato.jpeg",
+      rating: 6
+    },
+
     
     {
       quote: "They helped us reach new customers and elevate our brand online.",

@@ -9,6 +9,7 @@ import Portifole from "./page/Portifole";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
+
 import Payments from "./page/Payments";
 import InformtionSevices from "./page/InformtionSevices";
 
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       { path: '*', element: <NotFound /> },
     ],
   },
+
 ]);
 
 export default router;
