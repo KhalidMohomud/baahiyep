@@ -339,11 +339,12 @@ const Services = () => {
         </div>
       </div>
 
-       <Packages/>
+     
 
        
        <SocialMediaPackages/>
        {/* <WebDesign/> */}
+        <Packages/>
            <div>
                <EventBrandingPackages/>
              </div>
