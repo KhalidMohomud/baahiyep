@@ -1,12 +1,9 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useClerkAuth } from '../contexts/ClerkAuthContext';
-import { UserButton } from '@clerk/clerk-react';
 // import DarkModeToggle from './DarkModeToggle';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { isAuthenticated } = useClerkAuth();
 
   const closeMobileMenu = () => setMobileOpen(false);
 
@@ -27,31 +24,29 @@ const Header = () => {
           <div className="flex items-center space-x-8">
             <nav className="hidden space-x-8 md:flex">
               {[
-               
 
-              { to: '/', label: 'Home' },
-              { to: '/service', label: 'Services' },
+
+                { to: '/', label: 'Home' },
+                { to: '/service', label: 'Services' },
                 { to: '/about', label: 'About' },
-                 { to: '/Contact', label: 'Contact' },
-              { to: 'https://www.behance.net/baahiyedigitalmark', label: 'Portfolio' },
+                { to: '/Contact', label: 'Contact' },
+                { to: 'https://www.behance.net/baahiyedigitalmark', label: 'Portfolio' },
               ].map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
-                className={({ isActive }) =>
-                  `relative font-medium transition-all duration-300 group ${
-                    isActive
+                  className={({ isActive }) =>
+                    `relative font-medium transition-all duration-300 group ${isActive
                       ? 'text-brandOrange font-semibold'
                       : 'text-gray-700 dark:text-gray-300 hover:text-brandOrange'
-                  }`
-                }
+                    }`
+                  }
                   onClick={closeMobileMenu}
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full ${
-                      location.pathname === link.to ? 'w-full' : 'w-0'
-                    }`}
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-brandOrange transition-all duration-300 group-hover:w-full ${location.pathname === link.to ? 'w-full' : 'w-0'
+                      }`}
                   ></span>
                 </NavLink>
               ))}
@@ -61,23 +56,6 @@ const Header = () => {
             {/* <div className="hidden md:block">
               <DarkModeToggle />
             </div> */}
-
-            {/* User Avatar */}
-            {isAuthenticated && (
-              <div className="hidden md:block">
-                <UserButton
-                  appearance={{
-                    elements: {
-                      userButtonAvatarBox: 'w-10 h-10',
-                      userButtonPopoverCard: 'shadow-lg border border-gray-200 dark:border-gray-600 dark:bg-dark-surface',
-                      userButtonPopoverActionButton:
-                        'hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200',
-                    },
-                  }}
-                  afterSignOutUrl="/"
-                />
-              </div>
-            )}
 
             {/* Mobile Dark Mode Toggle */}
             {/* <div className="md:hidden">
@@ -124,21 +102,20 @@ const Header = () => {
             {[
               { to: '/', label: 'Home' },
               { to: '/service', label: 'Services' },
-                { to: '/about', label: 'About' },
-                 { to: '/Contact', label: 'Contact' },
-             
-                 { to: 'https://www.behance.net/baahiyedigitalmark', label: 'Portfolio' },
-             
+              { to: '/about', label: 'About' },
+              { to: '/Contact', label: 'Contact' },
+
+              { to: 'https://www.behance.net/baahiyedigitalmark', label: 'Portfolio' },
+
             ].map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 onClick={closeMobileMenu}
                 className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
-                    isActive
-                      ? 'bg-brandOrange text-white shadow-md'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-brandOrange hover:bg-gray-100 dark:hover:bg-gray-600'
+                  `px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${isActive
+                    ? 'bg-brandOrange text-white shadow-md'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-brandOrange hover:bg-gray-100 dark:hover:bg-gray-600'
                   }`
                 }
               >
